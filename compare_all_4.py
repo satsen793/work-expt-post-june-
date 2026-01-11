@@ -92,6 +92,10 @@ def generate_latex_table(summaries: Dict[str, Dict], output_path: str) -> None:
         
         summary = summaries[algo]
         
+        # Helper to get std (handles both "std" and "sd" keys)
+        def get_std(d: Dict, default=0.0) -> float:
+            return d.get("std", d.get("sd", default))
+        
         # Extract metrics
         ttm = summary.get("time_to_mastery", {})
         reward = summary.get("cumulative_reward", {})
@@ -103,12 +107,12 @@ def generate_latex_table(summaries: Dict[str, Dict], output_path: str) -> None:
         # Format row
         row = [
             algo,
-            format_value(ttm.get("mean", 0.0), ttm.get("std", 0.0), precision=1),
-            format_value(reward.get("mean", 0.0), reward.get("std", 0.0), precision=1),
-            format_value(auc_10k.get("mean", 0.0), auc_10k.get("std", 0.0), precision=1) if "auc_10k" in summary else "---",
-            format_value(blueprint.get("mean", 0.0), blueprint.get("std", 0.0), precision=1),
-            format_value(calibration.get("mean", 0.0), calibration.get("std", 0.0), precision=3) if algo in ["PETS", "MBPO"] else "N/A$^*$",
-            format_value(wall_clock.get("mean", 0.0), wall_clock.get("std", 0.0), precision=1) if "wall_clock_time_minutes" in summary else "---",
+            format_value(ttm.get("mean", 0.0), get_std(ttm), precision=1),
+            format_value(reward.get("mean", 0.0), get_std(reward), precision=1),
+            format_value(auc_10k.get("mean", 0.0), get_std(auc_10k), precision=1) if "auc_10k" in summary else "---",
+            format_value(blueprint.get("mean", 0.0), get_std(blueprint), precision=1),
+            format_value(calibration.get("mean", 0.0), get_std(calibration), precision=3) if algo in ["PETS", "MBPO"] else "N/A$^*$",
+            format_value(wall_clock.get("mean", 0.0), get_std(wall_clock), precision=1) if "wall_clock_time_minutes" in summary else "---",
         ]
         latex.append(" & ".join(row) + " \\\\")
     

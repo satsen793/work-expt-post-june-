@@ -937,6 +937,14 @@ def summarize_across_seeds(results: List[Dict]) -> Dict:
             "mean": mean_calibration_mae,
             "std": std_calibration_mae,
         },
+        "auc_10k": {  # NEW: Standard field for sample efficiency
+            "mean": float(np.mean([r.get("auc_10k", 0.0) for r in results])),
+            "std": float(np.std([r.get("auc_10k", 0.0) for r in results])),
+        },
+        "wall_clock_time_minutes": {  # NEW: Standard field for wall-clock comparison
+            "mean": float(np.mean([r.get("wall_clock_time_minutes", r.get("duration_s", 0) / 60.0) for r in results])),
+            "std": float(np.std([r.get("wall_clock_time_minutes", r.get("duration_s", 0) / 60.0) for r in results])),
+        },
         "num_seeds": len(results),
     }
 

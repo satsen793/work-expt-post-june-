@@ -1114,16 +1114,22 @@ def summarize_across_seeds(results_across_seeds: List[Dict]) -> Dict[str, Dict[s
     """Spec-aligned summary: mean, SD, and 95% bootstrap CI for primary metrics across seeds."""
     def summarize(values: List[float]) -> Dict[str, float]:
         if not values:
-            return {"mean": 0.0, "sd": 0.0, "ci_lower": 0.0, "ci_upper": 0.0}
+            return {"mean": 0.0, "std": 0.0, "ci_lower": 0.0, "ci_upper": 0.0}
         mean = float(np.mean(values))
-        sd = float(np.std(values))
+        std = float(np.std(values))
         ci_lower, ci_upper = bootstrap_ci(values, np.mean)
-        return {"mean": mean, "sd": sd, "ci_lower": float(ci_lower), "ci_upper": float(ci_upper)}
+        return {"mean": mean, "std": std, "ci_lower": float(ci_lower), "ci_upper": float(ci_upper)}
 
     cumulative_rewards = []
     ttms = []
     blueprint = []
     post_content = []
+    question_accuracy = []
+    final_mastery = []
+    mean_frustration = []
+    auc_10k_values = []
+    wall_clock_values = []
+    
     for r in results_across_seeds:
         cumulative_rewards.append(float(np.sum(r.get("returns", []))))
         ttm_list = r.get("time_to_mastery", [])
@@ -1132,6 +1138,12 @@ def summarize_across_seeds(results_across_seeds: List[Dict]) -> Dict[str, Dict[s
         if em:
             blueprint.append(float(np.mean([e.get("blueprint_adherence", 0.0) for e in em])))
             post_content.append(float(np.mean([e.get("post_content_gain", 0.0) for e in em])))
+            question_accuracy.append(float(np.mean([e.get("question_accuracy", 0.0) for e in em])))
+            final_mastery.append(float(np.mean([e.get("final_mastery", 0.0) for e in em])))
+            mean_frustration.append(float(np.mean([e.get("mean_frustration", 0.0) for e in em])))
+        # AUC@10k and wall-clock time
+        auc_10k_values.append(float(r.get("auc_10k", 0.0)))
+        wall_clock_values.append(float(r.get("duration_s", 0.0)) / 60.0)
 
     stability = policy_stability_summary(results_across_seeds)
     return {
@@ -1139,9 +1151,14 @@ def summarize_across_seeds(results_across_seeds: List[Dict]) -> Dict[str, Dict[s
         "time_to_mastery": {**summarize(ttms), **median_iqr(ttms)},
         "blueprint_adherence": summarize(blueprint),
         "post_content_gain": summarize(post_content),
+        "question_accuracy": summarize(question_accuracy),
+        "final_mastery": summarize(final_mastery),
+        "mean_frustration": summarize(mean_frustration),
+        "auc_10k": summarize(auc_10k_values),
+        "wall_clock_time_minutes": summarize(wall_clock_values),
         "policy_stability": stability,
+        "num_seeds": len(results_across_seeds),
     }
-
 
 if __name__ == "__main__":
     import argparse

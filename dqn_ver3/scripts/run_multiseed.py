@@ -172,12 +172,12 @@ def main():
                         help="Max steps per episode (default 140)")
     parser.add_argument("--start-steps", type=int, default=5000,
                         help="Warmup steps before learning (default 5000)")
-    parser.add_argument("--out-json", type=str, default="logs/multiseed_summary.json")
-    parser.add_argument("--out-csv", type=str, default="logs/multiseed_episodes.csv")
-    parser.add_argument("--fig-learning", type=str, default="figures/learning_curve_moving_avg_reward.png")
-    parser.add_argument("--fig-modality", type=str, default="figures/post_content_gain_by_modality.png")
-    parser.add_argument("--fig-variance", type=str, default="figures/variance_across_seeds.png")
-    parser.add_argument("--fig-compute", type=str, default="figures/compute_vs_reward.png")
+    parser.add_argument("--out-json", type=str, default="results/dqn/summary.json")
+    parser.add_argument("--out-csv", type=str, default="results/dqn/episodes.csv")
+    parser.add_argument("--fig-learning", type=str, default="results/dqn/figures/learning_curve_moving_avg_reward.png")
+    parser.add_argument("--fig-modality", type=str, default="results/dqn/figures/post_content_gain_by_modality.png")
+    parser.add_argument("--fig-variance", type=str, default="results/dqn/figures/variance_across_seeds.png")
+    parser.add_argument("--fig-compute", type=str, default="results/dqn/figures/compute_vs_reward.png")
     parser.add_argument("--total-steps", type=int, default=None, help="Per-seed total env step budget")
     args = parser.parse_args()
 

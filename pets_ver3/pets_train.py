@@ -846,22 +846,53 @@ def export_results_for_paper(
             if values:
                 aggregated_checkpoints[ckpt] = float(np.mean(values))
     
+    # Compute std for metrics across final episodes
+    qa_values = [m.get("question_accuracy", 0) for m in final_episode_metrics] if final_episode_metrics else []
+    ba_values = [m.get("blueprint_adherence", 0) for m in final_episode_metrics] if final_episode_metrics else []
+    fr_values = [m.get("mean_frustration", 0) for m in final_episode_metrics] if final_episode_metrics else []
+    fm_values = [m.get("final_mastery", 0) for m in final_episode_metrics] if final_episode_metrics else []
+    pcg_values = [m.get("post_content_gain", 0) for m in final_episode_metrics] if final_episode_metrics else []
+    
     perf_summary = {
-        "auc_10k": auc_10k_mean,  # NEW: Standard field for sample efficiency
-        "wall_clock_time_minutes": time_mean / 60.0,  # NEW: Standard field, converted from seconds
-        "checkpoints": aggregated_checkpoints,  # NEW: Standard field for progress snapshots
-        "time_to_mastery_mean": mastery_mean,
-        "time_to_mastery_std": mastery_std,
-        "cumulative_reward_mean": reward_mean,
-        "cumulative_reward_std": reward_std,
-        "reward_ci_lower": boot_ci[0],
-        "reward_ci_upper": boot_ci[1],
-        "wall_clock_mean_s": time_mean,
-        "wall_clock_std_s": time_std,
-        "question_accuracy_mean": float(np.mean([m.get("question_accuracy", 0) for m in final_episode_metrics])) if final_episode_metrics else 0.0,
-        "blueprint_adherence_mean": float(np.mean([m.get("blueprint_adherence", 0) for m in final_episode_metrics])) if final_episode_metrics else 0.0,
-        "mean_frustration": float(np.mean([m.get("mean_frustration", 0) for m in final_episode_metrics])) if final_episode_metrics else 0.0,
-        "final_mastery_mean": float(np.mean([m.get("final_mastery", 0) for m in final_episode_metrics])) if final_episode_metrics else 0.0,
+        "auc_10k": {
+            "mean": auc_10k_mean,
+            "std": auc_10k_std,
+        },
+        "wall_clock_time_minutes": {
+            "mean": time_mean / 60.0,
+            "std": time_std / 60.0,
+        },
+        "checkpoints": aggregated_checkpoints,
+        "time_to_mastery": {
+            "mean": mastery_mean,
+            "std": mastery_std,
+        },
+        "cumulative_reward": {
+            "mean": reward_mean,
+            "std": reward_std,
+            "ci_95": [boot_ci[0], boot_ci[1]],
+        },
+        "question_accuracy": {
+            "mean": float(np.mean(qa_values)) if qa_values else 0.0,
+            "std": float(np.std(qa_values)) if qa_values else 0.0,
+        },
+        "blueprint_adherence": {
+            "mean": float(np.mean(ba_values)) if ba_values else 0.0,
+            "std": float(np.std(ba_values)) if ba_values else 0.0,
+        },
+        "post_content_gain": {
+            "mean": float(np.mean(pcg_values)) if pcg_values else 0.0,
+            "std": float(np.std(pcg_values)) if pcg_values else 0.0,
+        },
+        "mean_frustration": {
+            "mean": float(np.mean(fr_values)) if fr_values else 0.0,
+            "std": float(np.std(fr_values)) if fr_values else 0.0,
+        },
+        "final_mastery": {
+            "mean": float(np.mean(fm_values)) if fm_values else 0.0,
+            "std": float(np.std(fm_values)) if fm_values else 0.0,
+        },
+        "num_seeds": len(TRAIN_CONFIG.seeds),
     }
     with open(os.path.join(output_dir, "summary.json"), "w") as f:
         json.dump(perf_summary, f, indent=2)
