@@ -9,18 +9,28 @@
 
 set -euo pipefail
 
-module purge || true
+# Skip module commands - use conda directly
+export PATH="$HOME/.conda/bin:$HOME/miniconda3/bin:$HOME/anaconda3/bin:$PATH"
+
+# Initialize conda
+if [ -f "$HOME/.conda/etc/profile.d/conda.sh" ]; then
+    source "$HOME/.conda/etc/profile.d/conda.sh"
+elif [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+    source "$HOME/miniconda3/etc/profile.d/conda.sh"
+elif [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+    source "$HOME/anaconda3/etc/profile.d/conda.sh"
+elif command -v conda &> /dev/null; then
+    eval "$(conda shell.bash hook)"
+fi
 
 # Create/activate conda env
 ENV_NAME=pets_gpu
 if ! conda env list | grep -q "^${ENV_NAME}\s"; then
   echo "Creating conda environment ${ENV_NAME}..."
   conda create -n ${ENV_NAME} python=3.11 -y
-  source $(conda info --base)/etc/profile.d/conda.sh
   conda activate ${ENV_NAME}
   pip install torch numpy
 else
-  source $(conda info --base)/etc/profile.d/conda.sh
   conda activate ${ENV_NAME}
 fi
 
