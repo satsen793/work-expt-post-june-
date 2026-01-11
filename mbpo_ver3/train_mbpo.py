@@ -1202,6 +1202,22 @@ def main():
                 result = train_single_seed(seeds[0], cfg, env)
                 print(f"✅ Training complete!")
                 print(f"\nResults: {json.dumps(result.get('episode_metrics', [])[-5:], indent=2)}")
+                
+                # NEW: Export JSON for single seed (for smoke tests and production consistency)
+                os.makedirs(args.output, exist_ok=True)
+                summary_path = os.path.join(args.output, "summary.json")
+                returns = [m.get("cumulative_reward", 0.0) for m in result.get("episode_metrics", [])]
+                with open(summary_path, "w") as f:
+                    json.dump({
+                        "auc_10k": float(np.sum(returns[:100])) if returns else 0.0,  # Approximate AUC@10k
+                        "checkpoints": {},  # Not computed for single seed smoke test
+                        "wall_clock_time_minutes": result.get("duration_s", 0) / 60.0,
+                        "seed": result["seed"],
+                        "episodes_completed": len(returns),
+                        "total_return": float(np.sum(returns)) if returns else 0.0,
+                        "mean_return": float(np.mean(returns)) if returns else 0.0,
+                    }, f, indent=2)
+                print(f"✅ Exported: {summary_path}")
             except Exception as e:
                 print(f"❌ Training failed: {e}")
                 import traceback
