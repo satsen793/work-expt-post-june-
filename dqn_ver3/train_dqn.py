@@ -1310,5 +1310,19 @@ if __name__ == "__main__":
     if args.out_json:
         import json
         _ensure_dir(args.out_json)
+        
+        # Convert numpy arrays to lists for JSON serialization
+        def convert_to_serializable(obj):
+            if isinstance(obj, np.ndarray):
+                return obj.tolist()
+            elif isinstance(obj, dict):
+                return {k: convert_to_serializable(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_to_serializable(item) for item in obj]
+            elif isinstance(obj, (np.int64, np.int32, np.float64, np.float32)):
+                return float(obj)
+            return obj
+        
+        serializable_results = convert_to_serializable(results)
         with open(args.out_json, "w") as f:
-            json.dump(results, f, indent=2)
+            json.dump(serializable_results, f, indent=2)
