@@ -557,6 +557,7 @@ def train_single_seed(seed: int, config: Dict, num_episodes: int = None) -> Dict
     episode_rewards = []
     episode_ttm = []
     episode_metrics = []
+    episode_steps: List[int] = []  # NEW: Track steps per episode for AUC/checkpoints
     
     episodes_completed = 0
     start_time = time.time()
@@ -655,6 +656,7 @@ def train_single_seed(seed: int, config: Dict, num_episodes: int = None) -> Dict
         
         episode_metrics.append(ep_metric)
         episode_rewards.append(ep_return)
+        episode_steps.append(len(ep_rewards))  # NEW: Record episode length
         if ep_mastery_reached_step:
             episode_ttm.append(ep_mastery_reached_step)
         
@@ -667,13 +669,75 @@ def train_single_seed(seed: int, config: Dict, num_episodes: int = None) -> Dict
     elapsed = time.time() - start_time
     print(f"Seed {seed} completed in {elapsed:.1f}s")
     
+    wall_clock_time_seconds = time.time() - start_time
+    wall_clock_time_minutes = wall_clock_time_seconds / 60.0
+    
+    # Compute additional metrics for comparison
+    auc_10k = compute_auc_at_10k(episode_rewards, episode_steps)
+    checkpoints = compute_checkpoint_metrics(episode_rewards, episode_metrics, episode_steps)
+    
     return {
         "seed": seed,
         "returns": episode_rewards,
         "time_to_mastery": episode_ttm,
         "episode_metrics": episode_metrics,
         "duration_s": elapsed,
+        "wall_clock_time_minutes": wall_clock_time_minutes,
+        "auc_10k": auc_10k,
+        "checkpoints": checkpoints,
+        "total_steps_per_episode": episode_steps,
     }
+
+
+def compute_auc_at_10k(episode_returns: List[float], episode_steps: List[int]) -> float:
+    """
+    Compute area under the cumulative reward curve up to the first 10,000 environment steps.
+    Required by Table 4 for sample-efficiency comparison across algorithms.
+    """
+    cumulative_steps = 0
+    cumulative_reward = 0.0
+    for ret, steps in zip(episode_returns, episode_steps):
+        if cumulative_steps >= 10_000:
+            break
+        cumulative_steps += steps
+        cumulative_reward += ret
+    return cumulative_reward
+
+
+def compute_checkpoint_metrics(
+    episode_returns: List[float],
+    episode_metrics: List[Dict],
+    episode_steps: List[int],
+    checkpoints: List[int] = [10_000, 25_000, 50_000]
+) -> Dict[int, Dict[str, float]]:
+    """
+    Capture snapshots of cumulative_reward, mean TTM, and blueprint_adherence at specific step checkpoints.
+    Required by Table 5 for progress tracking during training.
+    """
+    results = {}
+    cumulative_steps = 0
+    cumulative_reward = 0.0
+    ttm_buffer = []
+    blueprint_buffer = []
+    
+    for ret, em, steps in zip(episode_returns, episode_metrics, episode_steps):
+        cumulative_steps += steps
+        cumulative_reward += ret
+        if em.get("time_to_mastery") is not None:
+            ttm_buffer.append(em["time_to_mastery"])
+        if em.get("blueprint_adherence") is not None:
+            blueprint_buffer.append(em["blueprint_adherence"])
+        
+        # Check if we've crossed any checkpoints
+        for checkpoint in checkpoints:
+            if checkpoint not in results and cumulative_steps >= checkpoint:
+                results[checkpoint] = {
+                    "cumulative_reward": cumulative_reward,
+                    "mean_ttm": float(np.mean(ttm_buffer)) if ttm_buffer else 0.0,
+                    "blueprint_adherence": float(np.mean(blueprint_buffer)) if blueprint_buffer else 0.0,
+                }
+    
+    return results
 
 
 def _compute_blueprint_adherence(question_diffs: List[int]) -> float:

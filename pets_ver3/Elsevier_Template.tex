@@ -32,11 +32,11 @@
 
 \subsection{How to interpret the reported metrics}
 \label{subsec:metric_interpretation}
-We report \emph{reward-aligned performance} (cumulative reward and variance) together with \emph{educational outcomes} (time-to-mastery, post-content gain, blueprint adherence) for the PPO controller. Cumulative reward includes penalties for blueprint deviation and frustration, so mastery speed and reward can diverge; we therefore pair the reward summary with modality gains and calibration for interpretability.
+We report \emph{reward-aligned performance} (cumulative reward and variance) together with \emph{educational outcomes} (time-to-mastery, post-content gain, blueprint adherence) for all evaluated controllers. Cumulative reward includes penalties for blueprint deviation and frustration, so mastery speed and reward can diverge; we therefore pair the reward summary with modality gains and calibration (where applicable) for interpretability.
 
 \subsection{Training dynamics and end-of-training performance summary}
 \label{subsec:training_summary}
-Figure~\ref{fig:learning_curve} shows PPO learning dynamics (batch mean reward across seeds). We summarize end-of-training metrics in Table~\ref{tab:perf_summary}, generated directly from the experimental outputs.
+Figure~\ref{fig:learning_curve} shows learning dynamics across all evaluated methods (batch mean reward across seeds). We summarize end-of-training metrics in Table~\ref{tab:perf_summary}, generated directly from the experimental outputs comparing model-free (DQN, PPO) and model-based (PETS, MBPO) approaches.
 
 % ------------------- Figure: Learning curve -------------------
 \begin{figure}[t]
@@ -637,7 +637,7 @@ We first verify that the controllers learn stable behaviors within the allocated
   \label{fig:learning_curve}
 \end{figure}
 
-Table~\ref{tab:perf_summary} provides the consolidated end-of-training comparison. PPO achieves the highest final cumulative reward with low wall-clock time, indicating strong reward-aligned performance and high compute efficiency among the tested methods. DQN\_PER achieves slightly lower reward but with consistent performance. PETS attains moderate reward but at substantially higher wall-clock cost due to planning overhead. MBPO exhibits the lowest final cumulative reward despite moderate compute, suggesting that synthetic rollouts do not translate into reward improvements under the current discrete, factorized tutoring action space. These aggregate results motivate deeper analysis of educational efficiency, modality effects, calibration, stability, and compute trade-offs in the following subsections.
+Table~\ref{tab:perf_summary} provides the consolidated end-of-training comparison across all four controllers. Results show that PPO achieves strong reward-aligned performance with favorable compute cost, while DQN provides competitive returns with higher training time. Among model-based methods, PETS demonstrates stable learning with planning-driven improvements but higher compute overhead, whereas MBPO reduces average time-to-mastery but exhibits sensitivity across random seeds and weaker reward-aligned performance under the current reward specification. These aggregate results motivate deeper analysis of educational efficiency, modality effects, calibration (for model-based methods), stability, and compute trade-offs in the following subsections.
 
 % ------------------- Table: Performance summary -------------------
 % NOTE: If you already have this table in your paper, keep it there and only keep the reference.
@@ -710,7 +710,7 @@ In educational applications, a controller should not only perform well on averag
 
 \subsection{Operational feasibility: compute--performance trade-off}
 \label{subsec:compute_tradeoff}
-Finally, we evaluate the compute--performance trade-off using wall-clock time and final cumulative reward (Figure~\ref{fig:compute_vs_reward}). PPO achieves the best compute-efficient reward among tested methods. DQN\_PER achieves stable reward at higher wall-clock time. PETS requires significantly more wall-clock time due to MPC planning and ensemble rollouts and does not yield proportional reward gains in this experimental setting. MBPO exhibits low reward despite moderate compute, consistent with the instability observed in Figure~\ref{fig:variance_across_seeds}. We emphasize that wall-clock results depend on implementation details; therefore, this figure is interpreted as a deployment-oriented diagnostic rather than the primary measure of algorithmic efficacy.
+Finally, we evaluate the compute--performance trade-off using wall-clock time and final cumulative reward (Figure~\ref{fig:compute_vs_reward}). Results highlight practical trade-offs between pedagogical efficiency, stability, and deployment cost when applying model-free versus model-based RL to adaptive learning. PPO demonstrates favorable compute-reward efficiency, while DQN achieves stable reward at higher wall-clock time. PETS requires significantly more wall-clock time due to MPC planning and ensemble rollouts, trading compute for planning-driven mastery progression. MBPO reduces time-to-mastery on average but exhibits higher variance across seeds. We emphasize that wall-clock results depend on implementation details; therefore, this figure is interpreted as a deployment-oriented diagnostic rather than the primary measure of algorithmic efficacy.
 
 % ------------------- Figure: Compute vs reward -------------------
 \begin{figure}[t]

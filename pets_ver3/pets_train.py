@@ -730,6 +730,62 @@ def validate_simulator() -> None:
 
 
 # -----------------------
+# Additional Metrics for Fair Comparison
+# -----------------------
+
+
+def compute_auc_at_10k(episode_returns: List[float], episode_steps: List[int]) -> float:
+    """
+    Compute area under the cumulative reward curve up to the first 10,000 environment steps.
+    Required by Table 4 for sample-efficiency comparison across algorithms.
+    """
+    cumulative_steps = 0
+    cumulative_reward = 0.0
+    for ret, steps in zip(episode_returns, episode_steps):
+        if cumulative_steps >= 10_000:
+            break
+        cumulative_steps += steps
+        cumulative_reward += ret
+    return cumulative_reward
+
+
+def compute_checkpoint_metrics(
+    episode_returns: List[float],
+    episode_metrics: List[Dict],
+    episode_steps: List[int],
+    checkpoints: List[int] = [10_000, 25_000, 50_000]
+) -> Dict[int, Dict[str, float]]:
+    """
+    Capture snapshots of cumulative_reward, mean TTM, and blueprint_adherence at specific step checkpoints.
+    Required by Table 5 for progress tracking during training.
+    """
+    results = {}
+    cumulative_steps = 0
+    cumulative_reward = 0.0
+    ttm_buffer = []
+    blueprint_buffer = []
+    
+    for ret, em, steps in zip(episode_returns, episode_metrics, episode_steps):
+        cumulative_steps += steps
+        cumulative_reward += ret
+        if em.get("time_to_mastery") is not None:
+            ttm_buffer.append(em["time_to_mastery"])
+        if em.get("blueprint_adherence") is not None:
+            blueprint_buffer.append(em["blueprint_adherence"])
+        
+        # Check if we've crossed any checkpoints
+        for checkpoint in checkpoints:
+            if checkpoint not in results and cumulative_steps >= checkpoint:
+                results[checkpoint] = {
+                    "cumulative_reward": cumulative_reward,
+                    "mean_ttm": float(np.mean(ttm_buffer)) if ttm_buffer else 0.0,
+                    "blueprint_adherence": float(np.mean(blueprint_buffer)) if blueprint_buffer else 0.0,
+                }
+    
+    return results
+
+
+# -----------------------
 # Main training loop
 # -----------------------
 
@@ -876,6 +932,7 @@ def main() -> None:
     device = torch.device(TRAIN_CONFIG.device)
     all_seed_returns: List[List[float]] = []
     all_seed_mastery_steps: List[float] = []
+    all_seed_episode_steps: List[List[int]] = []  # NEW: Track steps per episode for AUC/checkpoints
     seed_durations: List[float] = []
     episode_durations: List[float] = []
     cem_elite_logs: List[float] = []
@@ -900,6 +957,7 @@ def main() -> None:
         dataset: List[Tuple[np.ndarray, int, float, np.ndarray]] = []
         returns: List[float] = []
         mastery_steps: List[float] = []
+        episode_steps: List[int] = []  # NEW: Track steps per episode
 
         seed_start = time.time()
 
@@ -907,6 +965,7 @@ def main() -> None:
             ret, dur, metrics = collect_episode(env, lambda _: 0, dataset, random_policy=True)
             returns.append(ret)
             episode_durations.append(dur)
+            episode_steps.append(metrics.get("total_steps", 0))  # NEW
             if metrics.get("time_to_mastery") is not None:
                 mastery_steps.append(metrics["time_to_mastery"])
 
@@ -915,6 +974,7 @@ def main() -> None:
             ret, dur, metrics = collect_episode(env, lambda obs: planner.plan(obs), dataset, random_policy=False)
             returns.append(ret)
             episode_durations.append(dur)
+            episode_steps.append(metrics.get("total_steps", 0))  # NEW
             
             # NEW: Collect comprehensive metrics
             all_episode_metrics.append({**metrics, "seed": seed, "episode": ep})
@@ -941,11 +1001,16 @@ def main() -> None:
                 mean_last = np.mean(returns[-5:])
                 print(f"Seed {seed} | Episode {ep+1}/{TRAIN_CONFIG.total_episodes} | recent avg return: {mean_last:.2f} | dataset size: {len(dataset)}")
 
+        # NEW: Compute per-seed AUC and checkpoints
+        auc_10k = compute_auc_at_10k(returns, episode_steps)
+        checkpoints = compute_checkpoint_metrics(returns, all_episode_metrics, episode_steps)
+        
         all_seed_returns.append(returns)
+        all_seed_episode_steps.append(episode_steps)  # NEW
         if mastery_steps:
             all_seed_mastery_steps.append(float(np.mean(mastery_steps)))
         seed_durations.append(time.time() - seed_start)
-        print(f"Seed {seed} complete. Final recent-5 avg return: {np.mean(returns[-5:]):.2f}")
+        print(f"Seed {seed} complete. Final recent-5 avg return: {np.mean(returns[-5:]):.2f} | AUC@10k: {auc_10k:.1f}")
 
     # Aggregate across seeds
     max_len = max(len(r) for r in all_seed_returns)

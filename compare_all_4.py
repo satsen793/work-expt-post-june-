@@ -60,25 +60,31 @@ def compute_effect_size(mean1: float, std1: float, mean2: float, std2: float) ->
 def generate_latex_table(summaries: Dict[str, Dict], output_path: str) -> None:
     """
     Generate LaTeX Table 1: Performance comparison across all 4 algorithms.
+    Updated for fair 4-algorithm comparison with AUC@10k, checkpoints, and calibration.
     
-    Table structure:
-    Algorithm | TTM | Cum. Reward | Accuracy | Blueprint | Post-Content | Frustration
+    Table structure includes:
+    - Time-to-Mastery (TTM)
+    - Cumulative Reward
+    - AUC@10k (NEW)
+    - Blueprint Adherence
+    - Calibration MAE (PETS/MBPO only)
+    - Wall-Clock Time
     """
     ensure_dir(output_path)
     
     latex = []
-    latex.append("% Table 1: Performance Comparison Across Algorithms")
+    latex.append("% Table 1: Fair 4-Algorithm Performance Comparison")
     latex.append("\\begin{table}[htbp]")
     latex.append("\\centering")
-    latex.append("\\caption{Performance Comparison: DQN, PETS, MBPO, and PPO}")
+    latex.append("\\caption{Performance Comparison: Model-Free (DQN, PPO) vs Model-Based (PETS, MBPO) Adaptive Learning Policies}")
     latex.append("\\label{tab:performance_comparison}")
-    latex.append("\\begin{tabular}{lcccccc}")
+    latex.append("\\begin{tabular}{lccccccc}")
     latex.append("\\toprule")
-    latex.append("\\textbf{Algorithm} & \\textbf{TTM} & \\textbf{Reward} & \\textbf{Accuracy} & \\textbf{Blueprint} & \\textbf{Post-Content} & \\textbf{Frustration} \\\\")
+    latex.append("\\textbf{Algorithm} & \\textbf{TTM} & \\textbf{Cum. Reward} & \\textbf{AUC@10k} & \\textbf{Blueprint} & \\textbf{Calibration} & \\textbf{Time (min)} \\\\")
     latex.append("\\midrule")
     
-    # Order algorithms
-    algo_order = ["DQN", "PETS", "MBPO", "PPO"]
+    # Order algorithms: Model-Free first, then Model-Based
+    algo_order = ["DQN", "PPO", "PETS", "MBPO"]
     
     for algo in algo_order:
         if algo not in summaries:
@@ -89,24 +95,25 @@ def generate_latex_table(summaries: Dict[str, Dict], output_path: str) -> None:
         # Extract metrics
         ttm = summary.get("time_to_mastery", {})
         reward = summary.get("cumulative_reward", {})
-        accuracy = summary.get("question_accuracy", {})
+        auc_10k = summary.get("auc_10k", {})  # NEW
         blueprint = summary.get("blueprint_adherence", {})
-        post_content = summary.get("post_content_gain", {})
-        frustration = summary.get("mean_frustration", {})
+        calibration = summary.get("calibration_mae", {})  # NEW: Only PETS/MBPO
+        wall_clock = summary.get("wall_clock_time_minutes", {})  # NEW
         
         # Format row
         row = [
             algo,
             format_value(ttm.get("mean", 0.0), ttm.get("std", 0.0), precision=1),
             format_value(reward.get("mean", 0.0), reward.get("std", 0.0), precision=1),
-            format_value(accuracy.get("mean", 0.0) * 100, accuracy.get("std", 0.0) * 100, precision=1),  # Convert to %
+            format_value(auc_10k.get("mean", 0.0), auc_10k.get("std", 0.0), precision=1) if "auc_10k" in summary else "---",
             format_value(blueprint.get("mean", 0.0), blueprint.get("std", 0.0), precision=1),
-            format_value(post_content.get("mean", 0.0), post_content.get("std", 0.0), precision=3),
-            format_value(frustration.get("mean", 0.0), frustration.get("std", 0.0), precision=2),
+            format_value(calibration.get("mean", 0.0), calibration.get("std", 0.0), precision=3) if algo in ["PETS", "MBPO"] else "N/A$^*$",
+            format_value(wall_clock.get("mean", 0.0), wall_clock.get("std", 0.0), precision=1) if "wall_clock_time_minutes" in summary else "---",
         ]
         latex.append(" & ".join(row) + " \\\\")
     
     latex.append("\\bottomrule")
+    latex.append("\\multicolumn{7}{l}{$^*$ Calibration applies only to model-based methods (PETS, MBPO) with learned dynamics.} \\\\")
     latex.append("\\end{tabular}")
     latex.append("\\end{table}")
     

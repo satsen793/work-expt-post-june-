@@ -499,6 +499,7 @@ class MBPOAgent:
         episode_rewards: List[float] = []
         episode_ttm: List[int] = []
         episode_metrics: List[Dict] = []
+        episode_steps: List[int] = []  # NEW: Track steps per episode for AUC/checkpoints
         
         # Current episode tracking
         ep_cumulative_reward = 0.0
@@ -512,6 +513,10 @@ class MBPOAgent:
         ep_question_correct = 0
         ep_content_count = 0
         ep_frustration_history: List[float] = []
+        
+        # NEW: Calibration tracking (predicted mastery vs actual correctness)
+        all_calibration_predicted: List[float] = []
+        all_calibration_actual: List[float] = []
         
         modality_names = ["video", "PPT", "text", "blog", "article", "handout"]
         
@@ -560,6 +565,15 @@ class MBPOAgent:
                     difficulty = info.get("difficulty")
                     if difficulty is not None:
                         ep_question_diffs.append(difficulty)
+                    
+                    # NEW: Track calibration (predicted mastery before question vs actual outcome)
+                    # Use pre-step mastery from state (before env.step applied mastery update)
+                    lo = info.get("lo")
+                    if lo is not None and lo < 30:
+                        predicted_mastery = float(state[lo])  # Mastery before this question
+                        actual_outcome = 1.0 if info.get("correct", False) else 0.0
+                        all_calibration_predicted.append(predicted_mastery)
+                        all_calibration_actual.append(actual_outcome)
             
             state = next_state
 
@@ -587,6 +601,7 @@ class MBPOAgent:
                 }
                 episode_metrics.append(ep_metric)
                 episode_rewards.append(episode_return)
+                episode_steps.append(ep_len)  # NEW: Record episode length
                 if ep_mastery_reached_step:
                     episode_ttm.append(ep_mastery_reached_step)
                 
@@ -627,11 +642,28 @@ class MBPOAgent:
             if t % self.cfg.save_interval == 0:
                 self._save_checkpoint(t)
         
+        # Compute additional metrics for comparison
+        auc_10k = compute_auc_at_10k(episode_rewards, episode_steps)
+        checkpoints = compute_checkpoint_metrics(episode_rewards, episode_metrics, episode_steps)
+        
+        # NEW: Compute calibration MAE (mean absolute error between predicted mastery and actual correctness)
+        calibration_mae = 0.0
+        if all_calibration_predicted and len(all_calibration_predicted) == len(all_calibration_actual):
+            calibration_mae = float(np.mean(np.abs(np.array(all_calibration_predicted) - np.array(all_calibration_actual))))
+        
         # Return comprehensive results
         return {
             "returns": episode_rewards,
             "time_to_mastery": episode_ttm,
             "episode_metrics": episode_metrics,
+            "auc_10k": auc_10k,
+            "checkpoints": checkpoints,
+            "total_steps_per_episode": episode_steps,
+            "calibration_data": {  # NEW: For template Figure 4 and calibration analysis
+                "predicted_mastery": all_calibration_predicted,
+                "empirical_correct": all_calibration_actual,
+                "mae": calibration_mae,
+            },
         }
 
     def _decode_env_action(self, action_id: int) -> Tuple[int, int, int]:
@@ -750,6 +782,57 @@ class MBPOAgent:
 # Multi-seed training and export utilities
 # -----------------------------------------------------------------------------
 
+def compute_auc_at_10k(episode_returns: List[float], episode_steps: List[int]) -> float:
+    """
+    Compute area under the cumulative reward curve up to the first 10,000 environment steps.
+    Required by Table 4 for sample-efficiency comparison across algorithms.
+    """
+    cumulative_steps = 0
+    cumulative_reward = 0.0
+    for ret, steps in zip(episode_returns, episode_steps):
+        if cumulative_steps >= 10_000:
+            break
+        cumulative_steps += steps
+        cumulative_reward += ret
+    return cumulative_reward
+
+
+def compute_checkpoint_metrics(
+    episode_returns: List[float],
+    episode_metrics: List[Dict],
+    episode_steps: List[int],
+    checkpoints: List[int] = [10_000, 25_000, 50_000]
+) -> Dict[int, Dict[str, float]]:
+    """
+    Capture snapshots of cumulative_reward, mean TTM, and blueprint_adherence at specific step checkpoints.
+    Required by Table 5 for progress tracking during training.
+    """
+    results = {}
+    cumulative_steps = 0
+    cumulative_reward = 0.0
+    ttm_buffer = []
+    blueprint_buffer = []
+    
+    for ret, em, steps in zip(episode_returns, episode_metrics, episode_steps):
+        cumulative_steps += steps
+        cumulative_reward += ret
+        if em.get("time_to_mastery") is not None:
+            ttm_buffer.append(em["time_to_mastery"])
+        if em.get("blueprint_adherence") is not None:
+            blueprint_buffer.append(em["blueprint_adherence"])
+        
+        # Check if we've crossed any checkpoints
+        for checkpoint in checkpoints:
+            if checkpoint not in results and cumulative_steps >= checkpoint:
+                results[checkpoint] = {
+                    "cumulative_reward": cumulative_reward,
+                    "mean_ttm": float(np.mean(ttm_buffer)) if ttm_buffer else 0.0,
+                    "blueprint_adherence": float(np.mean(blueprint_buffer)) if blueprint_buffer else 0.0,
+                }
+    
+    return results
+
+
 def ensure_dir(path: str) -> None:
     """Create directory if it doesn't exist."""
     d = os.path.dirname(path)
@@ -792,6 +875,15 @@ def summarize_across_seeds(results: List[Dict]) -> Dict:
     mean_post_content, std_post_content = aggregate_metric("post_content_gain")
     mean_frustration, std_frustration = aggregate_metric("mean_frustration")
     mean_final_mastery, std_final_mastery = aggregate_metric("final_mastery")
+    
+    # NEW: Calibration MAE aggregation (model-based method)
+    calibration_maes = []
+    for r in results:
+        calib_data = r.get("calibration_data", {})
+        if calib_data and "mae" in calib_data:
+            calibration_maes.append(calib_data["mae"])
+    mean_calibration_mae = float(np.mean(calibration_maes)) if calibration_maes else 0.0
+    std_calibration_mae = float(np.std(calibration_maes)) if calibration_maes else 0.0
     
     # Bootstrap 95% CI
     def bootstrap_ci(values, n_boot=1000, ci=0.95):
@@ -836,6 +928,10 @@ def summarize_across_seeds(results: List[Dict]) -> Dict:
             "mean": mean_final_mastery,
             "std": std_final_mastery,
         },
+        "calibration_mae": {  # NEW: For template Table 1
+            "mean": mean_calibration_mae,
+            "std": std_calibration_mae,
+        },
         "num_seeds": len(results),
     }
 
@@ -854,8 +950,12 @@ def train_single_seed(seed: int, cfg: MBPOConfig, env) -> Dict:
     results = agent.train()
     elapsed = time.time() - start_time
     
+    wall_clock_time_seconds = time.time() - start_time
+    wall_clock_time_minutes = wall_clock_time_seconds / 60.0
+    
     results["seed"] = seed
     results["duration_s"] = elapsed
+    results["wall_clock_time_minutes"] = wall_clock_time_minutes
     
     print(f"Seed {seed} completed in {elapsed:.1f}s")
     return results
