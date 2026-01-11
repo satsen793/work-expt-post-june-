@@ -41,6 +41,18 @@ bash run_lightning_multi.sh
 bash run_lightning_single.sh
 ```
 
+**Direct production run (saves all artifacts)**
+```bash
+python train_dqn.py \
+	--episodes 295 \
+	--out-json results/dqn/summary.json \
+	--out-csv results/dqn/episodes.csv \
+	--out-steps-csv results/dqn/steps.csv
+```
+Notes:
+- DQN only writes outputs when these flags are provided; without them, nothing is saved.
+- Directories are auto-created; adjust paths if you prefer a different results folder.
+
 ### 5. Download results
 
 From Windows PowerShell:
@@ -62,6 +74,7 @@ scp -i C:\Users\HP\.ssh\lightning_rsa -r ssh.lightning.ai:~/dqn_ver3/figures ./
 - `logs/multiseed_summary.json` - Statistical summary (mean±SD, CI)
 - `logs/multiseed_episodes.csv` - Per-episode metrics across seeds
 - `logs/dqn_steps.csv` - Per-step logs (for calibration)
+> For direct runs, use `--out-json/--out-csv/--out-steps-csv` to emit these files (paths are configurable).
 
 ### Figures (ready for paper)
 - `figures/learning_curve_moving_avg_reward.png` - Training dynamics
