@@ -119,10 +119,9 @@ def main():
             "cmd": [
                 sys.executable,
                 "pets_ver3/pets_train.py",
-                # PETS doesn't have CLI args, uses TrainConfig
-                # Will need to run with default config
+                # PETS uses TrainConfig internally, no CLI args needed for smoke test
             ],
-            "json_path": None  # PETS uses different output structure
+            "json_path": "pets_ver3/results/summary.json"  # PETS default output location
         },
         {
             "name": "MBPO",
@@ -131,9 +130,9 @@ def main():
                 "mbpo_ver3/train_mbpo.py",
                 "--seed", "0",
                 "--episodes", "5",
-                "--out-json", "smoketest_outputs/mbpo_smoke.json"
+                "--output", "smoketest_outputs/mbpo"
             ],
-            "json_path": "smoketest_outputs/mbpo_smoke.json"
+            "json_path": "smoketest_outputs/mbpo/summary.json"
         },
         {
             "name": "PPO",
@@ -142,9 +141,9 @@ def main():
                 "ppo_ver3/ppo_train.py",
                 "--seed", "0",
                 "--episodes", "5",
-                "--out-json", "smoketest_outputs/ppo_smoke.json"
+                "--output", "smoketest_outputs/ppo"
             ],
-            "json_path": "smoketest_outputs/ppo_smoke.json"
+            "json_path": "smoketest_outputs/ppo/summary.json"
         }
     ]
     

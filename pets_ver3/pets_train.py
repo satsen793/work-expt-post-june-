@@ -943,7 +943,7 @@ def main() -> None:
     all_episode_metrics: List[Dict] = []
     all_calibration_predicted: List[float] = []
     all_calibration_actual: List[float] = []
-    all_modality_gains: Dict[str, List[float]] = {mod: [] for mod in [\"video\", \"PPT\", \"text\", \"blog\", \"article\", \"handout\"]}
+    all_modality_gains: Dict[str, List[float]] = {mod: [] for mod in ["video", "PPT", "text", "blog", "article", "handout"]}
 
     for seed in TRAIN_CONFIG.seeds:
         torch.manual_seed(seed)
