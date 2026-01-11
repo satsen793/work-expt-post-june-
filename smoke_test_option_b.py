@@ -154,7 +154,7 @@ def main():
                 "--seed", "0",
                 "--episodes", "5"
             ],
-            "json_path": "pets_ver3/results/performance_summary.json"  # Relative to smoke test working dir
+            "json_path": "results/performance_summary.json"  # PETS saves to ./results/ (repo root)
         },
         {
             "name": "MBPO",
