@@ -1,0 +1,20 @@
+name: dqn_ver3
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy=2.2
+  - pytorch=2.4.*=cpu_*  # CPU-only by default; adjust for GPU below
+  - pip:
+      # Optional scientific stack for analysis helpers
+      - scipy>=1.10,<2
+# For NVIDIA GPU nodes, comment the cpu build above and use:
+# dependencies:
+#   - python=3.10
+#   - pytorch=2.4.*
+#   - cudatoolkit=11.8  # or match your cluster driver version
+#   - pip
+#   - pip:
+#       - scipy>=1.10,<2
