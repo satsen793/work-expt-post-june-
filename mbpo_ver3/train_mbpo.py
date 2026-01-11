@@ -836,7 +836,11 @@ def compute_checkpoint_metrics(
 
 def ensure_dir(path: str) -> None:
     """Create directory if it doesn't exist."""
-    d = os.path.dirname(path)
+    # Handle both file paths and directory paths
+    if os.path.splitext(path)[1]:  # Has extension, treat as file
+        d = os.path.dirname(path)
+    else:  # No extension, treat as directory
+        d = path
     if d:
         os.makedirs(d, exist_ok=True)
 
