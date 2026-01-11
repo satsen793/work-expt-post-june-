@@ -1,0 +1,73 @@
+{
+  "summary": {
+    "cumulative_reward": {
+      "mean": 48.43524128114376,
+      "std": 6.009100249272416,
+      "ci_95": [
+        12778.163689105879,
+        15800.018492196576
+      ]
+    },
+    "time_to_mastery": {
+      "mean": 107.37898305084745,
+      "std": 9.198981345751434,
+      "ci_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "question_accuracy": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "blueprint_adherence": {
+      "mean": 73.08338913917264,
+      "std": 2.8208718869962706
+    },
+    "post_content_gain": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "mean_frustration": {
+      "mean": 0.2310237400698761,
+      "std": 0.02842734633659394
+    },
+    "final_mastery": {
+      "mean": 0.38160855454913634,
+      "std": 0.026870345860173443
+    },
+    "num_seeds": 5
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "duration_s": 38.315545320510864,
+      "cumulative_reward": 13036.39561347863,
+      "mean_ttm": 0.0
+    },
+    {
+      "seed": 1,
+      "duration_s": 38.6981086730957,
+      "cumulative_reward": 13945.903118456728,
+      "mean_ttm": 0.0
+    },
+    {
+      "seed": 2,
+      "duration_s": 37.787747621536255,
+      "cumulative_reward": 15668.073758594135,
+      "mean_ttm": 0.0
+    },
+    {
+      "seed": 3,
+      "duration_s": 33.60697388648987,
+      "cumulative_reward": 16855.546349099848,
+      "mean_ttm": 0.0
+    },
+    {
+      "seed": 4,
+      "duration_s": 42.058852672576904,
+      "cumulative_reward": 11936.062050057702,
+      "mean_ttm": 0.0
+    }
+  ]
+}
