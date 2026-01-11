@@ -1,0 +1,270 @@
+=== DQN Production: 5 seeds, 295 episodes ===
+Episode 0010 | return=31.05 | ttm=140.0 | steps=1177
+Episode 0020 | return=33.27 | ttm=140.0 | steps=2361
+Episode 0030 | return=25.14 | ttm=140.0 | steps=3317
+Episode 0040 | return=25.97 | ttm=140.0 | steps=4295
+Episode 0050 | return=22.61 | ttm=140.0 | steps=5212
+Episode 0060 | return=31.11 | ttm=140.0 | steps=6300
+Episode 0070 | return=29.79 | ttm=140.0 | steps=7389
+Episode 0080 | return=28.37 | ttm=140.0 | steps=8527
+Episode 0090 | return=31.39 | ttm=140.0 | steps=9700
+Episode 0100 | return=22.37 | ttm=140.0 | steps=10631
+Episode 0110 | return=33.50 | ttm=140.0 | steps=11675
+Episode 0120 | return=22.81 | ttm=140.0 | steps=12543
+Episode 0130 | return=29.47 | ttm=140.0 | steps=13594
+Episode 0140 | return=24.33 | ttm=140.0 | steps=14569
+Episode 0150 | return=22.27 | ttm=140.0 | steps=15494
+Episode 0160 | return=25.51 | ttm=140.0 | steps=16507
+Episode 0170 | return=30.23 | ttm=140.0 | steps=17563
+Episode 0180 | return=26.26 | ttm=140.0 | steps=18611
+Episode 0190 | return=36.90 | ttm=140.0 | steps=19700
+Episode 0200 | return=27.75 | ttm=140.0 | steps=20790
+Episode 0210 | return=23.09 | ttm=140.0 | steps=21865
+Episode 0220 | return=21.39 | ttm=140.0 | steps=22842
+Episode 0230 | return=27.43 | ttm=140.0 | steps=23886
+Episode 0240 | return=26.56 | ttm=140.0 | steps=25002
+Episode 0250 | return=27.23 | ttm=140.0 | steps=26094
+Episode 0260 | return=22.61 | ttm=140.0 | steps=27050
+Episode 0270 | return=28.13 | ttm=140.0 | steps=28152
+Episode 0280 | return=21.30 | ttm=140.0 | steps=29050
+Episode 0290 | return=17.31 | ttm=140.0 | steps=29887
+Training finished.
+Episode 0010 | return=33.29 | ttm=140.0 | steps=1191
+Episode 0020 | return=33.18 | ttm=140.0 | steps=2366
+Episode 0030 | return=22.78 | ttm=140.0 | steps=3277
+Episode 0040 | return=30.47 | ttm=140.0 | steps=4342
+Episode 0050 | return=19.93 | ttm=140.0 | steps=5240
+Episode 0060 | return=32.17 | ttm=140.0 | steps=6349
+Episode 0070 | return=32.55 | ttm=140.0 | steps=7477
+Episode 0080 | return=24.04 | ttm=140.0 | steps=8536
+Episode 0090 | return=31.99 | ttm=140.0 | steps=9667
+Episode 0100 | return=25.94 | ttm=140.0 | steps=10639
+Episode 0110 | return=31.08 | ttm=140.0 | steps=11648
+Episode 0120 | return=22.69 | ttm=140.0 | steps=12547
+Episode 0130 | return=34.80 | ttm=140.0 | steps=13676
+Episode 0140 | return=25.86 | ttm=140.0 | steps=14776
+Episode 0150 | return=20.86 | ttm=140.0 | steps=15726
+Episode 0160 | return=29.50 | ttm=140.0 | steps=16801
+Episode 0170 | return=29.20 | ttm=140.0 | steps=17787
+Episode 0180 | return=23.54 | ttm=140.0 | steps=18733
+Episode 0190 | return=31.62 | ttm=140.0 | steps=19786
+Episode 0200 | return=30.21 | ttm=140.0 | steps=20888
+Episode 0210 | return=18.65 | ttm=140.0 | steps=21796
+Episode 0220 | return=25.28 | ttm=140.0 | steps=22839
+Episode 0230 | return=27.94 | ttm=140.0 | steps=23983
+Episode 0240 | return=22.13 | ttm=140.0 | steps=25053
+Episode 0250 | return=28.89 | ttm=140.0 | steps=26204
+Episode 0260 | return=24.77 | ttm=140.0 | steps=27265
+Episode 0270 | return=34.85 | ttm=140.0 | steps=28389
+Episode 0280 | return=27.30 | ttm=140.0 | steps=29300
+Episode 0290 | return=21.64 | ttm=140.0 | steps=30257
+Training finished.
+Episode 0010 | return=33.33 | ttm=140.0 | steps=1177
+Episode 0020 | return=35.54 | ttm=140.0 | steps=2361
+Episode 0030 | return=19.12 | ttm=140.0 | steps=3243
+Episode 0040 | return=28.99 | ttm=140.0 | steps=4238
+Episode 0050 | return=24.50 | ttm=140.0 | steps=5178
+Episode 0060 | return=27.47 | ttm=140.0 | steps=6229
+Episode 0070 | return=31.24 | ttm=140.0 | steps=7382
+Episode 0080 | return=22.27 | ttm=140.0 | steps=8340
+Episode 0090 | return=31.62 | ttm=140.0 | steps=9503
+Episode 0100 | return=26.43 | ttm=140.0 | steps=10447
+Episode 0110 | return=31.77 | ttm=140.0 | steps=11418
+Episode 0120 | return=23.64 | ttm=140.0 | steps=12347
+Episode 0130 | return=29.52 | ttm=140.0 | steps=13406
+Episode 0140 | return=25.33 | ttm=140.0 | steps=14372
+Episode 0150 | return=16.08 | ttm=140.0 | steps=15163
+Episode 0160 | return=25.50 | ttm=140.0 | steps=16193
+Episode 0170 | return=30.59 | ttm=140.0 | steps=17330
+Episode 0180 | return=25.73 | ttm=140.0 | steps=18343
+Episode 0190 | return=31.52 | ttm=140.0 | steps=19399
+Episode 0200 | return=29.89 | ttm=140.0 | steps=20462
+Episode 0210 | return=18.27 | ttm=140.0 | steps=21379
+Episode 0220 | return=28.03 | ttm=140.0 | steps=22482
+Episode 0230 | return=27.42 | ttm=140.0 | steps=23578
+Episode 0240 | return=22.27 | ttm=140.0 | steps=24604
+Episode 0250 | return=25.19 | ttm=140.0 | steps=25723
+Episode 0260 | return=26.44 | ttm=140.0 | steps=26831
+Episode 0270 | return=33.41 | ttm=140.0 | steps=27973
+Episode 0280 | return=28.99 | ttm=140.0 | steps=29038
+Episode 0290 | return=24.65 | ttm=140.0 | steps=30037
+Training finished.
+Episode 0010 | return=30.06 | ttm=140.0 | steps=1182
+Episode 0020 | return=34.08 | ttm=140.0 | steps=2334
+Episode 0030 | return=17.84 | ttm=140.0 | steps=3220
+Episode 0040 | return=28.02 | ttm=140.0 | steps=4181
+Episode 0050 | return=25.46 | ttm=140.0 | steps=5164
+Episode 0060 | return=29.02 | ttm=140.0 | steps=6192
+Episode 0070 | return=34.41 | ttm=140.0 | steps=7373
+Episode 0080 | return=23.88 | ttm=140.0 | steps=8446
+Episode 0090 | return=26.58 | ttm=140.0 | steps=9544
+Episode 0100 | return=26.63 | ttm=140.0 | steps=10539
+Episode 0110 | return=33.96 | ttm=140.0 | steps=11561
+Episode 0120 | return=23.95 | ttm=140.0 | steps=12414
+Episode 0130 | return=27.39 | ttm=140.0 | steps=13500
+Episode 0140 | return=26.03 | ttm=140.0 | steps=14458
+Episode 0150 | return=18.49 | ttm=140.0 | steps=15329
+Episode 0160 | return=28.54 | ttm=140.0 | steps=16360
+Episode 0170 | return=28.19 | ttm=140.0 | steps=17367
+Episode 0180 | return=34.99 | ttm=140.0 | steps=18543
+Episode 0190 | return=28.14 | ttm=140.0 | steps=19512
+Episode 0200 | return=27.14 | ttm=140.0 | steps=20501
+Episode 0210 | return=18.34 | ttm=140.0 | steps=21428
+Episode 0220 | return=28.74 | ttm=140.0 | steps=22490
+Episode 0230 | return=28.07 | ttm=140.0 | steps=23597
+Episode 0240 | return=25.23 | ttm=140.0 | steps=24697
+Episode 0250 | return=24.09 | ttm=140.0 | steps=25652
+Episode 0260 | return=28.37 | ttm=140.0 | steps=26753
+Episode 0270 | return=26.01 | ttm=140.0 | steps=27805
+Episode 0280 | return=23.91 | ttm=140.0 | steps=28690
+Episode 0290 | return=21.09 | ttm=140.0 | steps=29670
+Training finished.
+Episode 0010 | return=31.22 | ttm=140.0 | steps=1147
+Episode 0020 | return=35.74 | ttm=140.0 | steps=2313
+Episode 0030 | return=19.75 | ttm=140.0 | steps=3242
+Episode 0040 | return=29.87 | ttm=140.0 | steps=4229
+Episode 0050 | return=26.05 | ttm=140.0 | steps=5206
+Episode 0060 | return=31.69 | ttm=140.0 | steps=6278
+Episode 0070 | return=33.20 | ttm=140.0 | steps=7434
+Episode 0080 | return=23.44 | ttm=140.0 | steps=8503
+Episode 0090 | return=28.53 | ttm=140.0 | steps=9586
+Episode 0100 | return=29.53 | ttm=140.0 | steps=10620
+Episode 0110 | return=26.67 | ttm=140.0 | steps=11520
+Episode 0120 | return=27.07 | ttm=140.0 | steps=12474
+Episode 0130 | return=25.06 | ttm=140.0 | steps=13412
+Episode 0140 | return=26.81 | ttm=140.0 | steps=14376
+Episode 0150 | return=22.59 | ttm=140.0 | steps=15408
+Episode 0160 | return=29.46 | ttm=140.0 | steps=16414
+Episode 0170 | return=26.39 | ttm=140.0 | steps=17481
+Episode 0180 | return=35.15 | ttm=140.0 | steps=18658
+Episode 0190 | return=30.33 | ttm=140.0 | steps=19728
+Episode 0200 | return=24.86 | ttm=140.0 | steps=20698
+Episode 0210 | return=18.74 | ttm=140.0 | steps=21611
+Episode 0220 | return=31.36 | ttm=140.0 | steps=22713
+Episode 0230 | return=25.00 | ttm=140.0 | steps=23814
+Episode 0240 | return=26.07 | ttm=140.0 | steps=25020
+Episode 0250 | return=23.37 | ttm=140.0 | steps=26045
+Episode 0260 | return=29.65 | ttm=140.0 | steps=27159
+Episode 0270 | return=26.26 | ttm=140.0 | steps=28221
+Episode 0280 | return=28.17 | ttm=140.0 | steps=29268
+Episode 0290 | return=18.59 | ttm=140.0 | steps=30142
+Training finished.
+Done. Summary:
+{
+  "cumulative_reward": {
+    "mean": 7966.799077243278,
+    "std": 80.92577248485217,
+    "ci_lower": 7899.240428817752,
+    "ci_upper": 8042.5651463062695
+  },
+  "time_to_mastery": {
+    "mean": 140.0,
+    "std": 0.0,
+    "ci_lower": 140.0,
+    "ci_upper": 140.0,
+    "median": 140.0,
+    "p25": 140.0,
+    "p75": 140.0
+  },
+  "blueprint_adherence": {
+    "mean": 99.01414677185024,
+    "std": 0.0721705360796011,
+    "ci_lower": 98.95306956057705,
+    "ci_upper": 99.0752239831234
+  },
+  "post_content_gain": {
+    "mean": 0.04993763134073229,
+    "std": 0.00048056720200944817,
+    "ci_lower": 0.04944736638478394,
+    "ci_upper": 0.050348049903103896
+  },
+  "question_accuracy": {
+    "mean": 0.5916936439971799,
+    "std": 0.004108475574423579,
+    "ci_lower": 0.588165317609015,
+    "ci_upper": 0.5951651448698937
+  },
+  "final_mastery": {
+    "mean": 0.42408400831974136,
+    "std": 0.001960891541225525,
+    "ci_lower": 0.4223926836106696,
+    "ci_upper": 0.42572224341527354
+  },
+  "mean_frustration": {
+    "mean": 0.1920193134408528,
+    "std": 0.0035682180750790313,
+    "ci_lower": 0.18862817419692537,
+    "ci_upper": 0.1946573559647136
+  },
+  "auc_10k": {
+    "mean": 2676.206660362261,
+    "std": 34.511945611361924,
+    "ci_lower": 2641.441929921965,
+    "ci_upper": 2706.039619543692
+  },
+  "wall_clock_time_minutes": {
+    "mean": 0.0,
+    "std": 0.0,
+    "ci_lower": 0.0,
+    "ci_upper": 0.0
+  },
+  "policy_stability": {
+    "sd": 80.92577248485217,
+    "cv": 0.010157877925654254,
+    "ci_lower": 7898.1559037194165,
+    "ci_upper": 8042.5651463062695
+  },
+  "num_seeds": 5
+}
+Per-seed elapsed (s): [84.03545117378235, 80.54780626296997, 79.6432192325592, 78.97402334213257, 80.3872172832489]
+
+=== Verifying results ===
+total 46982
+drwxrwxr-x. 3 jabezc jabezc    25600 Jan 11 12:34 .
+drwxrwxr-x. 6 jabezc jabezc    25600 Jan 11 11:57 ..
+-rw-rw-r--. 1 jabezc jabezc    82693 Jan 11 08:59 episodes.csv
+drwxrwxr-x. 2 jabezc jabezc    25600 Jan 11 12:34 figures
+-rw-rw-r--. 1 jabezc jabezc    82506 Jan 11 08:59 seed0_episodes.csv
+-rw-rw-r--. 1 jabezc jabezc 82349460 Jan 11 08:59 seed0_summary.json
+-rw-rw-r--. 1 jabezc jabezc    82738 Jan 11 08:59 seed1_episodes.csv
+-rw-rw-r--. 1 jabezc jabezc 84520958 Jan 11 08:59 seed1_summary.json
+-rw-rw-r--. 1 jabezc jabezc    82539 Jan 11 08:59 seed2_episodes.csv
+-rw-rw-r--. 1 jabezc jabezc 83427146 Jan 11 08:59 seed2_summary.json
+-rw-rw-r--. 1 jabezc jabezc    82558 Jan 11 08:59 seed3_episodes.csv
+-rw-rw-r--. 1 jabezc jabezc 83563812 Jan 11 08:59 seed3_summary.json
+-rw-rw-r--. 1 jabezc jabezc    82372 Jan 11 08:59 seed4_episodes.csv
+-rw-rw-r--. 1 jabezc jabezc 84006260 Jan 11 09:00 seed4_summary.json
+-rw-rw-r--. 1 jabezc jabezc  2862354 Jan 11 09:00 steps.csv
+-rw-rw-r--. 1 jabezc jabezc 82504970 Jan 11 09:00 summary.json
+296 ../results/dqn/episodes.csv
+{
+  "returns": [
+    5.8914992793486824,
+    31.174699555561094,
+    53.42023963703875,
+    19.294032015358823,
+    13.174292484138878,
+    20.027418472174514,
+    22.50121188742301,
+    10.956652298378936,
+    14.853997328158124,
+    60.88658181503279,
+    35.48593462423953,
+    26.628897564905856,
+    28.81342245329792,
+    45.92954158526703,
+    7.600726807988361,
+    41.7830351087464,
+    29.629206296546165,
+    31.117399027756317,
+    17.91468045035332,
+    36.60954019788835,
+    37.13427428952937,
+    37.00479256848409,
+    12.650771880156466,
+    27.862545639828756,
+    32.7531273034094,
+    29.111840048908334,
+    27.657475987733235,
+    41.95664706148466,
+DQN production complete!

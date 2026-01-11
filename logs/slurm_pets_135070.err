@@ -1,0 +1,12 @@
+environment: line 17: /usr/share/lmod/lmod/libexec/lmod: No such file or directory
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 22.9.0
+  latest version: 25.11.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+

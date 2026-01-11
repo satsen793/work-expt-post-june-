@@ -1,0 +1,9 @@
+{
+  "auc_10k": 276.26011340439914,
+  "checkpoints": {},
+  "wall_clock_time_minutes": 0.8710980375607809,
+  "seed": 5,
+  "episodes_completed": 10,
+  "total_return": 276.26011340439914,
+  "mean_return": 27.626011340439913
+}

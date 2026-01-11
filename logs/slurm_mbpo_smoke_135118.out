@@ -1,0 +1,171 @@
+=== MBPO Smoke Test: 1 seed, 10 episodes ===
+
+======================================================================
+🚀 MBPO TRAINING STARTED
+======================================================================
+
+📋 Configuration:
+   Seeds: [0]
+   Episodes: 10
+   Device: cuda
+   Max steps per episode: 140
+   Total max steps: 1400
+======================================================================
+
+🎓 TRAINING MODE
+📍 Single seed training (seed=0)
+✅ Environment created
+
+======================================================================
+MBPO Training: Seed 0
+======================================================================
+step=1000 episodes=8 avg_reward_50=22.24 alpha=nan q1=nan actor=nan model=nan
+Seed 0 completed in 52.9s
+✅ Training complete!
+
+Results: [
+  {
+    "episode": 6,
+    "return": 34.806306786167646,
+    "cumulative_reward": 34.806306786167646,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.44087889790534973,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 7,
+    "return": 31.589253178293855,
+    "cumulative_reward": 31.589253178293855,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.4521632790565491,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 8,
+    "return": 22.116220964066187,
+    "cumulative_reward": 22.116220964066187,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.43571770191192627,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 9,
+    "return": 30.212711268194205,
+    "cumulative_reward": 30.212711268194205,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.4684655964374542,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 10,
+    "return": 43.258580514151724,
+    "cumulative_reward": 43.258580514151724,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.47390997409820557,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  }
+]
+✅ Exported: results/mbpo/summary.json
+✓ Episodes CSV exported to results/mbpo/episodes.csv
+
+=== Verifying results ===
+total 79
+drwxrwxr-x. 2 jabezc jabezc 25600 Jan 11 12:11 .
+drwxrwxr-x. 6 jabezc jabezc 25600 Jan 11 11:57 ..
+-rw-rw-r--. 1 jabezc jabezc  1457 Jan 11 12:11 episodes.csv
+-rw-rw-r--. 1 jabezc jabezc   218 Jan 11 12:11 summary.json
+seed,episode,return,cumulative_reward,ttm,total_steps,question_accuracy,content_rate,blueprint_adherence,post_content_gain,post_content_gain_video,post_content_gain_PPT,post_content_gain_text,post_content_gain_blog,post_content_gain_article,post_content_gain_handout,final_mastery,mean_frustration
+0,1,45.260790283605054,45.260790283605054,140,140,0.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.4845036268234253,0.0
+0,2,7.7169611869899395,7.7169611869899395,89,89,0.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3884986639022827,0.0
+0,3,5.952150677445032,5.952150677445032,100,100,0.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3977111279964447,0.0
+0,4,22.004349723176098,22.004349723176098,140,140,0.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.42391782999038696,0.0
+{
+  "auc_10k": 251.4084882539649,
+  "checkpoints": {},
+  "wall_clock_time_minutes": 0.8812952796618144,
+  "seed": 0,
+  "episodes_completed": 10,
+  "total_return": 251.4084882539649,
+  "mean_return": 25.14084882539649
+}
+MBPO smoke test complete!

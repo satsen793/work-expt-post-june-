@@ -1,0 +1,235 @@
+Creating conda environment pets_gpu...
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/jabezc/.conda/envs/pets_gpu
+
+  added / updated specs:
+    - python=3.11
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    bzip2-1.0.8                |       h5eee18b_6         262 KB
+    ca-certificates-2025.12.2  |       h06a4308_0         125 KB
+    expat-2.7.3                |       h7354ed3_4          25 KB
+    ld_impl_linux-64-2.44      |       h153f514_2         672 KB
+    libexpat-2.7.3             |       h7354ed3_4         121 KB
+    libffi-3.4.4               |       h6a678d5_1         141 KB
+    libgcc-15.2.0              |       h69a1729_7         806 KB
+    libgcc-ng-15.2.0           |       h166f726_7          28 KB
+    libgomp-15.2.0             |       h4751f2c_7         436 KB
+    libnsl-2.0.0               |       h5eee18b_0          31 KB
+    libstdcxx-15.2.0           |       h39759b7_7         3.7 MB
+    libstdcxx-ng-15.2.0        |       hc03a8fd_7          28 KB
+    libuuid-1.41.5             |       h5eee18b_0          27 KB
+    libxcb-1.17.0              |       h9b100fa_0         430 KB
+    libzlib-1.3.1              |       hb25bd0a_0          59 KB
+    ncurses-6.5                |       h7934f7d_0         1.1 MB
+    openssl-3.0.18             |       hd6dcaed_0         4.5 MB
+    pip-25.3                   |     pyhc872135_0         1.1 MB
+    pthread-stubs-0.3          |       h0ce48e5_1           5 KB
+    python-3.11.14             |       h6fa692b_0        29.8 MB
+    readline-8.3               |       hc2a1206_0         471 KB
+    setuptools-80.9.0          |  py311h06a4308_0         1.9 MB
+    sqlite-3.51.1              |       he0a8d7e_0         1.2 MB
+    tk-8.6.15                  |       h54e0aa7_0         3.4 MB
+    tzdata-2025b               |       h04d1e81_0         116 KB
+    wheel-0.45.1               |  py311h06a4308_0         151 KB
+    xorg-libx11-1.8.12         |       h9b100fa_1         895 KB
+    xorg-libxau-1.0.12         |       h9b100fa_0          13 KB
+    xorg-libxdmcp-1.1.5        |       h9b100fa_0          19 KB
+    xorg-xorgproto-2024.1      |       h5eee18b_1         580 KB
+    xz-5.6.4                   |       h5eee18b_1         567 KB
+    zlib-1.3.1                 |       hb25bd0a_0          96 KB
+    ------------------------------------------------------------
+                                           Total:        52.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main None
+  _openmp_mutex      pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu None
+  bzip2              pkgs/main/linux-64::bzip2-1.0.8-h5eee18b_6 None
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2025.12.2-h06a4308_0 None
+  expat              pkgs/main/linux-64::expat-2.7.3-h7354ed3_4 None
+  ld_impl_linux-64   pkgs/main/linux-64::ld_impl_linux-64-2.44-h153f514_2 None
+  libexpat           pkgs/main/linux-64::libexpat-2.7.3-h7354ed3_4 None
+  libffi             pkgs/main/linux-64::libffi-3.4.4-h6a678d5_1 None
+  libgcc             pkgs/main/linux-64::libgcc-15.2.0-h69a1729_7 None
+  libgcc-ng          pkgs/main/linux-64::libgcc-ng-15.2.0-h166f726_7 None
+  libgomp            pkgs/main/linux-64::libgomp-15.2.0-h4751f2c_7 None
+  libnsl             pkgs/main/linux-64::libnsl-2.0.0-h5eee18b_0 None
+  libstdcxx          pkgs/main/linux-64::libstdcxx-15.2.0-h39759b7_7 None
+  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-15.2.0-hc03a8fd_7 None
+  libuuid            pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0 None
+  libxcb             pkgs/main/linux-64::libxcb-1.17.0-h9b100fa_0 None
+  libzlib            pkgs/main/linux-64::libzlib-1.3.1-hb25bd0a_0 None
+  ncurses            pkgs/main/linux-64::ncurses-6.5-h7934f7d_0 None
+  openssl            pkgs/main/linux-64::openssl-3.0.18-hd6dcaed_0 None
+  pip                pkgs/main/noarch::pip-25.3-pyhc872135_0 None
+  pthread-stubs      pkgs/main/linux-64::pthread-stubs-0.3-h0ce48e5_1 None
+  python             pkgs/main/linux-64::python-3.11.14-h6fa692b_0 None
+  readline           pkgs/main/linux-64::readline-8.3-hc2a1206_0 None
+  setuptools         pkgs/main/linux-64::setuptools-80.9.0-py311h06a4308_0 None
+  sqlite             pkgs/main/linux-64::sqlite-3.51.1-he0a8d7e_0 None
+  tk                 pkgs/main/linux-64::tk-8.6.15-h54e0aa7_0 None
+  tzdata             pkgs/main/noarch::tzdata-2025b-h04d1e81_0 None
+  wheel              pkgs/main/linux-64::wheel-0.45.1-py311h06a4308_0 None
+  xorg-libx11        pkgs/main/linux-64::xorg-libx11-1.8.12-h9b100fa_1 None
+  xorg-libxau        pkgs/main/linux-64::xorg-libxau-1.0.12-h9b100fa_0 None
+  xorg-libxdmcp      pkgs/main/linux-64::xorg-libxdmcp-1.1.5-h9b100fa_0 None
+  xorg-xorgproto     pkgs/main/linux-64::xorg-xorgproto-2024.1-h5eee18b_1 None
+  xz                 pkgs/main/linux-64::xz-5.6.4-h5eee18b_1 None
+  zlib               pkgs/main/linux-64::zlib-1.3.1-hb25bd0a_0 None
+
+
+
+Downloading and Extracting Packages
+xorg-libx11-1.8.12   | 895 KB    |            |   0% xorg-libx11-1.8.12   | 895 KB    | 1          |   2% xorg-libx11-1.8.12   | 895 KB    | ########## | 100% xorg-libx11-1.8.12   | 895 KB    | ########## | 100% 
+zlib-1.3.1           | 96 KB     |            |   0% zlib-1.3.1           | 96 KB     | ########## | 100% zlib-1.3.1           | 96 KB     | ########## | 100% 
+ncurses-6.5          | 1.1 MB    |            |   0% ncurses-6.5          | 1.1 MB    | 1          |   1% ncurses-6.5          | 1.1 MB    | ##7        |  27% ncurses-6.5          | 1.1 MB    | ########## | 100% ncurses-6.5          | 1.1 MB    | ########## | 100% 
+sqlite-3.51.1        | 1.2 MB    |            |   0% sqlite-3.51.1        | 1.2 MB    | ########## | 100% sqlite-3.51.1        | 1.2 MB    | ########## | 100% 
+libexpat-2.7.3       | 121 KB    |            |   0% libexpat-2.7.3       | 121 KB    | ########## | 100% libexpat-2.7.3       | 121 KB    | ########## | 100% 
+bzip2-1.0.8          | 262 KB    |            |   0% bzip2-1.0.8          | 262 KB    | #########1 |  92% bzip2-1.0.8          | 262 KB    | ########## | 100% 
+libgcc-ng-15.2.0     | 28 KB     |            |   0% libgcc-ng-15.2.0     | 28 KB     | ########## | 100% libgcc-ng-15.2.0     | 28 KB     | ########## | 100% 
+ld_impl_linux-64-2.4 | 672 KB    |            |   0% ld_impl_linux-64-2.4 | 672 KB    | 2          |   2% ld_impl_linux-64-2.4 | 672 KB    | ########## | 100% ld_impl_linux-64-2.4 | 672 KB    | ########## | 100% 
+libgomp-15.2.0       | 436 KB    |            |   0% libgomp-15.2.0       | 436 KB    | ########## | 100% libgomp-15.2.0       | 436 KB    | ########## | 100% 
+xorg-xorgproto-2024. | 580 KB    |            |   0% xorg-xorgproto-2024. | 580 KB    | ###5       |  36% xorg-xorgproto-2024. | 580 KB    | ########## | 100% xorg-xorgproto-2024. | 580 KB    | ########## | 100% 
+libxcb-1.17.0        | 430 KB    |            |   0% libxcb-1.17.0        | 430 KB    | ########## | 100% libxcb-1.17.0        | 430 KB    | ########## | 100% 
+pip-25.3             | 1.1 MB    |            |   0% pip-25.3             | 1.1 MB    | #8         |  18% pip-25.3             | 1.1 MB    | ########## | 100% pip-25.3             | 1.1 MB    | ########## | 100% 
+readline-8.3         | 471 KB    |            |   0% readline-8.3         | 471 KB    | ########## | 100% readline-8.3         | 471 KB    | ########## | 100% 
+wheel-0.45.1         | 151 KB    |            |   0% wheel-0.45.1         | 151 KB    | #          |  11% wheel-0.45.1         | 151 KB    | ########## | 100% wheel-0.45.1         | 151 KB    | ########## | 100% 
+libzlib-1.3.1        | 59 KB     |            |   0% libzlib-1.3.1        | 59 KB     | ##6        |  27% libzlib-1.3.1        | 59 KB     | ########## | 100% 
+xorg-libxau-1.0.12   | 13 KB     |            |   0% xorg-libxau-1.0.12   | 13 KB     | ########## | 100% xorg-libxau-1.0.12   | 13 KB     | ########## | 100% 
+tk-8.6.15            | 3.4 MB    |            |   0% tk-8.6.15            | 3.4 MB    |            |   1% tk-8.6.15            | 3.4 MB    | ####8      |  49% tk-8.6.15            | 3.4 MB    | #########5 |  95% tk-8.6.15            | 3.4 MB    | ########## | 100% 
+libstdcxx-15.2.0     | 3.7 MB    |            |   0% libstdcxx-15.2.0     | 3.7 MB    | #3         |  13% libstdcxx-15.2.0     | 3.7 MB    | ########## | 100% libstdcxx-15.2.0     | 3.7 MB    | ########## | 100% 
+libnsl-2.0.0         | 31 KB     |            |   0% libnsl-2.0.0         | 31 KB     | ########## | 100% libnsl-2.0.0         | 31 KB     | ########## | 100% 
+openssl-3.0.18       | 4.5 MB    |            |   0% openssl-3.0.18       | 4.5 MB    |            |   0% openssl-3.0.18       | 4.5 MB    | ########## | 100% openssl-3.0.18       | 4.5 MB    | ########## | 100% 
+libstdcxx-ng-15.2.0  | 28 KB     |            |   0% libstdcxx-ng-15.2.0  | 28 KB     | ########## | 100% libstdcxx-ng-15.2.0  | 28 KB     | ########## | 100% 
+libuuid-1.41.5       | 27 KB     |            |   0% libuuid-1.41.5       | 27 KB     | #####8     |  58% libuuid-1.41.5       | 27 KB     | ########## | 100% 
+libffi-3.4.4         | 141 KB    |            |   0% libffi-3.4.4         | 141 KB    | #1         |  11% libffi-3.4.4         | 141 KB    | ########## | 100% libffi-3.4.4         | 141 KB    | ########## | 100% 
+ca-certificates-2025 | 125 KB    |            |   0% ca-certificates-2025 | 125 KB    | #####1     |  51% ca-certificates-2025 | 125 KB    | ########## | 100% 
+xz-5.6.4             | 567 KB    |            |   0% xz-5.6.4             | 567 KB    | 2          |   3% xz-5.6.4             | 567 KB    | ########## | 100% xz-5.6.4             | 567 KB    | ########## | 100% 
+expat-2.7.3          | 25 KB     |            |   0% expat-2.7.3          | 25 KB     | ######4    |  64% expat-2.7.3          | 25 KB     | ########## | 100% 
+xorg-libxdmcp-1.1.5  | 19 KB     |            |   0% xorg-libxdmcp-1.1.5  | 19 KB     | ########5  |  85% xorg-libxdmcp-1.1.5  | 19 KB     | ########## | 100% 
+tzdata-2025b         | 116 KB    |            |   0% tzdata-2025b         | 116 KB    | #3         |  14% tzdata-2025b         | 116 KB    | ########## | 100% tzdata-2025b         | 116 KB    | ########## | 100% 
+libgcc-15.2.0        | 806 KB    |            |   0% libgcc-15.2.0        | 806 KB    | 1          |   2% libgcc-15.2.0        | 806 KB    | ########## | 100% libgcc-15.2.0        | 806 KB    | ########## | 100% 
+pthread-stubs-0.3    | 5 KB      |            |   0% pthread-stubs-0.3    | 5 KB      | ########## | 100% pthread-stubs-0.3    | 5 KB      | ########## | 100% 
+setuptools-80.9.0    | 1.9 MB    |            |   0% setuptools-80.9.0    | 1.9 MB    |            |   1% setuptools-80.9.0    | 1.9 MB    | #########3 |  94% setuptools-80.9.0    | 1.9 MB    | ########## | 100% 
+python-3.11.14       | 29.8 MB   |            |   0% python-3.11.14       | 29.8 MB   | 7          |   7% python-3.11.14       | 29.8 MB   | #6         |  17% python-3.11.14       | 29.8 MB   | ###3       |  33% python-3.11.14       | 29.8 MB   | ####3      |  44% python-3.11.14       | 29.8 MB   | #####8     |  59% python-3.11.14       | 29.8 MB   | #######1   |  72% python-3.11.14       | 29.8 MB   | ########1  |  82% python-3.11.14       | 29.8 MB   | #########4 |  94% python-3.11.14       | 29.8 MB   | ########## | 100% 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate pets_gpu
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Retrieving notices: ...working... done
+Collecting torch
+  Downloading torch-2.9.1-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (30 kB)
+Collecting numpy
+  Downloading numpy-2.4.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting filelock (from torch)
+  Downloading filelock-3.20.3-py3-none-any.whl.metadata (2.1 kB)
+Collecting typing-extensions>=4.10.0 (from torch)
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting sympy>=1.13.3 (from torch)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch)
+  Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting jinja2 (from torch)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch)
+  Downloading fsspec-2026.1.0-py3-none-any.whl.metadata (10 kB)
+Collecting nvidia-cuda-nvrtc-cu12==12.8.93 (from torch)
+  Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime-cu12==12.8.90 (from torch)
+  Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti-cu12==12.8.90 (from torch)
+  Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cudnn-cu12==9.10.2.21 (from torch)
+  Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cublas-cu12==12.8.4.1 (from torch)
+  Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft-cu12==11.3.3.83 (from torch)
+  Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand-cu12==10.3.9.90 (from torch)
+  Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver-cu12==11.7.3.90 (from torch)
+  Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse-cu12==12.5.8.93 (from torch)
+  Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparselt-cu12==0.7.1 (from torch)
+  Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl.metadata (7.0 kB)
+Collecting nvidia-nccl-cu12==2.27.5 (from torch)
+  Downloading nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvshmem-cu12==3.3.20 (from torch)
+  Downloading nvidia_nvshmem_cu12-3.3.20-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.1 kB)
+Collecting nvidia-nvtx-cu12==12.8.90 (from torch)
+  Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.93 (from torch)
+  Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufile-cu12==1.13.1.3 (from torch)
+  Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting triton==3.5.1 (from torch)
+  Downloading triton-3.5.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch)
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading torch-2.9.1-cp311-cp311-manylinux_2_28_x86_64.whl (899.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 899.8/899.8 MB 18.4 MB/s  0:00:31
+Downloading nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl (594.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 594.3/594.3 MB 22.4 MB/s  0:00:20
+Downloading nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 3.6 MB/s  0:00:02
+Downloading nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (88.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.0/88.0 MB 21.0 MB/s  0:00:04
+Downloading nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (954 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 954.8/954.8 kB 1.2 MB/s  0:00:00
+Downloading nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl (706.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 706.8/706.8 MB 18.5 MB/s  0:00:24
+Downloading nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (193.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.1/193.1 MB 22.8 MB/s  0:00:08
+Downloading nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 1.4 MB/s  0:00:00
+Downloading nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl (63.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.6/63.6 MB 13.7 MB/s  0:00:04
+Downloading nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl (267.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 267.5/267.5 MB 24.3 MB/s  0:00:10
+Downloading nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (288.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 288.2/288.2 MB 24.3 MB/s  0:00:11
+Downloading nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl (287.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 287.2/287.2 MB 24.8 MB/s  0:00:11
+Downloading nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (322.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 322.3/322.3 MB 26.9 MB/s  0:00:11
+Downloading nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (39.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 39.3/39.3 MB 22.6 MB/s  0:00:01
+Downloading nvidia_nvshmem_cu12-3.3.20-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (124.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 124.7/124.7 MB 32.5 MB/s  0:00:03
+Downloading nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+Downloading triton-3.5.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (170.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 170.4/170.4 MB 28.5 MB/s  0:00:05
+Downloading numpy-2.4.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 16.3 MB/s  0:00:01
+Downloading fsspec-2026.1.0-py3-none-any.whl (201 kB)
+Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 2.3 MB/s  0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 7.8 MB/s  0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 226.1 kB/s  0:00:01
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading filelock-3.20.3-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Installing collected packages: nvidia-cusparselt-cu12, mpmath, typing-extensions, triton, sympy, nvidia-nvtx-cu12, nvidia-nvshmem-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numpy, networkx, MarkupSafe, fsspec, filelock, nvidia-cusparse-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, jinja2, nvidia-cusolver-cu12, torch

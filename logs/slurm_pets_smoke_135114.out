@@ -1,0 +1,10 @@
+=== PETS Smoke Test: 1 seed, 10 episodes ===
+
+=== Verifying results ===
+total 50
+drwxrwxr-x. 2 jabezc jabezc 25600 Jan 11 09:01 .
+drwxrwxr-x. 6 jabezc jabezc 25600 Jan 11 11:57 ..
+ERROR: episodes.csv not found!
+ERROR: summary.json not found!
+
+PETS smoke test complete!

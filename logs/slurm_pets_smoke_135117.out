@@ -1,0 +1,25 @@
+=== PETS Smoke Test: 1 seed, 10 episodes ===
+
+======================================================================
+🚀 PETS TRAINING STARTED
+======================================================================
+Seeds: (0,)
+Total episodes: 10
+Device: cuda
+======================================================================
+
+
+======================================================================
+📍 SEED 0 STARTING
+======================================================================
+✅ Random seeds set
+🏗️  Creating environment...
+✅ Environment created
+🏁 Initial exploration: 5 episodes
+   [EXPLORE] Episode 1/5 ✅ Ret: 51.05, TTM: None
+   [EXPLORE] Episode 2/5 ✅ Ret: -1.57, TTM: None
+   [EXPLORE] Episode 3/5 ✅ Ret: 46.18, TTM: None
+   [EXPLORE] Episode 4/5 ✅ Ret: 45.65, TTM: None
+   [EXPLORE] Episode 5/5 ✅ Ret: 28.06, TTM: None
+🎓 Training: 5 episodes
+   [TRAIN] Episode 6/10
