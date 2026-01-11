@@ -1024,6 +1024,10 @@ def compute_policy_stability(results_across_seeds: List[Dict]) -> float:
 
 
 if __name__ == "__main__":
+    print(f"\n{'='*70}")
+    print(f"🚀 PPO TRAINING STARTED")
+    print(f"{'='*70}\n")
+    
     parser = argparse.ArgumentParser(description="Train PPO for adaptive mock interviews (aligned with DQN/PETS/MBPO)")
     parser.add_argument("--seed", type=int, default=None, help="Single seed (overrides multi-seed)")
     parser.add_argument("--seeds", type=int, nargs="*", default=UNIFIED_SEEDS,
@@ -1034,9 +1038,27 @@ if __name__ == "__main__":
     parser.add_argument("--legacy", action="store_true", help="Use legacy train() function")
     args = parser.parse_args()
     
+    print(f"📋 Configuration:")
+    if args.seed:
+        print(f"   Seed: {args.seed}")
+    else:
+        print(f"   Seeds: {args.seeds}")
+    print(f"   Episodes: {args.episodes}")
+    print(f"   Output: {args.output}")
+    print(f"   Device: {CONFIG['device']}")
+    print(f"{'='*70}\n")
+    
     if args.legacy:
         # Legacy mode
-        train()
+        print(f"🎓 LEGACY TRAINING MODE")
+        try:
+            train()
+            print(f"✅ Training complete!")
+        except Exception as e:
+            print(f"❌ Training failed: {e}")
+            import traceback
+            traceback.print_exc()
+            raise
     else:
         # Modern multi-seed mode
         if args.seed is not None:
@@ -1046,13 +1068,28 @@ if __name__ == "__main__":
         
         if len(seeds) == 1:
             # Single seed
-            result = train_single_seed(seeds[0], CONFIG, args.episodes)
-            print(f"\n{json.dumps(result['episode_metrics'][-5:], indent=2)}")
+            print(f"📍 Single seed training (seed={seeds[0]})")
+            try:
+                result = train_single_seed(seeds[0], CONFIG, args.episodes)
+                print(f"✅ Training complete!")
+                print(f"\n{json.dumps(result['episode_metrics'][-5:], indent=2)}")
+            except Exception as e:
+                print(f"❌ Training failed: {e}")
+                import traceback
+                traceback.print_exc()
+                raise
         else:
             # Multi-seed
-            output = train_multi_seed(seeds, CONFIG, args.episodes, args.output)
-            print(f"\n{'='*70}")
-            print(f"Multi-seed training complete!")
-            print(f"Summary: {json.dumps(output['summary'], indent=2)}")
-            print(f"{'='*70}")
+            print(f"📍 Multi-seed training ({len(seeds)} seeds)")
+            try:
+                output = train_multi_seed(seeds, CONFIG, args.episodes, args.output)
+                print(f"\n{'='*70}")
+                print(f"✅ Multi-seed training complete!")
+                print(f"Summary: {json.dumps(output['summary'], indent=2)}")
+                print(f"{'='*70}")
+            except Exception as e:
+                print(f"❌ Multi-seed training failed: {e}")
+                import traceback
+                traceback.print_exc()
+                raise
 

@@ -1113,6 +1113,10 @@ def make_env():
 
 
 def main():
+    print(f"\n{'='*70}")
+    print(f"🚀 MBPO TRAINING STARTED")
+    print(f"{'='*70}\n")
+    
     parser = argparse.ArgumentParser(description="Train MBPO for adaptive mock interviews (aligned with DQN/PETS/PPO)")
     parser.add_argument("--seed", type=int, default=None, help="Single seed (overrides multi-seed)")
     parser.add_argument("--seeds", type=int, nargs="*", default=UNIFIED_SEEDS, 
@@ -1132,7 +1136,16 @@ def main():
         seeds = args.seeds
     
     # Build config
+    print(f"📋 Configuration:")
+    print(f"   Seeds: {seeds}")
+    print(f"   Episodes: {args.episodes}")
+    print(f"   Device: {'cuda' if torch.cuda.is_available() else 'cpu'}")
+    
     max_steps = args.max_steps if args.max_steps else (args.episodes * UNIFIED_MAX_STEPS_PER_EPISODE)
+    print(f"   Max steps per episode: {UNIFIED_MAX_STEPS_PER_EPISODE}")
+    print(f"   Total max steps: {max_steps}")
+    print(f"{'='*70}\n")
+    
     cfg = MBPOConfig(
         seed=seeds[0],  # Will be overridden per seed in multi-seed loop
         max_episodes=args.episodes,
@@ -1140,9 +1153,12 @@ def main():
     )
     
     if args.eval:
+        print(f"📊 EVALUATION MODE")
         # Evaluation mode (single run)
         env = make_env()
+        print(f"✅ Environment created")
         agent = MBPOAgent(env, cfg)
+        print(f"✅ Agent created")
         if args.checkpoint:
             state = torch.load(args.checkpoint, map_location=cfg.device)
             agent.actor.load_state_dict(state["actor"])
@@ -1157,18 +1173,35 @@ def main():
         print(json.dumps(metrics, indent=2))
     else:
         # Training mode (multi-seed if multiple seeds provided)
+        print(f"🎓 TRAINING MODE")
         if len(seeds) == 1:
             # Single seed training
+            print(f"📍 Single seed training (seed={seeds[0]})")
             env = make_env()
-            result = train_single_seed(seeds[0], cfg, env)
-            print(f"\nResults: {json.dumps(result.get('episode_metrics', [])[-5:], indent=2)}")
+            print(f"✅ Environment created")
+            try:
+                result = train_single_seed(seeds[0], cfg, env)
+                print(f"✅ Training complete!")
+                print(f"\nResults: {json.dumps(result.get('episode_metrics', [])[-5:], indent=2)}")
+            except Exception as e:
+                print(f"❌ Training failed: {e}")
+                import traceback
+                traceback.print_exc()
+                raise
         else:
             # Multi-seed training with full export
-            output = train_multi_seed(seeds, cfg, args.output)
-            print(f"\n{'='*70}")
-            print(f"Multi-seed training complete!")
-            print(f"Summary: {json.dumps(output['summary'], indent=2)}")
-            print(f"{'='*70}")
+            print(f"📍 Multi-seed training ({len(seeds)} seeds)")
+            try:
+                output = train_multi_seed(seeds, cfg, args.output)
+                print(f"\n{'='*70}")
+                print(f"✅ Multi-seed training complete!")
+                print(f"Summary: {json.dumps(output['summary'], indent=2)}")
+                print(f"{'='*70}")
+            except Exception as e:
+                print(f"❌ Multi-seed training failed: {e}")
+                import traceback
+                traceback.print_exc()
+                raise
 
 
 if __name__ == "__main__":

@@ -929,6 +929,14 @@ Wall-Clock Time (s) & {perf_summary['wall_clock_mean_s']:.1f} $\\\\pm$ {perf_sum
 
 
 def main() -> None:
+    print(f"\n{'='*70}")
+    print(f"🚀 PETS TRAINING STARTED")
+    print(f"{'='*70}")
+    print(f"Seeds: {TRAIN_CONFIG.seeds}")
+    print(f"Total episodes: {TRAIN_CONFIG.total_episodes}")
+    print(f"Device: {TRAIN_CONFIG.device}")
+    print(f"{'='*70}\n")
+    
     device = torch.device(TRAIN_CONFIG.device)
     all_seed_returns: List[List[float]] = []
     all_seed_mastery_steps: List[float] = []
@@ -946,11 +954,18 @@ def main() -> None:
     all_modality_gains: Dict[str, List[float]] = {mod: [] for mod in ["video", "PPT", "text", "blog", "article", "handout"]}
 
     for seed in TRAIN_CONFIG.seeds:
+        print(f"\n{'='*70}")
+        print(f"📍 SEED {seed} STARTING")
+        print(f"{'='*70}")
+        
         torch.manual_seed(seed)
         np.random.seed(seed)
         random.seed(seed)
-
+        
+        print(f"✅ Random seeds set")
+        print(f"🏗️  Creating environment...")
         env = AdaptiveLearningEnv(ENV_CONFIG)
+        print(f"✅ Environment created")
         ensemble = [EnsembleMember(hidden=MODEL_CONFIG.hidden_dim).to(device) for _ in range(MODEL_CONFIG.ensemble_size)]
         planner = FactorizedCategoricalCEM(MPC_CONFIG, ensemble, device, get_diff_proportions=env.get_difficulty_proportions)
 
@@ -960,21 +975,33 @@ def main() -> None:
         episode_steps: List[int] = []  # NEW: Track steps per episode
 
         seed_start = time.time()
+        print(f"🏁 Initial exploration: {TRAIN_CONFIG.initial_exploration} episodes")
 
-        for _ in range(TRAIN_CONFIG.initial_exploration):
+        for exp_ep in range(TRAIN_CONFIG.initial_exploration):
+            print(f"   [EXPLORE] Episode {exp_ep+1}/{TRAIN_CONFIG.initial_exploration}", end="", flush=True)
             ret, dur, metrics = collect_episode(env, lambda _: 0, dataset, random_policy=True)
             returns.append(ret)
             episode_durations.append(dur)
             episode_steps.append(metrics.get("total_steps", 0))  # NEW
             if metrics.get("time_to_mastery") is not None:
                 mastery_steps.append(metrics["time_to_mastery"])
+            print(f" ✅ Ret: {ret:.2f}, TTM: {metrics.get('time_to_mastery', 'N/A')}")
 
+        print(f"🎓 Training: {TRAIN_CONFIG.total_episodes - TRAIN_CONFIG.initial_exploration} episodes")
         for ep in range(TRAIN_CONFIG.initial_exploration, TRAIN_CONFIG.total_episodes):
-            train_ensemble(ensemble, dataset, MODEL_CONFIG, device)
-            ret, dur, metrics = collect_episode(env, lambda obs: planner.plan(obs), dataset, random_policy=False)
-            returns.append(ret)
-            episode_durations.append(dur)
-            episode_steps.append(metrics.get("total_steps", 0))  # NEW
+            print(f"   [TRAIN] Episode {ep+1}/{TRAIN_CONFIG.total_episodes}", end="", flush=True)
+            try:
+                train_ensemble(ensemble, dataset, MODEL_CONFIG, device)
+                ret, dur, metrics = collect_episode(env, lambda obs: planner.plan(obs), dataset, random_policy=False)
+                returns.append(ret)
+                episode_durations.append(dur)
+                episode_steps.append(metrics.get("total_steps", 0))  # NEW
+                print(f" ✅ Ret: {ret:.2f}, TTM: {metrics.get('time_to_mastery', 'N/A')}, Steps: {metrics.get('total_steps', 0)}")
+            except Exception as e:
+                print(f" ❌ ERROR: {e}")
+                import traceback
+                traceback.print_exc()
+                raise
             
             # NEW: Collect comprehensive metrics
             all_episode_metrics.append({**metrics, "seed": seed, "episode": ep})
