@@ -872,9 +872,10 @@ def export_episodes_csv(results: List[Dict], path: str) -> None:
         writer.writerow([
             "seed", "episode", "return", "cumulative_reward", "time_to_mastery",
             "total_steps", "question_accuracy", "content_rate", "blueprint_adherence",
-            "post_content_gain", "final_mastery", "mean_frustration",
+            "post_content_gain",
             "post_content_gain_video", "post_content_gain_PPT", "post_content_gain_text",
-            "post_content_gain_blog", "post_content_gain_article", "post_content_gain_handout"
+            "post_content_gain_blog", "post_content_gain_article", "post_content_gain_handout",
+            "final_mastery", "mean_frustration"
         ])
         
         for result in results:
@@ -886,11 +887,11 @@ def export_episodes_csv(results: List[Dict], path: str) -> None:
                     em.get("cumulative_reward", 0.0), em.get("time_to_mastery", 0),
                     em.get("total_steps", 0), em.get("question_accuracy", 0.0),
                     em.get("content_rate", 0.0), em.get("blueprint_adherence", 0.0),
-                    em.get("post_content_gain", 0.0), em.get("final_mastery", 0.0),
-                    em.get("mean_frustration", 0.0),
+                    em.get("post_content_gain", 0.0),
                     modality_gains.get("video", 0.0), modality_gains.get("PPT", 0.0),
                     modality_gains.get("text", 0.0), modality_gains.get("blog", 0.0),
                     modality_gains.get("article", 0.0), modality_gains.get("handout", 0.0),
+                    em.get("final_mastery", 0.0), em.get("mean_frustration", 0.0),
                 ])
     
     print(f"✓ Episodes CSV exported to {path}")
