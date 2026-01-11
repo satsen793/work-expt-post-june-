@@ -69,7 +69,19 @@ def verify_json_output(json_path: str, algo_name: str) -> bool:
         print(f"   Total keys in JSON: {len(data)}")
         print(f"   Keys: {list(data.keys())}")
         
-        # Check for required fields
+        # PETS has different export format - check for PETS-specific fields
+        if algo_name == "PETS":
+            required_pets = ["cumulative_reward_mean", "wall_clock_mean_s"]
+            missing = [f for f in required_pets if f not in data]
+            if missing:
+                print(f"❌ Missing required PETS fields: {', '.join(missing)}")
+                return False
+            print(f"✅ PETS JSON verified:")
+            print(f"   📊 Cumulative Reward: {data.get('cumulative_reward_mean', 'N/A')}")
+            print(f"   ⏱️  Wall-clock time: {data.get('wall_clock_mean_s', 'N/A')} s")
+            return True
+        
+        # All others (DQN, MBPO, PPO) use standard format
         required = ["auc_10k", "checkpoints", "wall_clock_time_minutes"]
         missing = []
         
