@@ -870,7 +870,7 @@ def export_episodes_csv(results: List[Dict], path: str) -> None:
     with open(path, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "seed", "episode", "return", "cumulative_reward", "time_to_mastery",
+            "seed", "episode", "return", "cumulative_reward", "ttm",
             "total_steps", "question_accuracy", "content_rate", "blueprint_adherence",
             "post_content_gain",
             "post_content_gain_video", "post_content_gain_PPT", "post_content_gain_text",
