@@ -1234,6 +1234,10 @@ def main():
                         "mean_return": float(np.mean(returns)) if returns else 0.0,
                     }, f, indent=2)
                 print(f"✅ Exported: {summary_path}")
+                
+                # Also export episodes.csv for single seed
+                csv_path = os.path.join(args.output, "episodes.csv")
+                export_episodes_csv([result], csv_path)
             except Exception as e:
                 print(f"❌ Training failed: {e}")
                 import traceback

@@ -814,7 +814,8 @@ def export_results_for_paper(
     import csv
     import os
     
-    os.makedirs("results", exist_ok=True)
+    output_dir = "results/pets"
+    os.makedirs(output_dir, exist_ok=True)
     
     # 1. Learning curve data (for Figure: learning_curve.png)
     learning_curve_data = {
@@ -822,7 +823,7 @@ def export_results_for_paper(
         "mean_reward": mean_curve.tolist(),
         "std_reward": std_curve.tolist(),
     }
-    with open("results/learning_curve_data.json", "w") as f:
+    with open(os.path.join(output_dir, "learning_curve_data.json"), "w") as f:
         json.dump(learning_curve_data, f, indent=2)
     print("✓ Exported learning_curve_data.json")
     
@@ -862,9 +863,9 @@ def export_results_for_paper(
         "mean_frustration": float(np.mean([m.get("mean_frustration", 0) for m in final_episode_metrics])) if final_episode_metrics else 0.0,
         "final_mastery_mean": float(np.mean([m.get("final_mastery", 0) for m in final_episode_metrics])) if final_episode_metrics else 0.0,
     }
-    with open("results/performance_summary.json", "w") as f:
+    with open(os.path.join(output_dir, "summary.json"), "w") as f:
         json.dump(perf_summary, f, indent=2)
-    print("✓ Exported performance_summary.json")
+    print("✓ Exported summary.json")
     
     # 3. Modality gains (for Figure: modality_gains.png and Table: tab:modality_gain)
     modality_stats = {}
@@ -878,7 +879,7 @@ def export_results_for_paper(
         else:
             modality_stats[mod] = {"mean": 0.0, "std": 0.0, "count": 0}
     
-    with open("results/modality_gains.json", "w") as f:
+    with open(os.path.join(output_dir, "modality_gains.json"), "w") as f:
         json.dump(modality_stats, f, indent=2)
     print("✓ Exported modality_gains.json")
     
@@ -888,7 +889,7 @@ def export_results_for_paper(
             "predicted_mastery": [float(x) for x in all_calibration_predicted],
             "empirical_correct": [float(x) for x in all_calibration_actual]
         }
-        with open("results/calibration_data.json", "w") as f:
+        with open(os.path.join(output_dir, "calibration_data.json"), "w") as f:
             json.dump(calibration_data, f, indent=2)
         print("✓ Exported calibration_data.json")
     
@@ -897,12 +898,12 @@ def export_results_for_paper(
         "seed_returns": [r.tolist() if hasattr(r, 'tolist') else list(r) for r in all_seed_returns],
         "episodes": list(range(len(mean_curve)))
     }
-    with open("results/variance_data.json", "w") as f:
+    with open(os.path.join(output_dir, "variance_data.json"), "w") as f:
         json.dump(variance_data, f, indent=2)
     print("✓ Exported variance_data.json")
     
     # 6. LaTeX table fragments for direct inclusion
-    generate_latex_tables(perf_summary, modality_stats)
+    generate_latex_tables(perf_summary, modality_stats, output_dir)
     
     print("\\n" + "="*60)
     print("RESULTS EXPORT COMPLETE")
@@ -919,7 +920,7 @@ def export_results_for_paper(
 
     # 7. Episodes CSV (align columns with DQN/PPO/MBPO)
     # Build canonical header with modality breakdown right after post_content_gain
-    episodes_csv_path = os.path.join("results", "episodes.csv")
+    episodes_csv_path = os.path.join("results", "pets", "episodes.csv")
     os.makedirs(os.path.dirname(episodes_csv_path), exist_ok=True)
     with open(episodes_csv_path, "w", newline="") as fcsv:
         writer = csv.writer(fcsv)
@@ -978,7 +979,7 @@ def export_results_for_paper(
     print("✓ Exported episodes.csv")
 
 
-def generate_latex_tables(perf_summary, modality_stats):
+def generate_latex_tables(perf_summary, modality_stats, output_dir):
     """Generate LaTeX table fragments for direct inclusion in paper"""
     
     # Performance summary table
@@ -997,7 +998,7 @@ Wall-Clock Time (s) & {perf_summary['wall_clock_mean_s']:.1f} $\\\\pm$ {perf_sum
 \\\\bottomrule
 \\\\end{{tabular}}
 """
-    with open("results/table_ppo_perf.tex", "w") as f:
+    with open(os.path.join(output_dir, "table_ppo_perf.tex"), "w") as f:
         f.write(latex_perf)
     
     # Modality gains table
@@ -1013,7 +1014,7 @@ Wall-Clock Time (s) & {perf_summary['wall_clock_mean_s']:.1f} $\\\\pm$ {perf_sum
     latex_mod += """\\\\bottomrule
 \\\\end{tabular}
 """
-    with open("results/table_modality.tex", "w") as f:
+    with open(os.path.join(output_dir, "table_modality.tex"), "w") as f:
         f.write(latex_mod)
     
     print("✓ Generated LaTeX tables: table_ppo_perf.tex, table_modality.tex")

@@ -12,7 +12,7 @@ module load python-3.10.8-gcc-11.2.0-dlcmq7k
 mkdir -p logs results/mbpo
 
 echo "=== MBPO Smoke Test: 1 seed, 10 episodes ==="
-python mbpo_ver3/train_mbpo.py --episodes 10 --seeds 1
+python mbpo_ver3/train_mbpo.py --episodes 10 --seed 0
 
 echo ""
 echo "=== Verifying results ==="
