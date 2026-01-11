@@ -1099,35 +1099,36 @@ def make_env():
     
     NOTE: Imports AdaptiveLearningEnv from the parent directory (shared across algos)
     """
-    # Import from parent directory - the environment is defined in dqn_ver3/train_dqn.py  
-    # For now, create a minimal gym-compatible environment inline
-    import sys
-    sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-    
-    # Try to import from dqn_ver3 or pets_ver3
+    # Try to import from PETS first (expects EnvConfig object)
     try:
-        from dqn_ver3.train_dqn import AdaptiveLearningEnv as DQNEnv
-        EnvClass = DQNEnv
+        import sys
+        sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+        from pets_ver3.pets_train import AdaptiveLearningEnv as PETSEnv, EnvConfig
+        
+        # Create PETS-compatible config
+        config = EnvConfig(
+            max_steps=140,
+            num_los=30,
+            mastery_threshold=0.8,
+            critical_frustration=0.95,
+            blueprint_target=(0.2, 0.6, 0.2),
+            blueprint_penalty=0.2
+        )
+        return PETSEnv(config)
     except ImportError:
-        try:
-            from pets_ver3.pets_train import AdaptiveLearningEnv as PETSEnv
-            EnvClass = PETSEnv
-        except ImportError:
-            raise RuntimeError(
-                "AdaptiveLearningEnv not found in DQN or PETS modules. "
-                "Ensure the shared environment is accessible."
-            )
+        pass
     
-    # Create config-compatible object
-    class MinimalConfig:
-        max_steps = 140
-        num_los = 30
-        mastery_threshold = 0.8
-        critical_frustration = 0.95
-        blueprint_target = (0.2, 0.6, 0.2)
-        blueprint_penalty = 0.2
-    
-    return EnvClass(MinimalConfig())
+    # Fall back to DQN (expects seed int as first arg)
+    try:
+        import sys
+        sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+        from dqn_ver3.train_dqn import AdaptiveLearningEnv as DQNEnv
+        return DQNEnv(seed=0, max_steps=140)
+    except ImportError:
+        raise RuntimeError(
+            "AdaptiveLearningEnv not found in PETS or DQN modules. "
+            "Ensure the shared environment is accessible."
+        )
 
 
 def main():
