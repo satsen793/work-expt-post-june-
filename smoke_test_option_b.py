@@ -151,7 +151,8 @@ def main():
             "cmd": [
                 sys.executable,
                 "pets_ver3/pets_train.py",
-                # PETS uses TrainConfig internally, no CLI args needed for smoke test
+                "--seed", "0",
+                "--episodes", "5"
             ],
             "json_path": "pets_ver3/results/summary.json"  # PETS default output location
         },

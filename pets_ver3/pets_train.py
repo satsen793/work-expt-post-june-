@@ -1095,12 +1095,16 @@ def main() -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="PETS training runner")
     parser.add_argument("--seed", type=int, default=None, help="Single seed to run (overrides TRAIN_CONFIG.seeds)")
-    parser.add_argument("--steps", type=int, default=None, help="Total training episodes (overrides TRAIN_CONFIG.total_episodes)")
+    parser.add_argument("--episodes", type=int, default=None, help="Number of episodes (overrides TRAIN_CONFIG.total_episodes)")
+    parser.add_argument("--steps", type=int, default=None, help="Deprecated: use --episodes instead")
     cli_args = parser.parse_args()
 
     if cli_args.seed is not None:
         TRAIN_CONFIG.seeds = (cli_args.seed,)
-    if cli_args.steps is not None:
-        TRAIN_CONFIG.total_episodes = cli_args.steps
+    
+    # Handle both --episodes and --steps arguments
+    episodes_val = cli_args.episodes if cli_args.episodes is not None else cli_args.steps
+    if episodes_val is not None:
+        TRAIN_CONFIG.total_episodes = episodes_val
 
     main()
