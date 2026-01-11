@@ -1096,20 +1096,38 @@ def make_env():
     """Create the adaptive learning simulator environment (blueprint):
     - Discrete(270) action space with question/content mapping per spec_simulator.md
     - 32-dim observation (30 mastery + frustration + response time)
-
-    Expects the simulator package to be importable as `adaptive_learning_env` and to
-    expose `AdaptiveLearningEnv` with a gym-like API.
+    
+    NOTE: Imports AdaptiveLearningEnv from the parent directory (shared across algos)
     """
-    if gym is None:
-        raise RuntimeError("gym not installed; please install gym and the simulator")
+    # Import from parent directory - the environment is defined in dqn_ver3/train_dqn.py  
+    # For now, create a minimal gym-compatible environment inline
+    import sys
+    sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+    
+    # Try to import from dqn_ver3 or pets_ver3
     try:
-        from adaptive_learning_env import AdaptiveLearningEnv  # type: ignore
-    except ImportError as exc:
-        raise RuntimeError(
-            "AdaptiveLearningEnv not found; ensure the simulator package is installed "
-            "or on PYTHONPATH."
-        ) from exc
-    return AdaptiveLearningEnv({})
+        from dqn_ver3.train_dqn import AdaptiveLearningEnv as DQNEnv
+        EnvClass = DQNEnv
+    except ImportError:
+        try:
+            from pets_ver3.pets_train import AdaptiveLearningEnv as PETSEnv
+            EnvClass = PETSEnv
+        except ImportError:
+            raise RuntimeError(
+                "AdaptiveLearningEnv not found in DQN or PETS modules. "
+                "Ensure the shared environment is accessible."
+            )
+    
+    # Create config-compatible object
+    class MinimalConfig:
+        max_steps = 140
+        num_los = 30
+        mastery_threshold = 0.8
+        critical_frustration = 0.95
+        blueprint_target = (0.2, 0.6, 0.2)
+        blueprint_penalty = 0.2
+    
+    return EnvClass(MinimalConfig())
 
 
 def main():

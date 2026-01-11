@@ -154,7 +154,7 @@ def main():
                 "--seed", "0",
                 "--episodes", "5"
             ],
-            "json_path": "pets_ver3/results/summary.json"  # PETS default output location
+            "json_path": "pets_ver3/results/performance_summary.json"  # PETS outputs performance_summary.json
         },
         {
             "name": "MBPO",
