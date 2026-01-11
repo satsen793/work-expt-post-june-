@@ -811,6 +811,7 @@ def export_results_for_paper(
 ) -> None:
     """Export comprehensive results matching paper requirements"""
     import json
+    import csv
     import os
     
     os.makedirs("results", exist_ok=True)
@@ -915,6 +916,66 @@ def export_results_for_paper(
     print("  - table_ppo_perf.tex (LaTeX table)")
     print("  - table_modality.tex (LaTeX table)")
     print("\\nUse these files to generate figures and tables for the paper.")
+
+    # 7. Episodes CSV (align columns with DQN/PPO/MBPO)
+    # Build canonical header with modality breakdown right after post_content_gain
+    episodes_csv_path = os.path.join("results", "episodes.csv")
+    os.makedirs(os.path.dirname(episodes_csv_path), exist_ok=True)
+    with open(episodes_csv_path, "w", newline="") as fcsv:
+        writer = csv.writer(fcsv)
+        writer.writerow([
+            "seed", "episode", "return", "cumulative_reward", "ttm",
+            "total_steps", "question_accuracy", "content_rate", "blueprint_adherence",
+            "post_content_gain",
+            "post_content_gain_video", "post_content_gain_PPT", "post_content_gain_text",
+            "post_content_gain_blog", "post_content_gain_article", "post_content_gain_handout",
+            "final_mastery", "mean_frustration"
+        ])
+
+        # Iterate through all_episode_metrics (passed in) and write rows
+        for em in all_episode_metrics:
+            seed = em.get("seed")
+            modality_stats = em.get("modality_gains", {})
+            # Compute overall post_content_gain as count-weighted mean across modalities
+            total_count = 0
+            weighted_sum = 0.0
+            modal_means = {
+                "video": 0.0, "PPT": 0.0, "text": 0.0,
+                "blog": 0.0, "article": 0.0, "handout": 0.0
+            }
+            for mod in modal_means.keys():
+                stats = modality_stats.get(mod, {})
+                m = float(stats.get("mean", 0.0))
+                c = int(stats.get("count", 0))
+                modal_means[mod] = m
+                weighted_sum += m * c
+                total_count += c
+            overall_pcg = (weighted_sum / total_count) if total_count > 0 else 0.0
+
+            # Compute content_rate from counts if not present
+            content_rate = em.get("content_rate")
+            if content_rate is None:
+                steps = int(em.get("total_steps", 0))
+                ccount = int(em.get("content_count", 0))
+                content_rate = (ccount / steps) if steps > 0 else 0.0
+
+            writer.writerow([
+                seed,
+                em.get("episode", 0),
+                em.get("return", 0.0),
+                em.get("cumulative_reward", 0.0),
+                em.get("time_to_mastery", 0),  # mapped to CSV column 'ttm'
+                em.get("total_steps", 0),
+                em.get("question_accuracy", 0.0),
+                content_rate,
+                em.get("blueprint_adherence", 0.0),
+                overall_pcg,
+                modal_means["video"], modal_means["PPT"], modal_means["text"],
+                modal_means["blog"], modal_means["article"], modal_means["handout"],
+                em.get("final_mastery", 0.0),
+                em.get("mean_frustration", 0.0),
+            ])
+    print("✓ Exported episodes.csv")
 
 
 def generate_latex_tables(perf_summary, modality_stats):
@@ -1035,8 +1096,8 @@ def main() -> None:
                 traceback.print_exc()
                 raise
             
-            # NEW: Collect comprehensive metrics
-            all_episode_metrics.append({**metrics, "seed": seed, "episode": ep})
+            # NEW: Collect comprehensive metrics (include per-episode return for CSV export)
+            all_episode_metrics.append({**metrics, "seed": seed, "episode": ep, "return": ret})
             
             # Collect modality gains
             if "modality_gains" in metrics:

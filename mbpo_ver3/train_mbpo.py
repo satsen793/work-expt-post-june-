@@ -154,12 +154,13 @@ class ReplayBuffer:
 
     def sample(self, batch_size: int, min_gen: int | None = None):
         if min_gen is None or not self.track_gen:
-            idx = torch.randint(0, self.size, (batch_size,), device=self.device)
+            # Buffers are CPU tensors; sample indices on CPU then move batches to device
+            idx = torch.randint(0, self.size, (batch_size,), device="cpu")
         else:
             valid = torch.nonzero(self.gen_ids[: self.size] >= min_gen, as_tuple=False).squeeze(-1)
             if valid.numel() == 0:
                 raise RuntimeError("No model samples satisfy retention window")
-            choice = torch.randint(0, valid.numel(), (batch_size,), device=self.device)
+            choice = torch.randint(0, valid.numel(), (batch_size,), device="cpu")
             idx = valid[choice]
         return (
             self.states[idx].to(self.device),
@@ -1014,26 +1015,37 @@ def export_episodes_csv(results: List[Dict], path: str) -> None:
     
     with open(path, "w", newline="") as f:
         writer = csv.writer(f)
+        # Align with DQN/PPO schema: place modality columns right after post_content_gain
         writer.writerow([
-            "seed", "episode", "return", "cumulative_reward", "time_to_mastery",
+            "seed", "episode", "return", "cumulative_reward", "ttm",
             "total_steps", "question_accuracy", "content_rate", "blueprint_adherence",
-            "post_content_gain", "final_mastery", "mean_frustration"
+            "post_content_gain",
+            "post_content_gain_video", "post_content_gain_PPT", "post_content_gain_text",
+            "post_content_gain_blog", "post_content_gain_article", "post_content_gain_handout",
+            "final_mastery", "mean_frustration"
         ])
         
         for result in results:
             seed = result["seed"]
             for em in result.get("episode_metrics", []):
+                modality_gains = em.get("modality_gains", {})
                 writer.writerow([
                     seed,
                     em.get("episode", 0),
                     em.get("return", 0.0),
                     em.get("cumulative_reward", 0.0),
-                    em.get("time_to_mastery", 0),
+                    em.get("time_to_mastery", 0),  # mapped to CSV column 'ttm'
                     em.get("total_steps", 0),
                     em.get("question_accuracy", 0.0),
                     em.get("content_rate", 0.0),
                     em.get("blueprint_adherence", 0.0),
                     em.get("post_content_gain", 0.0),
+                    modality_gains.get("video", 0.0),
+                    modality_gains.get("PPT", 0.0),
+                    modality_gains.get("text", 0.0),
+                    modality_gains.get("blog", 0.0),
+                    modality_gains.get("article", 0.0),
+                    modality_gains.get("handout", 0.0),
                     em.get("final_mastery", 0.0),
                     em.get("mean_frustration", 0.0),
                 ])
