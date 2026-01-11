@@ -795,7 +795,8 @@ def export_results_for_paper(
     all_calibration_predicted, all_calibration_actual,
     all_seed_returns, all_seed_mastery_steps,
     mastery_mean, mastery_std, reward_mean, reward_std, boot_ci,
-    time_mean, time_std
+    time_mean, time_std,
+    all_seed_auc: List[float] = None, all_seed_checkpoints: List[Dict] = None  # NEW
 ) -> None:
     """Export comprehensive results matching paper requirements"""
     import json
@@ -817,7 +818,25 @@ def export_results_for_paper(
     # Compute aggregate metrics from all_episode_metrics
     final_episode_metrics = [m for m in all_episode_metrics if m.get("episode", 0) >= TRAIN_CONFIG.total_episodes - 5]
     
+    # NEW: Aggregate AUC@10k and checkpoints across seeds to match DQN/MBPO/PPO standard format
+    auc_10k_mean = float(np.mean(all_seed_auc)) if all_seed_auc else 0.0
+    auc_10k_std = float(np.std(all_seed_auc)) if all_seed_auc else 0.0
+    
+    # Aggregate checkpoints: average each checkpoint's metrics across seeds
+    aggregated_checkpoints = {}
+    if all_seed_checkpoints:
+        all_checkpoint_keys = set()
+        for seed_ckpt in all_seed_checkpoints:
+            all_checkpoint_keys.update(seed_ckpt.keys())
+        for ckpt in sorted(all_checkpoint_keys):
+            values = [seed_ckpt.get(ckpt, {}).get("cumulative_reward", 0.0) for seed_ckpt in all_seed_checkpoints if ckpt in seed_ckpt]
+            if values:
+                aggregated_checkpoints[ckpt] = float(np.mean(values))
+    
     perf_summary = {
+        "auc_10k": auc_10k_mean,  # NEW: Standard field for sample efficiency
+        "wall_clock_time_minutes": time_mean / 60.0,  # NEW: Standard field, converted from seconds
+        "checkpoints": aggregated_checkpoints,  # NEW: Standard field for progress snapshots
         "time_to_mastery_mean": mastery_mean,
         "time_to_mastery_std": mastery_std,
         "cumulative_reward_mean": reward_mean,
@@ -941,6 +960,8 @@ def main() -> None:
     all_seed_returns: List[List[float]] = []
     all_seed_mastery_steps: List[float] = []
     all_seed_episode_steps: List[List[int]] = []  # NEW: Track steps per episode for AUC/checkpoints
+    all_seed_auc: List[float] = []  # NEW: Store AUC@10k per seed
+    all_seed_checkpoints: List[Dict] = []  # NEW: Store checkpoints per seed
     seed_durations: List[float] = []
     episode_durations: List[float] = []
     cem_elite_logs: List[float] = []
@@ -1034,6 +1055,8 @@ def main() -> None:
         
         all_seed_returns.append(returns)
         all_seed_episode_steps.append(episode_steps)  # NEW
+        all_seed_auc.append(auc_10k)  # NEW: Store per-seed AUC
+        all_seed_checkpoints.append(checkpoints)  # NEW: Store per-seed checkpoints
         if mastery_steps:
             all_seed_mastery_steps.append(float(np.mean(mastery_steps)))
         seed_durations.append(time.time() - seed_start)
@@ -1088,7 +1111,8 @@ def main() -> None:
         all_calibration_predicted, all_calibration_actual, 
         all_seed_returns, all_seed_mastery_steps,
         mastery_mean, mastery_std, last5_mean, last5_std, boot_ci,
-        time_mean, time_std
+        time_mean, time_std,
+        all_seed_auc=all_seed_auc, all_seed_checkpoints=all_seed_checkpoints  # NEW
     )
 
 
