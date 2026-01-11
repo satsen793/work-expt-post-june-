@@ -363,7 +363,7 @@ class MBPOAgent:
         self.model_rollout_gen += 1
         # Sample starting states
         idx = torch.randint(0, self.real_buffer.size, (self.cfg.rollout_batch_size,), device=self.device)
-        states = self.real_buffer.states[idx].to(self.device)
+        states = self.real_buffer.states[idx.cpu()].to(self.device)  # FIX: Move idx to CPU for indexing CPU buffer
         steps_added = 0
         for _ in range(self.cfg.rollout_length):
             with torch.no_grad():

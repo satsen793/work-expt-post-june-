@@ -760,7 +760,11 @@ def _compute_blueprint_adherence(question_diffs: List[int]) -> float:
 
 def ensure_dir(path: str) -> None:
     """Create directory if it doesn't exist."""
-    d = os.path.dirname(path)
+    # Handle both file paths and directory paths
+    if path.endswith(('.json', '.csv', '.txt')):
+        d = os.path.dirname(path)
+    else:
+        d = path
     if d:
         os.makedirs(d, exist_ok=True)
 
