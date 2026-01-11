@@ -350,6 +350,12 @@ class AdaptiveLearningEnv:
             "termination_reason": reason,
             "mean_mastery": float(np.mean(self.learner_state["mastery"])),
             "blueprint_adherence": self._compute_blueprint_adherence(),
+            # Pass through result fields for training loop tracking
+            "type": result["type"],
+            "mastery_gain": result.get("mastery_gain", 0.0),
+            "correct": result.get("correct", False),
+            "modality": result.get("modality"),
+            "difficulty": result.get("difficulty"),
         }
         self.episode_log.append({
             "state": obs,
@@ -602,20 +608,20 @@ def train_single_seed(seed: int, config: Dict, num_episodes: int = None) -> Dict
                 # Frustration
                 ep_frustration_history.append(env.learner_state["frustration"])
                 
-                # Action-specific tracking
-                action_dict = env._decode_action(action)
-                if action_dict["type"] == "content":
+                # Action-specific tracking (use info dict, not re-decoding)
+                action_type = info.get("type")
+                if action_type == "content":
                     ep_content_count += 1
                     mastery_gain = info.get("mastery_gain", 0.0)
                     ep_content_gains.append(mastery_gain)
-                    modality = action_dict.get("modality")
+                    modality = info.get("modality")
                     if modality is not None and 0 <= modality < len(modality_names):
                         ep_modality_gains[modality_names[modality]].append(mastery_gain)
-                elif action_dict["type"] == "question":
+                elif action_type == "question":
                     ep_question_total += 1
                     if info.get("correct", False):
                         ep_question_correct += 1
-                    ep_question_diffs.append(action_dict.get("difficulty", 0))
+                    ep_question_diffs.append(info.get("difficulty", 0))
             
             state = next_state
             if done:
