@@ -81,11 +81,22 @@ TRAIN_CONFIG = TrainConfig()
 # -----------------------
 
 
+class DiscreteActionSpace:
+    """Simple wrapper for action_space.sample() compatibility with gym-based algorithms."""
+    def __init__(self, n: int):
+        self.n = n
+    
+    def sample(self):
+        """Sample random action."""
+        return np.random.randint(0, self.n)
+
+
 class AdaptiveLearningEnv:
     def __init__(self, config: EnvConfig):
         self.cfg = config
         self.num_los = config.num_los
         self.num_actions = 270  # 90 questions + 180 content
+        self.action_space = DiscreteActionSpace(270)  # NEW: For gym-compatible algorithms (MBPO)
         self.max_steps = config.max_steps
         self.questions = self._load_questions()
         self.contents = self._load_contents()

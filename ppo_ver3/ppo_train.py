@@ -1073,6 +1073,21 @@ if __name__ == "__main__":
                 result = train_single_seed(seeds[0], CONFIG, args.episodes)
                 print(f"✅ Training complete!")
                 print(f"\n{json.dumps(result['episode_metrics'][-5:], indent=2)}")
+                
+                # NEW: Export JSON for single seed (for smoke tests and production consistency)
+                ensure_dir(args.output)
+                summary_path = os.path.join(args.output, "summary.json")
+                with open(summary_path, "w") as f:
+                    json.dump({
+                        "auc_10k": float(np.sum(result.get("returns", [])[:100])),  # Approximate AUC@10k
+                        "checkpoints": {},  # Not computed for single seed smoke test
+                        "wall_clock_time_minutes": result.get("duration_s", 0) / 60.0,
+                        "seed": result["seed"],
+                        "episodes_completed": len(result.get("returns", [])),
+                        "total_return": float(np.sum(result.get("returns", []))),
+                        "mean_return": float(np.mean(result.get("returns", []))) if result.get("returns") else 0.0,
+                    }, f, indent=2)
+                print(f"✅ Exported: {summary_path}")
             except Exception as e:
                 print(f"❌ Training failed: {e}")
                 import traceback

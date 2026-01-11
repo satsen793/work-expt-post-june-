@@ -89,6 +89,16 @@ class Content:
     reading_complexity: float
 
 
+class DiscreteActionSpace:
+    """Simple wrapper for action_space.sample() compatibility with gym-based algorithms."""
+    def __init__(self, n: int):
+        self.n = n
+    
+    def sample(self):
+        """Sample random action."""
+        return np.random.randint(0, self.n)
+
+
 class AdaptiveLearningEnv:
     def __init__(self, seed: int = 0, max_steps: int | None = None, config: Dict | None = None):
         self.cfg = config or SIMULATOR_CONFIG
@@ -98,6 +108,7 @@ class AdaptiveLearningEnv:
         self.max_steps_cap = max_steps or self.cfg["max_episode_steps"]  # upper bound; per-episode sampled 80-140
         self.min_steps_cap = self.cfg.get("min_episode_steps", 80)
         self.action_space_n = 270
+        self.action_space = DiscreteActionSpace(270)  # NEW: For gym-compatible algorithms (MBPO)
         self.rng = np.random.default_rng(seed)
 
         # Blueprint difficulty targets: Easy 20%, Medium 60%, Hard 20%
