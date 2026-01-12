@@ -1,9 +1,85 @@
 {
-  "auc_10k": 276.26011340439914,
-  "checkpoints": {},
-  "wall_clock_time_minutes": 0.8710980375607809,
-  "seed": 5,
-  "episodes_completed": 10,
-  "total_return": 276.26011340439914,
-  "mean_return": 27.626011340439913
+  "summary": {
+    "cumulative_reward": {
+      "mean": 16.25184019249662,
+      "std": 9.410580475278008,
+      "ci_95": [
+        2554.0673850080902,
+        7463.6392984577515
+      ]
+    },
+    "time_to_mastery": {
+      "mean": 106.14033898305085,
+      "std": 12.217181208879818,
+      "ci_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "question_accuracy": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "blueprint_adherence": {
+      "mean": 100.0,
+      "std": 0.0
+    },
+    "post_content_gain": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "mean_frustration": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "final_mastery": {
+      "mean": 0.3554907403557988,
+      "std": 0.013665210315429922
+    },
+    "calibration_mae": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "auc_10k": {
+      "mean": 2031.5400093321903,
+      "std": 518.6150098376822
+    },
+    "wall_clock_time_minutes": {
+      "mean": 38.43412676175436,
+      "std": 4.884180196393484
+    },
+    "num_seeds": 5
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "duration_s": 1981.0138654708862,
+      "cumulative_reward": 6940.571830196546,
+      "mean_ttm": 0.0
+    },
+    {
+      "seed": 1,
+      "duration_s": 2565.766896009445,
+      "cumulative_reward": 2919.9330289056234,
+      "mean_ttm": 0.0
+    },
+    {
+      "seed": 2,
+      "duration_s": 2734.8950917720795,
+      "cumulative_reward": 2104.849716263995,
+      "mean_ttm": 0.0
+    },
+    {
+      "seed": 3,
+      "duration_s": 2068.135972261429,
+      "cumulative_reward": 2820.352231803418,
+      "mean_ttm": 0.0
+    },
+    {
+      "seed": 4,
+      "duration_s": 2180.4261994361877,
+      "cumulative_reward": 9185.75747676293,
+      "mean_ttm": 0.0
+    }
+  ]
 }

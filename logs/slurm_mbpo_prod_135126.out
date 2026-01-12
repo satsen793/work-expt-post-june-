@@ -1,0 +1,158 @@
+=== MBPO Quick Test: 5 seeds, 10 episodes ===
+
+======================================================================
+🚀 MBPO TRAINING STARTED
+======================================================================
+
+📋 Configuration:
+   Seeds: [5]
+   Episodes: 10
+   Device: cuda
+   Max steps per episode: 140
+   Total max steps: 1400
+======================================================================
+
+🎓 TRAINING MODE
+📍 Single seed training (seed=5)
+✅ Environment created
+
+======================================================================
+MBPO Training: Seed 5
+======================================================================
+step=1000 episodes=7 avg_reward_50=28.87 alpha=nan q1=nan actor=nan model=nan
+Seed 5 completed in 55.2s
+✅ Training complete!
+
+Results: [
+  {
+    "episode": 6,
+    "return": 18.939334202503943,
+    "cumulative_reward": 18.939334202503943,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.47983884811401367,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 7,
+    "return": 55.35085117516212,
+    "cumulative_reward": 55.35085117516212,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.4855322539806366,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 8,
+    "return": 10.305498658255615,
+    "cumulative_reward": 10.305498658255615,
+    "time_to_mastery": 85,
+    "total_steps": 85,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.3714478611946106,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 9,
+    "return": 23.615384445447955,
+    "cumulative_reward": 23.615384445447955,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.464963436126709,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 10,
+    "return": 29.639754011506927,
+    "cumulative_reward": 29.639754011506927,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.4778115451335907,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  }
+]
+✅ Exported: results/mbpo/summary.json
+✓ Episodes CSV exported to results/mbpo/episodes.csv
+
+=== Verifying results ===
+total 106
+drwxrwxr-x. 2 jabezc jabezc 25600 Jan 11 12:11 .
+drwxrwxr-x. 6 jabezc jabezc 25600 Jan 11 11:57 ..
+-rw-rw-r--. 1 jabezc jabezc  1453 Jan 11 13:10 episodes.csv
+-rw-rw-r--. 1 jabezc jabezc   221 Jan 11 13:10 summary.json
+11 results/mbpo/episodes.csv
+MBPO production complete!

@@ -1,0 +1,265 @@
+=== MBPO Production: 5 seeds (0 1 2 3 4), 295 episodes ===
+
+======================================================================
+🚀 MBPO TRAINING STARTED
+======================================================================
+
+📋 Configuration:
+   Seeds: [0, 1, 2, 3, 4]
+   Episodes: 295
+   Device: cuda
+   Max steps per episode: 140
+   Total max steps: 41300
+======================================================================
+
+🎓 TRAINING MODE
+📍 Multi-seed training (5 seeds)
+
+======================================================================
+MBPO Training: Seed 0
+======================================================================
+step=1000 episodes=9 avg_reward_50=23.84 alpha=nan q1=nan actor=nan model=nan
+step=2000 episodes=16 avg_reward_50=26.80 alpha=nan q1=nan actor=nan model=nan
+step=3000 episodes=23 avg_reward_50=29.59 alpha=nan q1=nan actor=nan model=nan
+step=4000 episodes=31 avg_reward_50=28.73 alpha=nan q1=nan actor=nan model=nan
+step=5000 episodes=40 avg_reward_50=26.83 alpha=0.200 q1=1.806 actor=-1.139 model=-9.187
+step=6000 episodes=47 avg_reward_50=25.98 alpha=0.271 q1=0.163 actor=-8.210 model=-9.637
+step=7000 episodes=55 avg_reward_50=27.80 alpha=0.423 q1=0.494 actor=-15.850 model=-9.719
+step=8000 episodes=63 avg_reward_50=32.02 alpha=0.631 q1=1.184 actor=-23.473 model=-9.718
+step=9000 episodes=72 avg_reward_50=35.31 alpha=0.892 q1=5.831 actor=-31.737 model=-9.715
+step=10000 episodes=81 avg_reward_50=41.78 alpha=1.238 q1=4.051 actor=-38.178 model=-9.668
+step=11000 episodes=90 avg_reward_50=48.09 alpha=1.734 q1=8.977 actor=-41.401 model=-9.719
+step=12000 episodes=97 avg_reward_50=54.83 alpha=2.400 q1=8.922 actor=-42.841 model=-9.654
+step=13000 episodes=106 avg_reward_50=57.81 alpha=3.279 q1=2.699 actor=-41.436 model=-9.674
+step=14000 episodes=113 avg_reward_50=61.53 alpha=4.447 q1=5.843 actor=-41.761 model=-9.688
+step=15000 episodes=120 avg_reward_50=64.95 alpha=6.014 q1=6.760 actor=-41.648 model=-9.646
+step=16000 episodes=127 avg_reward_50=68.94 alpha=8.122 q1=1.732 actor=-41.001 model=-9.634
+step=17000 episodes=135 avg_reward_50=67.97 alpha=10.943 q1=8.724 actor=-42.159 model=-9.646
+step=18000 episodes=142 avg_reward_50=59.98 alpha=14.791 q1=0.576 actor=-41.227 model=-9.674
+step=19000 episodes=149 avg_reward_50=51.14 alpha=19.981 q1=9.166 actor=-39.397 model=-9.688
+step=20000 episodes=156 avg_reward_50=44.66 alpha=26.950 q1=223.480 actor=-52.138 model=-9.689
+step=21000 episodes=163 avg_reward_50=34.43 alpha=36.385 q1=0.561 actor=-43.117 model=-9.704
+step=22000 episodes=171 avg_reward_50=22.22 alpha=49.153 q1=0.393 actor=-41.051 model=-9.683
+step=23000 episodes=178 avg_reward_50=11.14 alpha=66.374 q1=7.081 actor=-38.668 model=-9.713
+step=24000 episodes=185 avg_reward_50=5.02 alpha=89.598 q1=6.206 actor=-37.051 model=-9.743
+step=25000 episodes=206 avg_reward_50=3.59 alpha=120.634 q1=12640.395 actor=-89.776 model=-9.777
+step=26000 episodes=239 avg_reward_50=0.77 alpha=162.435 q1=84.733 actor=-139.798 model=-9.746
+step=27000 episodes=292 avg_reward_50=0.55 alpha=219.884 q1=7673.528 actor=-132.103 model=-9.784
+Seed 0 completed in 1981.0s
+
+======================================================================
+MBPO Training: Seed 1
+======================================================================
+step=1000 episodes=7 avg_reward_50=31.06 alpha=nan q1=nan actor=nan model=nan
+step=2000 episodes=16 avg_reward_50=28.90 alpha=nan q1=nan actor=nan model=nan
+step=3000 episodes=24 avg_reward_50=29.87 alpha=nan q1=nan actor=nan model=nan
+step=4000 episodes=32 avg_reward_50=28.76 alpha=nan q1=nan actor=nan model=nan
+step=5000 episodes=40 avg_reward_50=29.87 alpha=0.200 q1=1.788 actor=-1.124 model=-9.167
+step=6000 episodes=47 avg_reward_50=28.08 alpha=0.273 q1=0.292 actor=-8.203 model=-9.652
+step=7000 episodes=54 avg_reward_50=26.69 alpha=0.378 q1=1.957 actor=-16.609 model=-9.734
+step=8000 episodes=61 avg_reward_50=25.02 alpha=0.500 q1=2.307 actor=-28.317 model=-9.775
+step=9000 episodes=68 avg_reward_50=22.40 alpha=0.674 q1=5.800 actor=-42.689 model=-9.805
+step=10000 episodes=76 avg_reward_50=20.99 alpha=0.901 q1=5.824 actor=-61.774 model=-9.827
+step=11000 episodes=83 avg_reward_50=20.08 alpha=1.191 q1=4.261 actor=-87.328 model=-9.827
+step=12000 episodes=90 avg_reward_50=18.11 alpha=1.591 q1=56.887 actor=-119.994 model=-9.805
+step=13000 episodes=97 avg_reward_50=18.25 alpha=2.164 q1=107.994 actor=-164.539 model=-9.821
+step=14000 episodes=111 avg_reward_50=15.75 alpha=3.085 q1=271.189 actor=-212.681 model=-9.819
+step=15000 episodes=126 avg_reward_50=11.98 alpha=4.927 q1=319.669 actor=-247.672 model=-9.833
+step=16000 episodes=137 avg_reward_50=8.39 alpha=7.284 q1=438.848 actor=-284.970 model=-9.850
+step=17000 episodes=149 avg_reward_50=5.11 alpha=9.810 q1=699.630 actor=-393.410 model=-9.836
+step=18000 episodes=158 avg_reward_50=5.40 alpha=13.916 q1=488.800 actor=-391.511 model=-9.830
+step=19000 episodes=176 avg_reward_50=6.75 alpha=19.007 q1=638.448 actor=-460.028 model=-9.812
+step=20000 episodes=190 avg_reward_50=6.13 alpha=26.591 q1=635.801 actor=-453.607 model=-9.837
+step=21000 episodes=197 avg_reward_50=5.01 alpha=36.596 q1=408.904 actor=-460.061 model=-9.821
+step=22000 episodes=207 avg_reward_50=3.59 alpha=49.618 q1=350.352 actor=-464.098 model=-9.853
+step=23000 episodes=214 avg_reward_50=0.93 alpha=67.475 q1=2225.381 actor=-429.006 model=-9.843
+step=24000 episodes=221 avg_reward_50=0.91 alpha=91.179 q1=1672.441 actor=-432.342 model=-9.843
+step=25000 episodes=228 avg_reward_50=1.46 alpha=123.307 q1=264.386 actor=-407.425 model=-9.873
+step=26000 episodes=235 avg_reward_50=1.90 alpha=166.458 q1=8808.383 actor=-492.728 model=-9.890
+step=27000 episodes=242 avg_reward_50=1.32 alpha=224.866 q1=1065.115 actor=-394.315 model=-9.857
+step=28000 episodes=250 avg_reward_50=1.49 alpha=303.097 q1=12020.228 actor=-498.645 model=-9.876
+step=29000 episodes=257 avg_reward_50=1.66 alpha=407.878 q1=73946.094 actor=-818.997 model=-9.903
+step=30000 episodes=264 avg_reward_50=1.64 alpha=551.989 q1=2012.014 actor=-723.331 model=-9.873
+step=31000 episodes=271 avg_reward_50=1.66 alpha=745.983 q1=82664.883 actor=-800.019 model=-9.883
+step=32000 episodes=278 avg_reward_50=1.65 alpha=1007.622 q1=299.425 actor=-780.727 model=-9.891
+step=33000 episodes=285 avg_reward_50=1.63 alpha=1361.161 q1=938.194 actor=-878.263 model=-9.905
+step=34000 episodes=292 avg_reward_50=1.56 alpha=1837.656 q1=442.845 actor=-860.770 model=-9.878
+Seed 1 completed in 2565.8s
+
+======================================================================
+MBPO Training: Seed 2
+======================================================================
+step=1000 episodes=9 avg_reward_50=19.14 alpha=nan q1=nan actor=nan model=nan
+step=2000 episodes=18 avg_reward_50=22.90 alpha=nan q1=nan actor=nan model=nan
+step=3000 episodes=27 avg_reward_50=24.46 alpha=nan q1=nan actor=nan model=nan
+step=4000 episodes=35 avg_reward_50=24.69 alpha=nan q1=nan actor=nan model=nan
+step=5000 episodes=43 avg_reward_50=25.64 alpha=0.200 q1=2.063 actor=-1.190 model=-9.151
+step=6000 episodes=51 avg_reward_50=24.57 alpha=0.277 q1=0.204 actor=-7.802 model=-9.616
+step=7000 episodes=60 avg_reward_50=22.93 alpha=0.372 q1=1.324 actor=-16.835 model=-9.738
+step=8000 episodes=67 avg_reward_50=20.53 alpha=0.499 q1=0.648 actor=-27.645 model=-9.788
+step=9000 episodes=74 avg_reward_50=18.36 alpha=0.808 q1=4.237 actor=-34.386 model=-9.799
+step=10000 episodes=81 avg_reward_50=17.52 alpha=1.179 q1=14.313 actor=-46.970 model=-9.833
+step=11000 episodes=89 avg_reward_50=13.39 alpha=1.729 q1=1.349 actor=-41.241 model=-9.869
+step=12000 episodes=96 avg_reward_50=10.25 alpha=2.395 q1=2.387 actor=-41.473 model=-9.867
+step=13000 episodes=103 avg_reward_50=9.12 alpha=3.274 q1=2.930 actor=-39.573 model=-9.885
+step=14000 episodes=110 avg_reward_50=8.41 alpha=4.453 q1=2.811 actor=-37.332 model=-9.900
+step=15000 episodes=117 avg_reward_50=7.25 alpha=6.023 q1=0.141 actor=-36.637 model=-9.891
+step=16000 episodes=124 avg_reward_50=6.06 alpha=8.145 q1=0.196 actor=-33.922 model=-9.907
+step=17000 episodes=131 avg_reward_50=5.26 alpha=11.002 q1=5.318 actor=-32.878 model=-9.915
+step=18000 episodes=139 avg_reward_50=4.68 alpha=14.829 q1=48.136 actor=-33.930 model=-9.910
+step=19000 episodes=146 avg_reward_50=4.20 alpha=20.004 q1=0.668 actor=-36.814 model=-9.911
+step=20000 episodes=153 avg_reward_50=3.69 alpha=27.043 q1=8.594 actor=-32.986 model=-9.909
+step=21000 episodes=160 avg_reward_50=3.18 alpha=36.527 q1=0.131 actor=-32.725 model=-9.926
+step=22000 episodes=167 avg_reward_50=2.65 alpha=49.312 q1=3.215 actor=-31.258 model=-9.920
+step=23000 episodes=174 avg_reward_50=2.37 alpha=66.142 q1=2582.418 actor=-82.966 model=-9.933
+step=24000 episodes=181 avg_reward_50=1.87 alpha=89.572 q1=2276.065 actor=-77.721 model=-9.937
+step=25000 episodes=189 avg_reward_50=1.64 alpha=121.115 q1=38.884 actor=-75.234 model=-9.927
+step=26000 episodes=219 avg_reward_50=1.19 alpha=160.666 q1=43649.086 actor=-527.008 model=-9.931
+step=27000 episodes=226 avg_reward_50=1.00 alpha=218.872 q1=31.176 actor=-415.464 model=-9.940
+step=28000 episodes=233 avg_reward_50=1.03 alpha=296.963 q1=45.194 actor=-381.187 model=-9.922
+step=29000 episodes=240 avg_reward_50=0.98 alpha=401.685 q1=556.200 actor=-341.500 model=-9.927
+step=30000 episodes=247 avg_reward_50=1.12 alpha=542.381 q1=478.347 actor=-366.607 model=-9.932
+step=31000 episodes=254 avg_reward_50=1.21 alpha=732.384 q1=939.174 actor=-326.405 model=-9.926
+step=32000 episodes=261 avg_reward_50=1.31 alpha=989.005 q1=1233.577 actor=-316.357 model=-9.940
+step=33000 episodes=269 avg_reward_50=1.40 alpha=1335.051 q1=26.438 actor=-328.312 model=-9.930
+step=34000 episodes=276 avg_reward_50=1.39 alpha=1802.005 q1=889.052 actor=-259.733 model=-9.933
+step=35000 episodes=283 avg_reward_50=1.38 alpha=2432.284 q1=843.621 actor=-251.205 model=-9.945
+step=36000 episodes=290 avg_reward_50=1.39 alpha=3283.491 q1=7.718 actor=-221.177 model=-9.920
+Seed 2 completed in 2734.9s
+
+======================================================================
+MBPO Training: Seed 3
+======================================================================
+step=1000 episodes=7 avg_reward_50=27.75 alpha=nan q1=nan actor=nan model=nan
+step=2000 episodes=15 avg_reward_50=30.59 alpha=nan q1=nan actor=nan model=nan
+step=3000 episodes=24 avg_reward_50=25.96 alpha=nan q1=nan actor=nan model=nan
+step=4000 episodes=31 avg_reward_50=25.28 alpha=nan q1=nan actor=nan model=nan
+step=5000 episodes=40 avg_reward_50=24.85 alpha=0.200 q1=1.959 actor=-1.153 model=-9.138
+step=6000 episodes=47 avg_reward_50=25.25 alpha=0.280 q1=0.505 actor=-8.287 model=-9.638
+step=7000 episodes=54 avg_reward_50=24.90 alpha=0.383 q1=1.486 actor=-17.326 model=-9.739
+step=8000 episodes=62 avg_reward_50=23.47 alpha=0.492 q1=2.963 actor=-28.560 model=-9.794
+step=9000 episodes=70 avg_reward_50=22.00 alpha=0.699 q1=1.121 actor=-42.016 model=-9.779
+step=10000 episodes=84 avg_reward_50=17.38 alpha=0.986 q1=3.451 actor=-55.380 model=-9.817
+step=11000 episodes=97 avg_reward_50=13.62 alpha=1.464 q1=48.558 actor=-71.682 model=-9.821
+step=12000 episodes=104 avg_reward_50=10.78 alpha=2.160 q1=22.629 actor=-85.872 model=-9.831
+step=13000 episodes=112 avg_reward_50=12.61 alpha=2.830 q1=26.628 actor=-131.155 model=-9.822
+step=14000 episodes=119 avg_reward_50=14.72 alpha=3.612 q1=46.166 actor=-175.912 model=-9.817
+step=15000 episodes=126 avg_reward_50=14.83 alpha=5.422 q1=64.113 actor=-178.126 model=-9.857
+step=16000 episodes=133 avg_reward_50=14.47 alpha=7.716 q1=35.605 actor=-177.971 model=-9.869
+step=17000 episodes=140 avg_reward_50=14.53 alpha=10.604 q1=502.651 actor=-200.231 model=-9.860
+step=18000 episodes=147 avg_reward_50=13.88 alpha=14.287 q1=152.811 actor=-198.384 model=-9.877
+step=19000 episodes=154 avg_reward_50=13.25 alpha=19.444 q1=86.236 actor=-205.875 model=-9.887
+step=20000 episodes=162 avg_reward_50=8.92 alpha=26.438 q1=214.109 actor=-190.723 model=-9.882
+step=21000 episodes=169 avg_reward_50=5.29 alpha=35.798 q1=151.261 actor=-172.435 model=-9.865
+step=22000 episodes=176 avg_reward_50=3.86 alpha=48.379 q1=3.735 actor=-163.793 model=-9.900
+step=23000 episodes=183 avg_reward_50=3.78 alpha=65.333 q1=4.424 actor=-155.505 model=-9.899
+step=24000 episodes=202 avg_reward_50=2.79 alpha=86.140 q1=6903.857 actor=-476.757 model=-9.898
+step=25000 episodes=223 avg_reward_50=1.79 alpha=117.239 q1=3028.808 actor=-435.753 model=-9.889
+step=26000 episodes=244 avg_reward_50=1.09 alpha=159.443 q1=9075.770 actor=-485.696 model=-9.887
+step=27000 episodes=264 avg_reward_50=1.09 alpha=214.117 q1=23694.730 actor=-684.366 model=-9.881
+step=28000 episodes=285 avg_reward_50=1.09 alpha=290.510 q1=3020.784 actor=-648.463 model=-9.900
+Seed 3 completed in 2068.1s
+
+======================================================================
+MBPO Training: Seed 4
+======================================================================
+step=1000 episodes=9 avg_reward_50=22.20 alpha=nan q1=nan actor=nan model=nan
+step=2000 episodes=16 avg_reward_50=29.73 alpha=nan q1=nan actor=nan model=nan
+step=3000 episodes=24 avg_reward_50=28.81 alpha=nan q1=nan actor=nan model=nan
+step=4000 episodes=32 avg_reward_50=28.06 alpha=nan q1=nan actor=nan model=nan
+step=5000 episodes=40 avg_reward_50=28.09 alpha=0.200 q1=1.883 actor=-1.150 model=-9.127
+step=6000 episodes=47 avg_reward_50=27.52 alpha=0.273 q1=0.309 actor=-8.212 model=-9.640
+step=7000 episodes=54 avg_reward_50=25.61 alpha=0.381 q1=0.865 actor=-16.873 model=-9.704
+step=8000 episodes=61 avg_reward_50=25.37 alpha=0.507 q1=2.050 actor=-28.159 model=-9.795
+step=9000 episodes=68 avg_reward_50=23.31 alpha=0.667 q1=8.914 actor=-42.990 model=-9.816
+step=10000 episodes=75 avg_reward_50=22.42 alpha=0.879 q1=1.789 actor=-61.546 model=-9.801
+step=11000 episodes=83 avg_reward_50=21.77 alpha=1.177 q1=47.171 actor=-86.315 model=-9.826
+step=12000 episodes=90 avg_reward_50=20.54 alpha=1.580 q1=30.259 actor=-118.305 model=-9.790
+step=13000 episodes=97 avg_reward_50=20.26 alpha=2.215 q1=14.446 actor=-158.069 model=-9.822
+step=14000 episodes=105 avg_reward_50=20.37 alpha=3.534 q1=102.624 actor=-201.996 model=-9.841
+step=15000 episodes=112 avg_reward_50=22.84 alpha=5.277 q1=33.396 actor=-214.629 model=-9.811
+step=16000 episodes=120 avg_reward_50=28.79 alpha=7.773 q1=56.766 actor=-217.302 model=-9.806
+step=17000 episodes=127 avg_reward_50=32.82 alpha=10.821 q1=79.298 actor=-217.051 model=-9.813
+step=18000 episodes=135 avg_reward_50=40.50 alpha=14.817 q1=275.772 actor=-203.924 model=-9.781
+step=19000 episodes=143 avg_reward_50=49.10 alpha=20.102 q1=6.412 actor=-196.711 model=-9.755
+step=20000 episodes=150 avg_reward_50=55.23 alpha=27.192 q1=19.801 actor=-185.426 model=-9.757
+step=21000 episodes=158 avg_reward_50=63.35 alpha=36.741 q1=14.482 actor=-175.558 model=-9.731
+step=22000 episodes=165 avg_reward_50=67.01 alpha=49.615 q1=138.362 actor=-163.242 model=-9.700
+step=23000 episodes=173 avg_reward_50=67.25 alpha=66.083 q1=9250.105 actor=-402.641 model=-9.710
+step=24000 episodes=181 avg_reward_50=67.17 alpha=87.194 q1=6214.078 actor=-654.503 model=-9.665
+step=25000 episodes=188 avg_reward_50=70.04 alpha=119.624 q1=172.413 actor=-630.925 model=-9.680
+step=26000 episodes=196 avg_reward_50=69.11 alpha=162.722 q1=453.721 actor=-666.161 model=-9.662
+step=27000 episodes=203 avg_reward_50=70.51 alpha=215.524 q1=106565.609 actor=-1836.657 model=-9.674
+step=28000 episodes=224 avg_reward_50=48.21 alpha=280.889 q1=188978.156 actor=-3793.414 model=-9.697
+step=29000 episodes=263 avg_reward_50=0.98 alpha=380.960 q1=200141.953 actor=-4349.280 model=-9.716
+step=30000 episodes=288 avg_reward_50=0.81 alpha=523.318 q1=424944.750 actor=-4885.390 model=-9.663
+Seed 4 completed in 2180.4s
+
+✓ Summary exported to results/mbpo/summary.json
+✓ Episodes CSV exported to results/mbpo/episodes.csv
+✓ Figures exported to results/mbpo/figures/
+
+======================================================================
+✅ Multi-seed training complete!
+Summary: {
+  "cumulative_reward": {
+    "mean": 16.25184019249662,
+    "std": 9.410580475278008,
+    "ci_95": [
+      2554.0673850080902,
+      7463.6392984577515
+    ]
+  },
+  "time_to_mastery": {
+    "mean": 106.14033898305085,
+    "std": 12.217181208879818,
+    "ci_95": [
+      0.0,
+      0.0
+    ]
+  },
+  "question_accuracy": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "blueprint_adherence": {
+    "mean": 100.0,
+    "std": 0.0
+  },
+  "post_content_gain": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "mean_frustration": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "final_mastery": {
+    "mean": 0.3554907403557988,
+    "std": 0.013665210315429922
+  },
+  "calibration_mae": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "auc_10k": {
+    "mean": 2031.5400093321903,
+    "std": 518.6150098376822
+  },
+  "wall_clock_time_minutes": {
+    "mean": 38.43412676175436,
+    "std": 4.884180196393484
+  },
+  "num_seeds": 5
+}
+======================================================================
+
+=== Verifying results ===
+total 113
+drwxrwxr-x. 3 jabezc jabezc  25600 Jan 11 16:32 .
+drwxrwxr-x. 6 jabezc jabezc  25600 Jan 11 11:57 ..
+-rw-rw-r--. 1 jabezc jabezc 172106 Jan 11 16:32 episodes.csv
+drwxrwxr-x. 3 jabezc jabezc  25600 Jan 11 16:32 figures
+-rw-rw-r--. 1 jabezc jabezc   1719 Jan 11 16:32 summary.json
+1476 results/mbpo/episodes.csv
+MBPO production complete!
