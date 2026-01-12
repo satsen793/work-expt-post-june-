@@ -26,4 +26,6 @@ Device: cuda
    [TRAIN] Episode 7/295 ✅ Ret: 128.98, TTM: None, Steps: 140
    [TRAIN] Episode 8/295 ✅ Ret: 122.02, TTM: None, Steps: 140
    [TRAIN] Episode 9/295 ✅ Ret: 39.74, TTM: None, Steps: 93
-   [TRAIN] Episode 10/295
+   [TRAIN] Episode 10/295 ✅ Ret: 87.13, TTM: None, Steps: 140
+Seed 0 | Episode 10/295 | recent avg return: 99.44 | dataset size: 1235
+   [TRAIN] Episode 11/295
