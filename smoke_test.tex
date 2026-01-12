@@ -1,0 +1,461 @@
+⚡ ~ cd Adaptive_Recommender_ver4 
+⚡ main ~/Adaptive_Recommender_ver4 python smoke_test_option_b.py
+======================================================================
+PRODUCTION-SCALE SMOKE TEST - Option B (4 Algorithms)
+======================================================================
+Scale: 5 episodes × 1 seed (production: 295 episodes × 5 seeds)
+Goal: Verify production will work if smoke test passes
+======================================================================
+Python: 3.12.11
+Working dir: /teamspace/studios/this_studio/Adaptive_Recommender_ver4
+======================================================================
+[CONFIG] Loaded shared_config.py
+   Production: 5 seeds × 295 episodes
+   Smoke test: 1 seed × 5 episodes (1.7% of production)
+   Using seed=0 (first production seed)
+
+[SETUP] Created smoketest_outputs/
+
+
+[1/4] DQN Smoke Test
+   Guarantees: Validates episode iteration (scales to 295), AUC computation, aggregation
+   Command: /home/zeus/miniconda3/envs/cloudspace/bin/python dqn_ver3/train_dqn.py --seed...
+Training finished.
+
+[VERIFY-JSON] DQN output at smoketest_outputs/dqn_smoke.json
+   OK: File exists
+   JSON keys (8): ['returns', 'time_to_mastery', 'episode_metrics', 'episode_logs', 'auc_10k']...
+   OK: All standard fields present
+   - AUC@10k: 154.38
+   - Wall-clock: 0.06 min
+   - Checkpoints: []
+
+[2/4] PETS Smoke Test
+   Guarantees: Validates seed loop, multi-seed aggregation, checkpoint averaging
+   Command: /home/zeus/miniconda3/envs/cloudspace/bin/python pets_ver3/pets_train.py --seed...
+
+======================================================================
+🚀 PETS TRAINING STARTED
+======================================================================
+Seeds: (0,)
+Total episodes: 5
+Device: cuda
+======================================================================
+
+
+======================================================================
+📍 SEED 0 STARTING
+======================================================================
+✅ Random seeds set
+🏗️  Creating environment...
+✅ Environment created
+🏁 Initial exploration: 5 episodes
+   [EXPLORE] Episode 1/5 ✅ Ret: 51.05, TTM: None
+   [EXPLORE] Episode 2/5 ✅ Ret: -1.57, TTM: None
+   [EXPLORE] Episode 3/5 ✅ Ret: 46.18, TTM: None
+   [EXPLORE] Episode 4/5 ✅ Ret: 45.65, TTM: None
+   [EXPLORE] Episode 5/5 ✅ Ret: 28.06, TTM: None
+🎓 Training: 0 episodes
+Seed 0 complete. Final recent-5 avg return: 33.87 | AUC@10k: 169.4
+Across seeds: mean±std of last 5 episodes: 33.87 ± 0.00
+95% CI (normal approx) on last-5 mean: 33.87 ± 0.00
+Bootstrap 95% CI on last-5 mean: [33.87, 33.87]
+Time-to-mastery (steps) mean±std (per seed avg): nan ± nan
+Wall-clock per seed (s) mean±std: 0.04 ± 0.00
+Wall-clock per episode (s) mean±std: 0.01 ± 0.00
+CEM elite return (per-iter mean) mean±std: nan ± nan
+Ensemble disagreement mean±std: nan ± nan
+✓ Exported learning_curve_data.json
+✓ Exported performance_summary.json
+✓ Exported modality_gains.json
+✓ Exported variance_data.json
+✓ Generated LaTeX tables: table_ppo_perf.tex, table_modality.tex
+\n============================================================
+RESULTS EXPORT COMPLETE
+============================================================
+Files saved to results/ directory:
+  - learning_curve_data.json
+  - performance_summary.json
+  - modality_gains.json
+  - calibration_data.json
+  - variance_data.json
+  - table_ppo_perf.tex (LaTeX table)
+  - table_modality.tex (LaTeX table)
+\nUse these files to generate figures and tables for the paper.
+
+[VERIFY-JSON] PETS output at results/performance_summary.json
+   OK: File exists
+   JSON keys (15): ['auc_10k', 'wall_clock_time_minutes', 'checkpoints', 'time_to_mastery_mean', 'time_to_mastery_std']...
+   OK: All PETS standard fields present
+   - AUC@10k: 169.37174973633356
+   - Wall-clock: 0.0006831884384155273 min
+   - Checkpoints: []
+
+[3/4] MBPO Smoke Test
+   Guarantees: Validates model-based learning, memory scaling, JSON export
+   Command: /home/zeus/miniconda3/envs/cloudspace/bin/python mbpo_ver3/train_mbpo.py --seed...
+
+======================================================================
+🚀 MBPO TRAINING STARTED
+======================================================================
+
+📋 Configuration:
+   Seeds: [0]
+   Episodes: 5
+   Device: cuda
+   Max steps per episode: 140
+   Total max steps: 700
+======================================================================
+
+🎓 TRAINING MODE
+📍 Single seed training (seed=0)
+✅ Environment created
+
+======================================================================
+MBPO Training: Seed 0
+======================================================================
+Seed 0 completed in 38.2s
+✅ Training complete!
+
+Results: [
+  {
+    "episode": 1,
+    "return": 45.399097438333236,
+    "cumulative_reward": 45.399097438333236,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.48399603366851807,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 2,
+    "return": 5.4198716480200595,
+    "cumulative_reward": 5.4198716480200595,
+    "time_to_mastery": 86,
+    "total_steps": 86,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.37937498092651367,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 3,
+    "return": 34.11826648092805,
+    "cumulative_reward": 34.11826648092805,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.43591105937957764,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 4,
+    "return": 49.581058645687534,
+    "cumulative_reward": 49.581058645687534,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.5164932012557983,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 5,
+    "return": 9.160619857072643,
+    "cumulative_reward": 9.160619857072643,
+    "time_to_mastery": 53,
+    "total_steps": 53,
+    "question_accuracy": 0.0,
+    "question_total": 0,
+    "question_correct": 0,
+    "content_count": 0,
+    "content_rate": 0.0,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.3423580825328827,
+    "mean_frustration": 0.0,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  }
+]
+✅ Exported: smoketest_outputs/mbpo/summary.json
+
+[VERIFY-JSON] MBPO output at smoketest_outputs/mbpo/summary.json
+   OK: File exists
+   JSON keys (7): ['auc_10k', 'checkpoints', 'wall_clock_time_minutes', 'seed', 'episodes_completed']...
+   OK: All standard fields present
+   - AUC@10k: 143.68
+   - Wall-clock: 0.64 min
+   - Checkpoints: []
+
+[4/4] PPO Smoke Test
+   Guarantees: Validates policy gradient stability, multi-episode learning
+   Command: /home/zeus/miniconda3/envs/cloudspace/bin/python ppo_ver3/ppo_train.py --seed...
+
+======================================================================
+🚀 PPO TRAINING STARTED
+======================================================================
+
+📋 Configuration:
+   Seeds: [0, 1, 2, 3, 4]
+   Episodes: 5
+   Output: smoketest_outputs/ppo
+   Device: cpu
+======================================================================
+
+📍 Single seed training (seed=0)
+
+======================================================================
+PPO Training: Seed 0
+======================================================================
+Seed 0 completed in 0.9s
+✅ Training complete!
+
+[
+  {
+    "episode": 1,
+    "return": 55.97946510860124,
+    "cumulative_reward": 55.97946510860124,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 49,
+    "question_correct": 0,
+    "content_count": 91,
+    "content_rate": 0.65,
+    "blueprint_adherence": 81.7687074829932,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.4880795180797577,
+    "mean_frustration": 0.0487142857142857,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 2,
+    "return": 43.47680050113322,
+    "cumulative_reward": 43.47680050113322,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 51,
+    "question_correct": 0,
+    "content_count": 89,
+    "content_rate": 0.6357142857142857,
+    "blueprint_adherence": 76.99346405228759,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.5012829899787903,
+    "mean_frustration": 0.08935714285714287,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 3,
+    "return": 15.933968433148888,
+    "cumulative_reward": 15.933968433148888,
+    "time_to_mastery": 99,
+    "total_steps": 99,
+    "question_accuracy": 0.0,
+    "question_total": 43,
+    "question_correct": 0,
+    "content_count": 56,
+    "content_rate": 0.5656565656565656,
+    "blueprint_adherence": 83.25581395348837,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.37258827686309814,
+    "mean_frustration": 0.45303030303030295,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 4,
+    "return": 43.51483832425723,
+    "cumulative_reward": 43.51483832425723,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 43,
+    "question_correct": 0,
+    "content_count": 97,
+    "content_rate": 0.6928571428571428,
+    "blueprint_adherence": 91.0077519379845,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.4786456227302551,
+    "mean_frustration": 0.04721428571428572,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 5,
+    "return": 51.10909334811138,
+    "cumulative_reward": 51.10909334811138,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.0,
+    "question_total": 45,
+    "question_correct": 0,
+    "content_count": 95,
+    "content_rate": 0.6785714285714286,
+    "blueprint_adherence": 83.7037037037037,
+    "post_content_gain": 0.0,
+    "final_mastery": 0.4932658076286316,
+    "mean_frustration": 0.023857142857142855,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  }
+]
+✅ Exported: smoketest_outputs/ppo/summary.json
+
+[VERIFY-JSON] PPO output at smoketest_outputs/ppo/summary.json
+   OK: File exists
+   JSON keys (7): ['auc_10k', 'checkpoints', 'wall_clock_time_minutes', 'seed', 'episodes_completed']...
+   OK: All standard fields present
+   - AUC@10k: 210.01
+   - Wall-clock: 0.01 min
+   - Checkpoints: []
+
+======================================================================
+SMOKE TEST RESULTS
+======================================================================
+DQN   : Train=PASS  JSON=PASS
+   - AUC@10k: 210.01
+   - Wall-clock: 0.01 min
+   - Checkpoints: []
+
+======================================================================
+SMOKE TEST RESULTS
+======================================================================
+DQN   : Train=PASS  JSON=PASS
+   - Wall-clock: 0.01 min
+   - Checkpoints: []
+
+======================================================================
+SMOKE TEST RESULTS
+======================================================================
+DQN   : Train=PASS  JSON=PASS
+   - Checkpoints: []
+
+======================================================================
+SMOKE TEST RESULTS
+======================================================================
+DQN   : Train=PASS  JSON=PASS
+
+======================================================================
+SMOKE TEST RESULTS
+======================================================================
+DQN   : Train=PASS  JSON=PASS
+======================================================================
+SMOKE TEST RESULTS
+======================================================================
+DQN   : Train=PASS  JSON=PASS
+SMOKE TEST RESULTS
+======================================================================
+DQN   : Train=PASS  JSON=PASS
+======================================================================
+DQN   : Train=PASS  JSON=PASS
+DQN   : Train=PASS  JSON=PASS
+PETS  : Train=PASS  JSON=PASS
+MBPO  : Train=PASS  JSON=PASS
+PPO   : Train=PASS  JSON=PASS
+======================================================================
+
+SUCCESS: Smoke test passed
+GUARANTEE: Production (295 ep × 5 seeds) will work
+  - Episode iteration logic validated
+  - JSON aggregation functions tested
+  - Output file I/O paths verified
+  - All 4 algorithms exercise production code paths
+
+Ready for full Lightning AI run
+======================================================================
+⚡ main ~/Adaptive_Recommender_ver4

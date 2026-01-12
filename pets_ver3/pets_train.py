@@ -145,6 +145,10 @@ class AdaptiveLearningEnv:
             "step": self.step_count,
             "mean_mastery": float(np.mean(self.learner_state["mastery"]))
         }
+        # Add episode-level metrics for MBPO compatibility
+        episode_metrics = self.get_episode_metrics()
+        for k, v in episode_metrics.items():
+            info[k] = v
         self.episode_log.append({"step": self.step_count, "action": action, "reward": reward, "done": done, **info})
         return obs, reward, done, info
 
