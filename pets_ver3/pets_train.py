@@ -43,19 +43,19 @@ class EnvConfig:
 @dataclasses.dataclass
 class ModelConfig:
     ensemble_size: int = 5
-    hidden_dim: int = 512
+    hidden_dim: int = 128  # Aggressively reduced for speed
     learning_rate: float = 1e-3
     weight_decay: float = 1e-5
-    train_epochs: int = 50
-    batch_size: int = 256
+    train_epochs: int = 3  # Aggressively reduced for speed
+    batch_size: int = 32   # Aggressively reduced for speed
     logvar_clamp: Tuple[float, float] = (-10.0, 2.0)
 
 
 @dataclasses.dataclass
 class MPCConfig:
     horizon: int = 10
-    iterations: int = 5
-    candidates: int = 500
+    iterations: int = 1      # Aggressively reduced for speed
+    candidates: int = 50     # Aggressively reduced for speed
     elite_fraction: float = 0.1
     update_rate: float = 0.5
     gamma: float = 0.99
