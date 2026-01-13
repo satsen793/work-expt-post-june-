@@ -1,1 +1,164 @@
 === MBPO Production: 1 seed (0), 50 episodes ===
+
+======================================================================
+🚀 MBPO TRAINING STARTED
+======================================================================
+
+📋 Configuration:
+   Seeds: [0]
+   Episodes: 50
+   Device: cuda
+   Max steps per episode: 140
+   Total max steps: 7000
+======================================================================
+
+🎓 TRAINING MODE
+📍 Single seed training (seed=0)
+✅ Environment created
+
+======================================================================
+MBPO Training: Seed 0
+======================================================================
+step=1000 episodes=8 avg_reward_50=24.91 alpha=nan q1=nan actor=nan model=nan
+step=2000 episodes=15 avg_reward_50=24.56 alpha=nan q1=nan actor=nan model=nan
+step=3000 episodes=23 avg_reward_50=28.72 alpha=nan q1=nan actor=nan model=nan
+step=4000 episodes=31 avg_reward_50=27.36 alpha=nan q1=nan actor=nan model=nan
+step=5000 episodes=40 avg_reward_50=26.97 alpha=0.200 q1=1.746 actor=-1.139 model=-9.130
+step=6000 episodes=47 avg_reward_50=26.06 alpha=0.270 q1=0.302 actor=-8.303 model=-9.654
+Seed 0 completed in 299.5s
+✅ Training complete!
+
+Results: [
+  {
+    "episode": 46,
+    "return": 37.046590427379876,
+    "cumulative_reward": 37.046590427379876,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.90625,
+    "question_total": 32,
+    "question_correct": 29,
+    "content_count": 108,
+    "content_rate": 0.7714285714285715,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.04730706713516975,
+    "final_mastery": 0.5101865530014038,
+    "mean_frustration": 0.038642857142857145,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 47,
+    "return": 15.3772556042829,
+    "cumulative_reward": 15.3772556042829,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.42857142857142855,
+    "question_total": 21,
+    "question_correct": 9,
+    "content_count": 119,
+    "content_rate": 0.85,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.044253592395992344,
+    "final_mastery": 0.4752682149410248,
+    "mean_frustration": 0.16278571428571434,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 48,
+    "return": 27.480996445071895,
+    "cumulative_reward": 27.480996445071895,
+    "time_to_mastery": 140,
+    "total_steps": 140,
+    "question_accuracy": 0.7272727272727273,
+    "question_total": 33,
+    "question_correct": 24,
+    "content_count": 107,
+    "content_rate": 0.7642857142857142,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.049799934350699473,
+    "final_mastery": 0.46436113119125366,
+    "mean_frustration": 0.1367857142857143,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 49,
+    "return": 16.863642500539257,
+    "cumulative_reward": 16.863642500539257,
+    "time_to_mastery": 120,
+    "total_steps": 120,
+    "question_accuracy": 0.4594594594594595,
+    "question_total": 37,
+    "question_correct": 17,
+    "content_count": 83,
+    "content_rate": 0.6916666666666667,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.04986787852679131,
+    "final_mastery": 0.40073493123054504,
+    "mean_frustration": 0.2859166666666667,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  },
+  {
+    "episode": 50,
+    "return": 2.1922568236119773,
+    "cumulative_reward": 2.1922568236119773,
+    "time_to_mastery": 33,
+    "total_steps": 33,
+    "question_accuracy": 0.4166666666666667,
+    "question_total": 12,
+    "question_correct": 5,
+    "content_count": 21,
+    "content_rate": 0.6363636363636364,
+    "blueprint_adherence": 100.0,
+    "post_content_gain": 0.047241878656900355,
+    "final_mastery": 0.3088747262954712,
+    "mean_frustration": 0.3793939393939394,
+    "modality_gains": {
+      "video": 0.0,
+      "PPT": 0.0,
+      "text": 0.0,
+      "blog": 0.0,
+      "article": 0.0,
+      "handout": 0.0
+    }
+  }
+]
+✅ Exported: results/mbpo/summary.json
+✓ Episodes CSV exported to results/mbpo/episodes.csv
+
+=== Verifying results ===
+total 186
+drwxrwxr-x. 3 jabezc jabezc 25600 Jan 11 16:32 .
+drwxrwxr-x. 6 jabezc jabezc 25600 Jan 11 11:57 ..
+-rw-rw-r--. 1 jabezc jabezc  8998 Jan 13 06:10 episodes.csv
+drwxrwxr-x. 3 jabezc jabezc 25600 Jan 11 16:32 figures
+-rw-rw-r--. 1 jabezc jabezc   219 Jan 13 06:10 summary.json
+51 results/mbpo/episodes.csv
+MBPO production complete!
