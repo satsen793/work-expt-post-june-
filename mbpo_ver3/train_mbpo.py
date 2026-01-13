@@ -557,8 +557,13 @@ class MBPOAgent:
                     ep_content_gains.append(mastery_gain)
                     # Modality breakdown
                     modality_idx = info.get("modality")
-                    if modality_idx is not None and 0 <= modality_idx < len(modality_names):
-                        ep_modality_gains[modality_names[modality_idx]].append(mastery_gain)
+                    if modality_idx is not None:
+                        try:
+                            modality_idx_int = int(modality_idx)
+                            if 0 <= modality_idx_int < len(modality_names):
+                                ep_modality_gains[modality_names[modality_idx_int]].append(mastery_gain)
+                        except (ValueError, TypeError):
+                            pass
                 elif action_type == "question":
                     ep_question_total += 1
                     if info.get("correct", False):
