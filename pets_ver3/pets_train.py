@@ -145,6 +145,18 @@ class AdaptiveLearningEnv:
             "step": self.step_count,
             "mean_mastery": float(np.mean(self.learner_state["mastery"]))
         }
+        # Expose action metadata and result fields at top-level for compatibility
+        # with other training scripts (MBPO expects top-level keys like `type`,
+        # `lo`, `modality`, `difficulty_idx`, `mastery_gain`, `correct`, etc.).
+        try:
+            info.update(action_dict)
+        except Exception:
+            pass
+        try:
+            # result may contain fields like mastery_gain, correct, frustration, etc.
+            info.update(result)
+        except Exception:
+            pass
         # Add episode-level metrics for MBPO compatibility
         episode_metrics = self.get_episode_metrics()
         for k, v in episode_metrics.items():
