@@ -560,10 +560,13 @@ class MBPOAgent:
                     if modality_idx is not None:
                         try:
                             modality_idx_int = int(modality_idx)
-                            if 0 <= modality_idx_int < len(modality_names):
-                                ep_modality_gains[modality_names[modality_idx_int]].append(mastery_gain)
                         except (ValueError, TypeError):
-                            pass
+                            try:
+                                modality_idx_int = modality_names.index(modality_idx)
+                            except ValueError:
+                                modality_idx_int = None
+                        if modality_idx_int is not None and 0 <= modality_idx_int < len(modality_names):
+                            ep_modality_gains[modality_names[modality_idx_int]].append(mastery_gain)
                 elif action_type == "question":
                     ep_question_total += 1
                     if info.get("correct", False):
