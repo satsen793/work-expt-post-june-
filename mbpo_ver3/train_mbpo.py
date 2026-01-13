@@ -570,7 +570,10 @@ class MBPOAgent:
                         ep_question_correct += 1
                     difficulty = info.get("difficulty")
                     if difficulty is not None:
-                        ep_question_diffs.append(difficulty)
+                        try:
+                            ep_question_diffs.append(int(difficulty))
+                        except (ValueError, TypeError):
+                            pass
                     
                     # NEW: Track calibration (predicted mastery before question vs actual outcome)
                     # Use pre-step mastery from state (before env.step applied mastery update)
