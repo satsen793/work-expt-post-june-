@@ -109,4 +109,611 @@ Seed 0 | Episode 75/295 | recent avg return: 15.51 | dataset size: 8038
    [TRAIN] Episode 76/295 ✅ Ret: 108.24, TTM: None, Steps: 140
    [TRAIN] Episode 77/295 ✅ Ret: 86.30, TTM: None, Steps: 140
    [TRAIN] Episode 78/295 ✅ Ret: 1.65, TTM: None, Steps: 25
-   [TRAIN] Episode 79/295
+   [TRAIN] Episode 79/295 ✅ Ret: 84.75, TTM: None, Steps: 140
+   [TRAIN] Episode 80/295 ✅ Ret: 3.69, TTM: None, Steps: 32
+Seed 0 | Episode 80/295 | recent avg return: 56.93 | dataset size: 8515
+   [TRAIN] Episode 81/295 ✅ Ret: 79.09, TTM: None, Steps: 140
+   [TRAIN] Episode 82/295 ✅ Ret: 83.98, TTM: None, Steps: 140
+   [TRAIN] Episode 83/295 ✅ Ret: 9.32, TTM: None, Steps: 51
+   [TRAIN] Episode 84/295 ✅ Ret: 24.84, TTM: None, Steps: 74
+   [TRAIN] Episode 85/295 ✅ Ret: 13.58, TTM: None, Steps: 54
+Seed 0 | Episode 85/295 | recent avg return: 42.16 | dataset size: 8974
+   [TRAIN] Episode 86/295 ✅ Ret: 68.84, TTM: None, Steps: 140
+   [TRAIN] Episode 87/295 ✅ Ret: 17.84, TTM: None, Steps: 78
+   [TRAIN] Episode 88/295 ✅ Ret: 89.66, TTM: None, Steps: 140
+   [TRAIN] Episode 89/295 ✅ Ret: 103.30, TTM: None, Steps: 140
+   [TRAIN] Episode 90/295 ✅ Ret: 5.85, TTM: None, Steps: 30
+Seed 0 | Episode 90/295 | recent avg return: 57.10 | dataset size: 9502
+   [TRAIN] Episode 91/295 ✅ Ret: 65.94, TTM: None, Steps: 140
+   [TRAIN] Episode 92/295 ✅ Ret: 5.37, TTM: None, Steps: 41
+   [TRAIN] Episode 93/295 ✅ Ret: 8.36, TTM: None, Steps: 43
+   [TRAIN] Episode 94/295 ✅ Ret: 63.71, TTM: None, Steps: 140
+   [TRAIN] Episode 95/295 ✅ Ret: 88.39, TTM: None, Steps: 140
+Seed 0 | Episode 95/295 | recent avg return: 46.35 | dataset size: 10006
+   [TRAIN] Episode 96/295 ✅ Ret: 90.83, TTM: None, Steps: 140
+   [TRAIN] Episode 97/295 ✅ Ret: 85.53, TTM: None, Steps: 140
+   [TRAIN] Episode 98/295 ✅ Ret: 44.16, TTM: None, Steps: 140
+   [TRAIN] Episode 99/295 ✅ Ret: 98.31, TTM: None, Steps: 140
+   [TRAIN] Episode 100/295 ✅ Ret: 71.40, TTM: None, Steps: 140
+Seed 0 | Episode 100/295 | recent avg return: 78.04 | dataset size: 10706
+   [TRAIN] Episode 101/295 ✅ Ret: 73.79, TTM: None, Steps: 140
+   [TRAIN] Episode 102/295 ✅ Ret: 52.90, TTM: None, Steps: 140
+   [TRAIN] Episode 103/295 ✅ Ret: 92.09, TTM: None, Steps: 140
+   [TRAIN] Episode 104/295 ✅ Ret: 19.52, TTM: None, Steps: 82
+   [TRAIN] Episode 105/295 ✅ Ret: 1.22, TTM: None, Steps: 30
+Seed 0 | Episode 105/295 | recent avg return: 47.90 | dataset size: 11238
+   [TRAIN] Episode 106/295 ✅ Ret: 111.04, TTM: None, Steps: 140
+   [TRAIN] Episode 107/295 ✅ Ret: 71.68, TTM: None, Steps: 140
+   [TRAIN] Episode 108/295 ✅ Ret: 32.04, TTM: None, Steps: 140
+   [TRAIN] Episode 109/295 ✅ Ret: 79.33, TTM: None, Steps: 140
+   [TRAIN] Episode 110/295 ✅ Ret: 100.65, TTM: None, Steps: 140
+Seed 0 | Episode 110/295 | recent avg return: 78.95 | dataset size: 11938
+   [TRAIN] Episode 111/295 ✅ Ret: 83.43, TTM: None, Steps: 140
+   [TRAIN] Episode 112/295 ✅ Ret: 20.39, TTM: None, Steps: 91
+   [TRAIN] Episode 113/295 ✅ Ret: 67.73, TTM: None, Steps: 140
+   [TRAIN] Episode 114/295 ✅ Ret: 56.49, TTM: None, Steps: 140
+   [TRAIN] Episode 115/295 ✅ Ret: 82.75, TTM: None, Steps: 140
+Seed 0 | Episode 115/295 | recent avg return: 62.16 | dataset size: 12589
+   [TRAIN] Episode 116/295 ✅ Ret: 90.91, TTM: None, Steps: 140
+   [TRAIN] Episode 117/295 ✅ Ret: -0.62, TTM: None, Steps: 14
+   [TRAIN] Episode 118/295 ✅ Ret: 45.77, TTM: None, Steps: 131
+   [TRAIN] Episode 119/295 ✅ Ret: 71.56, TTM: None, Steps: 140
+   [TRAIN] Episode 120/295 ✅ Ret: 71.48, TTM: None, Steps: 140
+Seed 0 | Episode 120/295 | recent avg return: 55.82 | dataset size: 13154
+   [TRAIN] Episode 121/295 ✅ Ret: 39.55, TTM: None, Steps: 121
+   [TRAIN] Episode 122/295 ✅ Ret: -1.34, TTM: None, Steps: 15
+   [TRAIN] Episode 123/295 ✅ Ret: 35.39, TTM: None, Steps: 125
+   [TRAIN] Episode 124/295 ✅ Ret: 74.26, TTM: None, Steps: 140
+   [TRAIN] Episode 125/295 ✅ Ret: 64.23, TTM: None, Steps: 140
+Seed 0 | Episode 125/295 | recent avg return: 42.42 | dataset size: 13695
+   [TRAIN] Episode 126/295 ✅ Ret: 14.75, TTM: None, Steps: 48
+   [TRAIN] Episode 127/295 ✅ Ret: 21.45, TTM: None, Steps: 102
+   [TRAIN] Episode 128/295 ✅ Ret: 95.11, TTM: None, Steps: 140
+   [TRAIN] Episode 129/295 ✅ Ret: 0.36, TTM: None, Steps: 21
+   [TRAIN] Episode 130/295 ✅ Ret: 68.75, TTM: None, Steps: 140
+Seed 0 | Episode 130/295 | recent avg return: 40.08 | dataset size: 14146
+   [TRAIN] Episode 131/295 ✅ Ret: 103.65, TTM: None, Steps: 140
+   [TRAIN] Episode 132/295 ✅ Ret: 106.91, TTM: None, Steps: 140
+   [TRAIN] Episode 133/295 ✅ Ret: 69.86, TTM: None, Steps: 140
+   [TRAIN] Episode 134/295 ✅ Ret: 93.30, TTM: None, Steps: 140
+   [TRAIN] Episode 135/295 ✅ Ret: 102.95, TTM: None, Steps: 140
+Seed 0 | Episode 135/295 | recent avg return: 95.34 | dataset size: 14846
+   [TRAIN] Episode 136/295 ✅ Ret: -2.00, TTM: None, Steps: 14
+   [TRAIN] Episode 137/295 ✅ Ret: 85.50, TTM: None, Steps: 140
+   [TRAIN] Episode 138/295 ✅ Ret: 34.32, TTM: None, Steps: 140
+   [TRAIN] Episode 139/295 ✅ Ret: 88.63, TTM: None, Steps: 140
+   [TRAIN] Episode 140/295 ✅ Ret: 94.67, TTM: None, Steps: 140
+Seed 0 | Episode 140/295 | recent avg return: 60.23 | dataset size: 15420
+   [TRAIN] Episode 141/295 ✅ Ret: 101.39, TTM: None, Steps: 140
+   [TRAIN] Episode 142/295 ✅ Ret: 70.61, TTM: None, Steps: 140
+   [TRAIN] Episode 143/295 ✅ Ret: 75.73, TTM: None, Steps: 140
+   [TRAIN] Episode 144/295 ✅ Ret: 78.68, TTM: None, Steps: 140
+   [TRAIN] Episode 145/295 ✅ Ret: 10.13, TTM: None, Steps: 48
+Seed 0 | Episode 145/295 | recent avg return: 67.31 | dataset size: 16028
+   [TRAIN] Episode 146/295 ✅ Ret: 90.20, TTM: None, Steps: 140
+   [TRAIN] Episode 147/295 ✅ Ret: 6.59, TTM: None, Steps: 34
+   [TRAIN] Episode 148/295 ✅ Ret: 12.69, TTM: None, Steps: 85
+   [TRAIN] Episode 149/295 ✅ Ret: 30.68, TTM: None, Steps: 98
+   [TRAIN] Episode 150/295 ✅ Ret: 90.79, TTM: None, Steps: 140
+Seed 0 | Episode 150/295 | recent avg return: 46.19 | dataset size: 16525
+   [TRAIN] Episode 151/295 ✅ Ret: 93.91, TTM: None, Steps: 140
+   [TRAIN] Episode 152/295 ✅ Ret: 106.20, TTM: None, Steps: 140
+   [TRAIN] Episode 153/295 ✅ Ret: 87.34, TTM: None, Steps: 140
+   [TRAIN] Episode 154/295 ✅ Ret: 74.95, TTM: None, Steps: 140
+   [TRAIN] Episode 155/295 ✅ Ret: 93.71, TTM: None, Steps: 140
+Seed 0 | Episode 155/295 | recent avg return: 91.22 | dataset size: 17225
+   [TRAIN] Episode 156/295 ✅ Ret: 67.16, TTM: None, Steps: 140
+   [TRAIN] Episode 157/295 ✅ Ret: 89.66, TTM: None, Steps: 140
+   [TRAIN] Episode 158/295 ✅ Ret: 7.73, TTM: None, Steps: 46
+   [TRAIN] Episode 159/295 ✅ Ret: 45.34, TTM: None, Steps: 140
+   [TRAIN] Episode 160/295 ✅ Ret: 82.91, TTM: None, Steps: 140
+Seed 0 | Episode 160/295 | recent avg return: 58.56 | dataset size: 17831
+   [TRAIN] Episode 161/295 ✅ Ret: 51.62, TTM: None, Steps: 140
+   [TRAIN] Episode 162/295 ✅ Ret: 3.93, TTM: None, Steps: 32
+   [TRAIN] Episode 163/295 ✅ Ret: 65.34, TTM: None, Steps: 140
+   [TRAIN] Episode 164/295 ✅ Ret: 79.72, TTM: None, Steps: 140
+   [TRAIN] Episode 165/295 ✅ Ret: 97.26, TTM: None, Steps: 140
+Seed 0 | Episode 165/295 | recent avg return: 59.57 | dataset size: 18423
+   [TRAIN] Episode 166/295 ✅ Ret: 1.61, TTM: None, Steps: 27
+   [TRAIN] Episode 167/295 ✅ Ret: 65.94, TTM: None, Steps: 140
+   [TRAIN] Episode 168/295 ✅ Ret: 11.37, TTM: None, Steps: 49
+   [TRAIN] Episode 169/295 ✅ Ret: 1.77, TTM: None, Steps: 23
+   [TRAIN] Episode 170/295 ✅ Ret: 15.35, TTM: None, Steps: 62
+Seed 0 | Episode 170/295 | recent avg return: 19.21 | dataset size: 18724
+   [TRAIN] Episode 171/295 ✅ Ret: 94.24, TTM: None, Steps: 140
+   [TRAIN] Episode 172/295 ✅ Ret: 82.28, TTM: None, Steps: 140
+   [TRAIN] Episode 173/295 ✅ Ret: 25.32, TTM: None, Steps: 111
+   [TRAIN] Episode 174/295 ✅ Ret: 46.66, TTM: None, Steps: 140
+   [TRAIN] Episode 175/295 ✅ Ret: 76.95, TTM: None, Steps: 140
+Seed 0 | Episode 175/295 | recent avg return: 65.09 | dataset size: 19395
+   [TRAIN] Episode 176/295 ✅ Ret: 66.86, TTM: None, Steps: 140
+   [TRAIN] Episode 177/295 ✅ Ret: 87.94, TTM: None, Steps: 140
+   [TRAIN] Episode 178/295 ✅ Ret: 14.81, TTM: None, Steps: 64
+   [TRAIN] Episode 179/295 ✅ Ret: 95.12, TTM: None, Steps: 140
+   [TRAIN] Episode 180/295 ✅ Ret: 71.07, TTM: None, Steps: 140
+Seed 0 | Episode 180/295 | recent avg return: 67.16 | dataset size: 20019
+   [TRAIN] Episode 181/295 ✅ Ret: 69.79, TTM: None, Steps: 140
+   [TRAIN] Episode 182/295 ✅ Ret: 97.40, TTM: None, Steps: 140
+   [TRAIN] Episode 183/295 ✅ Ret: 18.32, TTM: None, Steps: 92
+   [TRAIN] Episode 184/295 ✅ Ret: 81.49, TTM: None, Steps: 140
+   [TRAIN] Episode 185/295 ✅ Ret: 12.63, TTM: None, Steps: 53
+Seed 0 | Episode 185/295 | recent avg return: 55.93 | dataset size: 20584
+   [TRAIN] Episode 186/295 ✅ Ret: 85.47, TTM: None, Steps: 140
+   [TRAIN] Episode 187/295 ✅ Ret: 89.66, TTM: None, Steps: 140
+   [TRAIN] Episode 188/295 ✅ Ret: 75.09, TTM: None, Steps: 140
+   [TRAIN] Episode 189/295 ✅ Ret: 77.15, TTM: None, Steps: 140
+   [TRAIN] Episode 190/295 ✅ Ret: 28.06, TTM: None, Steps: 140
+Seed 0 | Episode 190/295 | recent avg return: 71.09 | dataset size: 21284
+   [TRAIN] Episode 191/295 ✅ Ret: 8.09, TTM: None, Steps: 37
+   [TRAIN] Episode 192/295 ✅ Ret: 97.12, TTM: None, Steps: 140
+   [TRAIN] Episode 193/295 ✅ Ret: 99.64, TTM: None, Steps: 140
+   [TRAIN] Episode 194/295 ✅ Ret: 93.98, TTM: None, Steps: 140
+   [TRAIN] Episode 195/295 ✅ Ret: 94.89, TTM: None, Steps: 140
+Seed 0 | Episode 195/295 | recent avg return: 78.74 | dataset size: 21881
+   [TRAIN] Episode 196/295 ✅ Ret: 58.74, TTM: None, Steps: 140
+   [TRAIN] Episode 197/295 ✅ Ret: 57.68, TTM: None, Steps: 140
+   [TRAIN] Episode 198/295 ✅ Ret: 56.42, TTM: None, Steps: 140
+   [TRAIN] Episode 199/295 ✅ Ret: 78.72, TTM: None, Steps: 140
+   [TRAIN] Episode 200/295 ✅ Ret: 96.12, TTM: None, Steps: 140
+Seed 0 | Episode 200/295 | recent avg return: 69.53 | dataset size: 22581
+   [TRAIN] Episode 201/295 ✅ Ret: 69.43, TTM: None, Steps: 140
+   [TRAIN] Episode 202/295 ✅ Ret: 51.78, TTM: None, Steps: 140
+   [TRAIN] Episode 203/295 ✅ Ret: 89.95, TTM: None, Steps: 140
+   [TRAIN] Episode 204/295 ✅ Ret: 44.97, TTM: None, Steps: 140
+   [TRAIN] Episode 205/295 ✅ Ret: 87.56, TTM: None, Steps: 140
+Seed 0 | Episode 205/295 | recent avg return: 68.74 | dataset size: 23281
+   [TRAIN] Episode 206/295 ✅ Ret: 5.04, TTM: None, Steps: 53
+   [TRAIN] Episode 207/295 ✅ Ret: 98.54, TTM: None, Steps: 140
+   [TRAIN] Episode 208/295 ✅ Ret: 64.58, TTM: None, Steps: 140
+   [TRAIN] Episode 209/295 ✅ Ret: 2.43, TTM: None, Steps: 38
+   [TRAIN] Episode 210/295 ✅ Ret: 3.13, TTM: None, Steps: 28
+Seed 0 | Episode 210/295 | recent avg return: 34.74 | dataset size: 23680
+   [TRAIN] Episode 211/295 ✅ Ret: 84.91, TTM: None, Steps: 140
+   [TRAIN] Episode 212/295 ✅ Ret: 51.82, TTM: None, Steps: 140
+   [TRAIN] Episode 213/295 ✅ Ret: 71.36, TTM: None, Steps: 140
+   [TRAIN] Episode 214/295 ✅ Ret: 17.71, TTM: None, Steps: 72
+   [TRAIN] Episode 215/295 ✅ Ret: 88.87, TTM: None, Steps: 140
+Seed 0 | Episode 215/295 | recent avg return: 62.93 | dataset size: 24312
+   [TRAIN] Episode 216/295 ✅ Ret: 80.12, TTM: None, Steps: 140
+   [TRAIN] Episode 217/295 ✅ Ret: 106.80, TTM: None, Steps: 140
+   [TRAIN] Episode 218/295 ✅ Ret: 79.02, TTM: None, Steps: 140
+   [TRAIN] Episode 219/295 ✅ Ret: 5.29, TTM: None, Steps: 49
+   [TRAIN] Episode 220/295 ✅ Ret: 90.68, TTM: None, Steps: 140
+Seed 0 | Episode 220/295 | recent avg return: 72.38 | dataset size: 24921
+   [TRAIN] Episode 221/295 ✅ Ret: 88.09, TTM: None, Steps: 140
+   [TRAIN] Episode 222/295 ✅ Ret: 46.80, TTM: None, Steps: 140
+   [TRAIN] Episode 223/295 ✅ Ret: 66.26, TTM: None, Steps: 140
+   [TRAIN] Episode 224/295 ✅ Ret: 93.09, TTM: None, Steps: 140
+   [TRAIN] Episode 225/295 ✅ Ret: 46.04, TTM: None, Steps: 140
+Seed 0 | Episode 225/295 | recent avg return: 68.06 | dataset size: 25621
+   [TRAIN] Episode 226/295 ✅ Ret: 108.42, TTM: None, Steps: 140
+   [TRAIN] Episode 227/295 ✅ Ret: 106.94, TTM: None, Steps: 140
+   [TRAIN] Episode 228/295 ✅ Ret: 80.30, TTM: None, Steps: 140
+   [TRAIN] Episode 229/295 ✅ Ret: 97.57, TTM: None, Steps: 140
+   [TRAIN] Episode 230/295 ✅ Ret: 0.19, TTM: None, Steps: 24
+Seed 0 | Episode 230/295 | recent avg return: 78.69 | dataset size: 26205
+   [TRAIN] Episode 231/295 ✅ Ret: 92.86, TTM: None, Steps: 140
+   [TRAIN] Episode 232/295 ✅ Ret: 7.98, TTM: None, Steps: 45
+   [TRAIN] Episode 233/295 ✅ Ret: 77.75, TTM: None, Steps: 140
+   [TRAIN] Episode 234/295 ✅ Ret: 59.49, TTM: None, Steps: 140
+   [TRAIN] Episode 235/295 ✅ Ret: 5.16, TTM: None, Steps: 37
+Seed 0 | Episode 235/295 | recent avg return: 48.65 | dataset size: 26707
+   [TRAIN] Episode 236/295 ✅ Ret: 97.71, TTM: None, Steps: 140
+   [TRAIN] Episode 237/295 ✅ Ret: 17.82, TTM: None, Steps: 90
+   [TRAIN] Episode 238/295 ✅ Ret: 4.18, TTM: None, Steps: 29
+   [TRAIN] Episode 239/295 ✅ Ret: 97.80, TTM: None, Steps: 140
+   [TRAIN] Episode 240/295 ✅ Ret: 93.33, TTM: None, Steps: 140
+Seed 0 | Episode 240/295 | recent avg return: 62.17 | dataset size: 27246
+   [TRAIN] Episode 241/295 ✅ Ret: 71.60, TTM: None, Steps: 140
+   [TRAIN] Episode 242/295 ✅ Ret: 90.66, TTM: None, Steps: 140
+   [TRAIN] Episode 243/295 ✅ Ret: 47.41, TTM: None, Steps: 140
+   [TRAIN] Episode 244/295 ✅ Ret: 80.29, TTM: None, Steps: 140
+   [TRAIN] Episode 245/295 ✅ Ret: 17.79, TTM: None, Steps: 64
+Seed 0 | Episode 245/295 | recent avg return: 61.55 | dataset size: 27870
+   [TRAIN] Episode 246/295 ✅ Ret: 31.97, TTM: None, Steps: 112
+   [TRAIN] Episode 247/295 ✅ Ret: 65.27, TTM: None, Steps: 140
+   [TRAIN] Episode 248/295 ✅ Ret: 5.25, TTM: None, Steps: 39
+   [TRAIN] Episode 249/295 ✅ Ret: 57.92, TTM: None, Steps: 140
+   [TRAIN] Episode 250/295 ✅ Ret: 98.57, TTM: None, Steps: 140
+Seed 0 | Episode 250/295 | recent avg return: 51.80 | dataset size: 28441
+   [TRAIN] Episode 251/295 ✅ Ret: 5.67, TTM: None, Steps: 37
+   [TRAIN] Episode 252/295 ✅ Ret: 86.87, TTM: None, Steps: 140
+   [TRAIN] Episode 253/295 ✅ Ret: 61.83, TTM: None, Steps: 140
+   [TRAIN] Episode 254/295 ✅ Ret: 97.16, TTM: None, Steps: 140
+   [TRAIN] Episode 255/295 ✅ Ret: 87.53, TTM: None, Steps: 140
+Seed 0 | Episode 255/295 | recent avg return: 67.81 | dataset size: 29038
+   [TRAIN] Episode 256/295 ✅ Ret: 10.47, TTM: None, Steps: 59
+   [TRAIN] Episode 257/295 ✅ Ret: 93.90, TTM: None, Steps: 140
+   [TRAIN] Episode 258/295 ✅ Ret: 49.82, TTM: None, Steps: 140
+   [TRAIN] Episode 259/295 ✅ Ret: 17.07, TTM: None, Steps: 77
+   [TRAIN] Episode 260/295 ✅ Ret: 80.27, TTM: None, Steps: 140
+Seed 0 | Episode 260/295 | recent avg return: 50.31 | dataset size: 29594
+   [TRAIN] Episode 261/295 ✅ Ret: 52.91, TTM: None, Steps: 140
+   [TRAIN] Episode 262/295 ✅ Ret: 77.47, TTM: None, Steps: 140
+   [TRAIN] Episode 263/295 ✅ Ret: 11.32, TTM: None, Steps: 39
+   [TRAIN] Episode 264/295 ✅ Ret: 89.56, TTM: None, Steps: 140
+   [TRAIN] Episode 265/295 ✅ Ret: 76.49, TTM: None, Steps: 140
+Seed 0 | Episode 265/295 | recent avg return: 61.55 | dataset size: 30193
+   [TRAIN] Episode 266/295 ✅ Ret: 67.75, TTM: None, Steps: 140
+   [TRAIN] Episode 267/295 ✅ Ret: 68.84, TTM: None, Steps: 140
+   [TRAIN] Episode 268/295 ✅ Ret: -0.60, TTM: None, Steps: 33
+   [TRAIN] Episode 269/295 ✅ Ret: 2.21, TTM: None, Steps: 23
+   [TRAIN] Episode 270/295 ✅ Ret: 96.88, TTM: None, Steps: 140
+Seed 0 | Episode 270/295 | recent avg return: 47.02 | dataset size: 30669
+   [TRAIN] Episode 271/295 ✅ Ret: 58.36, TTM: None, Steps: 140
+   [TRAIN] Episode 272/295 ✅ Ret: 26.73, TTM: None, Steps: 107
+   [TRAIN] Episode 273/295 ✅ Ret: 11.36, TTM: None, Steps: 64
+   [TRAIN] Episode 274/295 ✅ Ret: 86.87, TTM: None, Steps: 140
+   [TRAIN] Episode 275/295 ✅ Ret: 83.67, TTM: None, Steps: 140
+Seed 0 | Episode 275/295 | recent avg return: 53.40 | dataset size: 31260
+   [TRAIN] Episode 276/295 ✅ Ret: 104.07, TTM: None, Steps: 140
+   [TRAIN] Episode 277/295 ✅ Ret: 70.11, TTM: None, Steps: 140
+   [TRAIN] Episode 278/295 ✅ Ret: 15.60, TTM: None, Steps: 77
+   [TRAIN] Episode 279/295 ✅ Ret: 86.01, TTM: None, Steps: 140
+   [TRAIN] Episode 280/295 ✅ Ret: 12.87, TTM: None, Steps: 77
+Seed 0 | Episode 280/295 | recent avg return: 57.73 | dataset size: 31834
+   [TRAIN] Episode 281/295 ✅ Ret: 84.79, TTM: None, Steps: 140
+   [TRAIN] Episode 282/295 ✅ Ret: 63.40, TTM: None, Steps: 140
+   [TRAIN] Episode 283/295 ✅ Ret: 89.77, TTM: None, Steps: 140
+   [TRAIN] Episode 284/295 ✅ Ret: 37.52, TTM: None, Steps: 140
+   [TRAIN] Episode 285/295 ✅ Ret: 65.90, TTM: None, Steps: 140
+Seed 0 | Episode 285/295 | recent avg return: 68.28 | dataset size: 32534
+   [TRAIN] Episode 286/295 ✅ Ret: 3.14, TTM: None, Steps: 23
+   [TRAIN] Episode 287/295 ✅ Ret: 94.55, TTM: None, Steps: 140
+   [TRAIN] Episode 288/295 ✅ Ret: 59.42, TTM: None, Steps: 140
+   [TRAIN] Episode 289/295 ✅ Ret: 66.04, TTM: None, Steps: 140
+   [TRAIN] Episode 290/295 ✅ Ret: 7.82, TTM: None, Steps: 43
+Seed 0 | Episode 290/295 | recent avg return: 46.19 | dataset size: 33020
+   [TRAIN] Episode 291/295 ✅ Ret: 81.95, TTM: None, Steps: 140
+   [TRAIN] Episode 292/295 ✅ Ret: 19.65, TTM: None, Steps: 83
+   [TRAIN] Episode 293/295 ✅ Ret: 94.34, TTM: None, Steps: 140
+   [TRAIN] Episode 294/295 ✅ Ret: 90.06, TTM: None, Steps: 140
+   [TRAIN] Episode 295/295 ✅ Ret: 7.72, TTM: None, Steps: 38
+Seed 0 | Episode 295/295 | recent avg return: 58.74 | dataset size: 33561
+Seed 0 complete. Final recent-5 avg return: 58.74 | AUC@10k: 4709.6
+
+======================================================================
+📍 SEED 1 STARTING
+======================================================================
+✅ Random seeds set
+🏗️  Creating environment...
+✅ Environment created
+🏁 Initial exploration: 5 episodes
+   [EXPLORE] Episode 1/5 ✅ Ret: 8.82, TTM: None
+   [EXPLORE] Episode 2/5 ✅ Ret: 41.83, TTM: None
+   [EXPLORE] Episode 3/5 ✅ Ret: 33.54, TTM: None
+   [EXPLORE] Episode 4/5 ✅ Ret: 26.87, TTM: None
+   [EXPLORE] Episode 5/5 ✅ Ret: 5.22, TTM: None
+🎓 Training: 290 episodes
+   [TRAIN] Episode 6/295 ✅ Ret: 9.13, TTM: None, Steps: 63
+   [TRAIN] Episode 7/295 ✅ Ret: 10.59, TTM: None, Steps: 58
+   [TRAIN] Episode 8/295 ✅ Ret: 8.82, TTM: None, Steps: 51
+   [TRAIN] Episode 9/295 ✅ Ret: 75.93, TTM: None, Steps: 140
+   [TRAIN] Episode 10/295 ✅ Ret: 43.42, TTM: None, Steps: 140
+Seed 1 | Episode 10/295 | recent avg return: 29.58 | dataset size: 1037
+   [TRAIN] Episode 11/295 ✅ Ret: 69.04, TTM: None, Steps: 140
+   [TRAIN] Episode 12/295 ✅ Ret: 27.40, TTM: None, Steps: 126
+   [TRAIN] Episode 13/295 ✅ Ret: 79.66, TTM: None, Steps: 140
+   [TRAIN] Episode 14/295 ✅ Ret: 71.38, TTM: None, Steps: 140
+   [TRAIN] Episode 15/295 ✅ Ret: 12.53, TTM: None, Steps: 62
+Seed 1 | Episode 15/295 | recent avg return: 52.00 | dataset size: 1645
+   [TRAIN] Episode 16/295 ✅ Ret: 77.13, TTM: None, Steps: 140
+   [TRAIN] Episode 17/295 ✅ Ret: 7.53, TTM: None, Steps: 48
+   [TRAIN] Episode 18/295 ✅ Ret: 66.35, TTM: None, Steps: 140
+   [TRAIN] Episode 19/295 ✅ Ret: 41.30, TTM: None, Steps: 140
+   [TRAIN] Episode 20/295 ✅ Ret: 92.29, TTM: None, Steps: 140
+Seed 1 | Episode 20/295 | recent avg return: 56.92 | dataset size: 2253
+   [TRAIN] Episode 21/295 ✅ Ret: 78.05, TTM: None, Steps: 140
+   [TRAIN] Episode 22/295 ✅ Ret: 8.42, TTM: None, Steps: 40
+   [TRAIN] Episode 23/295 ✅ Ret: 3.56, TTM: None, Steps: 34
+   [TRAIN] Episode 24/295 ✅ Ret: 16.28, TTM: None, Steps: 73
+   [TRAIN] Episode 25/295 ✅ Ret: 91.85, TTM: None, Steps: 140
+Seed 1 | Episode 25/295 | recent avg return: 39.63 | dataset size: 2680
+   [TRAIN] Episode 26/295 ✅ Ret: 90.17, TTM: None, Steps: 140
+   [TRAIN] Episode 27/295 ✅ Ret: 2.15, TTM: None, Steps: 30
+   [TRAIN] Episode 28/295 ✅ Ret: 64.55, TTM: None, Steps: 140
+   [TRAIN] Episode 29/295 ✅ Ret: 19.14, TTM: None, Steps: 75
+   [TRAIN] Episode 30/295 ✅ Ret: 4.19, TTM: None, Steps: 41
+Seed 1 | Episode 30/295 | recent avg return: 36.04 | dataset size: 3106
+   [TRAIN] Episode 31/295 ✅ Ret: 63.64, TTM: None, Steps: 140
+   [TRAIN] Episode 32/295 ✅ Ret: 7.69, TTM: None, Steps: 54
+   [TRAIN] Episode 33/295 ✅ Ret: 88.62, TTM: None, Steps: 140
+   [TRAIN] Episode 34/295 ✅ Ret: 3.82, TTM: None, Steps: 32
+   [TRAIN] Episode 35/295 ✅ Ret: 4.86, TTM: None, Steps: 33
+Seed 1 | Episode 35/295 | recent avg return: 33.73 | dataset size: 3505
+   [TRAIN] Episode 36/295 ✅ Ret: 60.83, TTM: None, Steps: 140
+   [TRAIN] Episode 37/295 ✅ Ret: 57.13, TTM: None, Steps: 140
+   [TRAIN] Episode 38/295 ✅ Ret: 4.56, TTM: None, Steps: 24
+   [TRAIN] Episode 39/295 ✅ Ret: 74.18, TTM: None, Steps: 140
+   [TRAIN] Episode 40/295 ✅ Ret: 7.37, TTM: None, Steps: 55
+Seed 1 | Episode 40/295 | recent avg return: 40.81 | dataset size: 4004
+   [TRAIN] Episode 41/295 ✅ Ret: 0.17, TTM: None, Steps: 20
+   [TRAIN] Episode 42/295 ✅ Ret: 87.75, TTM: None, Steps: 140
+   [TRAIN] Episode 43/295 ✅ Ret: 72.80, TTM: None, Steps: 140
+   [TRAIN] Episode 44/295 ✅ Ret: 10.12, TTM: None, Steps: 60
+   [TRAIN] Episode 45/295 ✅ Ret: 55.77, TTM: None, Steps: 140
+Seed 1 | Episode 45/295 | recent avg return: 45.32 | dataset size: 4504
+   [TRAIN] Episode 46/295 ✅ Ret: 31.70, TTM: None, Steps: 81
+   [TRAIN] Episode 47/295 ✅ Ret: 38.01, TTM: None, Steps: 129
+   [TRAIN] Episode 48/295 ✅ Ret: 89.19, TTM: None, Steps: 140
+   [TRAIN] Episode 49/295 ✅ Ret: 68.87, TTM: None, Steps: 140
+   [TRAIN] Episode 50/295 ✅ Ret: 4.66, TTM: None, Steps: 40
+Seed 1 | Episode 50/295 | recent avg return: 46.49 | dataset size: 5034
+   [TRAIN] Episode 51/295 ✅ Ret: 80.79, TTM: None, Steps: 140
+   [TRAIN] Episode 52/295 ✅ Ret: 19.08, TTM: None, Steps: 79
+   [TRAIN] Episode 53/295 ✅ Ret: 73.35, TTM: None, Steps: 140
+   [TRAIN] Episode 54/295 ✅ Ret: 12.51, TTM: None, Steps: 62
+   [TRAIN] Episode 55/295 ✅ Ret: 99.26, TTM: None, Steps: 140
+Seed 1 | Episode 55/295 | recent avg return: 57.00 | dataset size: 5595
+   [TRAIN] Episode 56/295 ✅ Ret: 68.09, TTM: None, Steps: 140
+   [TRAIN] Episode 57/295 ✅ Ret: 4.65, TTM: None, Steps: 36
+   [TRAIN] Episode 58/295 ✅ Ret: 88.95, TTM: None, Steps: 140
+   [TRAIN] Episode 59/295 ✅ Ret: 93.34, TTM: None, Steps: 140
+   [TRAIN] Episode 60/295 ✅ Ret: 87.11, TTM: None, Steps: 140
+Seed 1 | Episode 60/295 | recent avg return: 68.43 | dataset size: 6191
+   [TRAIN] Episode 61/295 ✅ Ret: 37.64, TTM: None, Steps: 140
+   [TRAIN] Episode 62/295 ✅ Ret: 86.38, TTM: None, Steps: 140
+   [TRAIN] Episode 63/295 ✅ Ret: 66.11, TTM: None, Steps: 140
+   [TRAIN] Episode 64/295 ✅ Ret: 81.59, TTM: None, Steps: 140
+   [TRAIN] Episode 65/295 ✅ Ret: 84.02, TTM: None, Steps: 140
+Seed 1 | Episode 65/295 | recent avg return: 71.15 | dataset size: 6891
+   [TRAIN] Episode 66/295 ✅ Ret: 19.74, TTM: None, Steps: 72
+   [TRAIN] Episode 67/295 ✅ Ret: 84.00, TTM: None, Steps: 140
+   [TRAIN] Episode 68/295 ✅ Ret: 11.82, TTM: None, Steps: 49
+   [TRAIN] Episode 69/295 ✅ Ret: 16.19, TTM: None, Steps: 66
+   [TRAIN] Episode 70/295 ✅ Ret: 8.70, TTM: None, Steps: 36
+Seed 1 | Episode 70/295 | recent avg return: 28.09 | dataset size: 7254
+   [TRAIN] Episode 71/295 ✅ Ret: -2.21, TTM: None, Steps: 18
+   [TRAIN] Episode 72/295 ✅ Ret: 54.73, TTM: None, Steps: 140
+   [TRAIN] Episode 73/295 ✅ Ret: 73.25, TTM: None, Steps: 140
+   [TRAIN] Episode 74/295 ✅ Ret: 71.95, TTM: None, Steps: 140
+   [TRAIN] Episode 75/295 ✅ Ret: 84.49, TTM: None, Steps: 140
+Seed 1 | Episode 75/295 | recent avg return: 56.44 | dataset size: 7832
+   [TRAIN] Episode 76/295 ✅ Ret: 50.32, TTM: None, Steps: 140
+   [TRAIN] Episode 77/295 ✅ Ret: 65.60, TTM: None, Steps: 140
+   [TRAIN] Episode 78/295 ✅ Ret: 44.78, TTM: None, Steps: 140
+   [TRAIN] Episode 79/295 ✅ Ret: 82.23, TTM: None, Steps: 140
+   [TRAIN] Episode 80/295 ✅ Ret: 56.91, TTM: None, Steps: 140
+Seed 1 | Episode 80/295 | recent avg return: 59.97 | dataset size: 8532
+   [TRAIN] Episode 81/295 ✅ Ret: 4.72, TTM: None, Steps: 30
+   [TRAIN] Episode 82/295 ✅ Ret: 72.30, TTM: None, Steps: 140
+   [TRAIN] Episode 83/295 ✅ Ret: 13.07, TTM: None, Steps: 47
+   [TRAIN] Episode 84/295 ✅ Ret: 100.07, TTM: None, Steps: 140
+   [TRAIN] Episode 85/295 ✅ Ret: 64.13, TTM: None, Steps: 140
+Seed 1 | Episode 85/295 | recent avg return: 50.86 | dataset size: 9029
+   [TRAIN] Episode 86/295 ✅ Ret: 91.26, TTM: None, Steps: 140
+   [TRAIN] Episode 87/295 ✅ Ret: 90.93, TTM: None, Steps: 140
+   [TRAIN] Episode 88/295 ✅ Ret: 88.15, TTM: None, Steps: 140
+   [TRAIN] Episode 89/295 ✅ Ret: -0.32, TTM: None, Steps: 25
+   [TRAIN] Episode 90/295 ✅ Ret: 25.00, TTM: None, Steps: 100
+Seed 1 | Episode 90/295 | recent avg return: 59.00 | dataset size: 9574
+   [TRAIN] Episode 91/295 ✅ Ret: 83.98, TTM: None, Steps: 140
+   [TRAIN] Episode 92/295 ✅ Ret: 7.01, TTM: None, Steps: 51
+   [TRAIN] Episode 93/295 ✅ Ret: 3.53, TTM: None, Steps: 34
+   [TRAIN] Episode 94/295 ✅ Ret: 1.94, TTM: None, Steps: 45
+   [TRAIN] Episode 95/295 ✅ Ret: 89.17, TTM: None, Steps: 140
+Seed 1 | Episode 95/295 | recent avg return: 37.13 | dataset size: 9984
+   [TRAIN] Episode 96/295 ✅ Ret: 12.57, TTM: None, Steps: 47
+   [TRAIN] Episode 97/295 ✅ Ret: 76.37, TTM: None, Steps: 140
+   [TRAIN] Episode 98/295 ✅ Ret: 15.02, TTM: None, Steps: 73
+   [TRAIN] Episode 99/295 ✅ Ret: 83.84, TTM: None, Steps: 140
+   [TRAIN] Episode 100/295 ✅ Ret: 74.78, TTM: None, Steps: 140
+Seed 1 | Episode 100/295 | recent avg return: 52.52 | dataset size: 10524
+   [TRAIN] Episode 101/295 ✅ Ret: 1.63, TTM: None, Steps: 28
+   [TRAIN] Episode 102/295 ✅ Ret: 63.96, TTM: None, Steps: 140
+   [TRAIN] Episode 103/295 ✅ Ret: 60.05, TTM: None, Steps: 140
+   [TRAIN] Episode 104/295 ✅ Ret: 67.24, TTM: None, Steps: 140
+   [TRAIN] Episode 105/295 ✅ Ret: 60.60, TTM: None, Steps: 140
+Seed 1 | Episode 105/295 | recent avg return: 50.70 | dataset size: 11112
+   [TRAIN] Episode 106/295 ✅ Ret: 97.05, TTM: None, Steps: 140
+   [TRAIN] Episode 107/295 ✅ Ret: 83.41, TTM: None, Steps: 140
+   [TRAIN] Episode 108/295 ✅ Ret: 79.04, TTM: None, Steps: 140
+   [TRAIN] Episode 109/295 ✅ Ret: 3.91, TTM: None, Steps: 45
+   [TRAIN] Episode 110/295 ✅ Ret: 6.31, TTM: None, Steps: 44
+Seed 1 | Episode 110/295 | recent avg return: 53.94 | dataset size: 11621
+   [TRAIN] Episode 111/295 ✅ Ret: 81.45, TTM: None, Steps: 140
+   [TRAIN] Episode 112/295 ✅ Ret: 75.27, TTM: None, Steps: 140
+   [TRAIN] Episode 113/295 ✅ Ret: 83.27, TTM: None, Steps: 140
+   [TRAIN] Episode 114/295 ✅ Ret: 68.32, TTM: None, Steps: 140
+   [TRAIN] Episode 115/295 ✅ Ret: 15.43, TTM: None, Steps: 58
+Seed 1 | Episode 115/295 | recent avg return: 64.75 | dataset size: 12239
+   [TRAIN] Episode 116/295 ✅ Ret: 87.45, TTM: None, Steps: 140
+   [TRAIN] Episode 117/295 ✅ Ret: 85.80, TTM: None, Steps: 140
+   [TRAIN] Episode 118/295 ✅ Ret: 5.72, TTM: None, Steps: 40
+   [TRAIN] Episode 119/295 ✅ Ret: 6.47, TTM: None, Steps: 41
+   [TRAIN] Episode 120/295 ✅ Ret: 0.71, TTM: None, Steps: 29
+Seed 1 | Episode 120/295 | recent avg return: 37.23 | dataset size: 12629
+   [TRAIN] Episode 121/295 ✅ Ret: 50.62, TTM: None, Steps: 140
+   [TRAIN] Episode 122/295 ✅ Ret: 1.99, TTM: None, Steps: 35
+   [TRAIN] Episode 123/295 ✅ Ret: 5.96, TTM: None, Steps: 38
+   [TRAIN] Episode 124/295 ✅ Ret: 75.36, TTM: None, Steps: 140
+   [TRAIN] Episode 125/295 ✅ Ret: 1.61, TTM: None, Steps: 30
+Seed 1 | Episode 125/295 | recent avg return: 27.11 | dataset size: 13012
+   [TRAIN] Episode 126/295 ✅ Ret: 16.32, TTM: None, Steps: 66
+   [TRAIN] Episode 127/295 ✅ Ret: 90.61, TTM: None, Steps: 140
+   [TRAIN] Episode 128/295 ✅ Ret: 71.42, TTM: None, Steps: 140
+   [TRAIN] Episode 129/295 ✅ Ret: 89.72, TTM: None, Steps: 140
+   [TRAIN] Episode 130/295 ✅ Ret: 90.58, TTM: None, Steps: 140
+Seed 1 | Episode 130/295 | recent avg return: 71.73 | dataset size: 13638
+   [TRAIN] Episode 131/295 ✅ Ret: 79.92, TTM: None, Steps: 140
+   [TRAIN] Episode 132/295 ✅ Ret: 59.49, TTM: None, Steps: 140
+   [TRAIN] Episode 133/295 ✅ Ret: 12.64, TTM: None, Steps: 58
+   [TRAIN] Episode 134/295 ✅ Ret: 97.54, TTM: None, Steps: 140
+   [TRAIN] Episode 135/295 ✅ Ret: 83.18, TTM: None, Steps: 140
+Seed 1 | Episode 135/295 | recent avg return: 66.55 | dataset size: 14256
+   [TRAIN] Episode 136/295 ✅ Ret: 3.31, TTM: None, Steps: 55
+   [TRAIN] Episode 137/295 ✅ Ret: 1.79, TTM: None, Steps: 30
+   [TRAIN] Episode 138/295 ✅ Ret: 27.70, TTM: None, Steps: 140
+   [TRAIN] Episode 139/295 ✅ Ret: 24.18, TTM: None, Steps: 76
+   [TRAIN] Episode 140/295 ✅ Ret: 46.86, TTM: None, Steps: 140
+Seed 1 | Episode 140/295 | recent avg return: 20.77 | dataset size: 14697
+   [TRAIN] Episode 141/295 ✅ Ret: 33.90, TTM: None, Steps: 140
+   [TRAIN] Episode 142/295 ✅ Ret: 18.06, TTM: None, Steps: 72
+   [TRAIN] Episode 143/295 ✅ Ret: 90.12, TTM: None, Steps: 140
+   [TRAIN] Episode 144/295 ✅ Ret: 87.13, TTM: None, Steps: 140
+   [TRAIN] Episode 145/295 ✅ Ret: 3.71, TTM: None, Steps: 43
+Seed 1 | Episode 145/295 | recent avg return: 46.58 | dataset size: 15232
+   [TRAIN] Episode 146/295 ✅ Ret: 24.50, TTM: None, Steps: 85
+   [TRAIN] Episode 147/295 ✅ Ret: 80.97, TTM: None, Steps: 140
+   [TRAIN] Episode 148/295 ✅ Ret: 42.57, TTM: None, Steps: 140
+   [TRAIN] Episode 149/295 ✅ Ret: 56.93, TTM: None, Steps: 140
+   [TRAIN] Episode 150/295 ✅ Ret: 3.64, TTM: None, Steps: 31
+Seed 1 | Episode 150/295 | recent avg return: 41.72 | dataset size: 15768
+   [TRAIN] Episode 151/295 ✅ Ret: 82.30, TTM: None, Steps: 140
+   [TRAIN] Episode 152/295 ✅ Ret: 52.88, TTM: None, Steps: 140
+   [TRAIN] Episode 153/295 ✅ Ret: 107.43, TTM: None, Steps: 140
+   [TRAIN] Episode 154/295 ✅ Ret: 87.63, TTM: None, Steps: 140
+   [TRAIN] Episode 155/295 ✅ Ret: 89.59, TTM: None, Steps: 140
+Seed 1 | Episode 155/295 | recent avg return: 83.97 | dataset size: 16468
+   [TRAIN] Episode 156/295 ✅ Ret: 75.30, TTM: None, Steps: 140
+   [TRAIN] Episode 157/295 ✅ Ret: 81.87, TTM: None, Steps: 140
+   [TRAIN] Episode 158/295 ✅ Ret: 24.85, TTM: None, Steps: 91
+   [TRAIN] Episode 159/295 ✅ Ret: 92.24, TTM: None, Steps: 140
+   [TRAIN] Episode 160/295 ✅ Ret: 3.97, TTM: None, Steps: 38
+Seed 1 | Episode 160/295 | recent avg return: 55.64 | dataset size: 17017
+   [TRAIN] Episode 161/295 ✅ Ret: 82.15, TTM: None, Steps: 140
+   [TRAIN] Episode 162/295 ✅ Ret: 9.91, TTM: None, Steps: 49
+   [TRAIN] Episode 163/295 ✅ Ret: 67.55, TTM: None, Steps: 140
+   [TRAIN] Episode 164/295 ✅ Ret: 84.73, TTM: None, Steps: 140
+   [TRAIN] Episode 165/295 ✅ Ret: 27.13, TTM: None, Steps: 88
+Seed 1 | Episode 165/295 | recent avg return: 54.29 | dataset size: 17574
+   [TRAIN] Episode 166/295 ✅ Ret: 101.02, TTM: None, Steps: 140
+   [TRAIN] Episode 167/295 ✅ Ret: 99.40, TTM: None, Steps: 140
+   [TRAIN] Episode 168/295 ✅ Ret: 3.26, TTM: None, Steps: 29
+   [TRAIN] Episode 169/295 ✅ Ret: 103.69, TTM: None, Steps: 140
+   [TRAIN] Episode 170/295 ✅ Ret: 63.07, TTM: None, Steps: 140
+Seed 1 | Episode 170/295 | recent avg return: 74.09 | dataset size: 18163
+   [TRAIN] Episode 171/295 ✅ Ret: 39.64, TTM: None, Steps: 140
+   [TRAIN] Episode 172/295 ✅ Ret: 0.00, TTM: None, Steps: 25
+   [TRAIN] Episode 173/295 ✅ Ret: 3.76, TTM: None, Steps: 30
+   [TRAIN] Episode 174/295 ✅ Ret: 62.33, TTM: None, Steps: 140
+   [TRAIN] Episode 175/295 ✅ Ret: 75.67, TTM: None, Steps: 140
+Seed 1 | Episode 175/295 | recent avg return: 36.28 | dataset size: 18638
+   [TRAIN] Episode 176/295 ✅ Ret: 1.00, TTM: None, Steps: 27
+   [TRAIN] Episode 177/295 ✅ Ret: 59.77, TTM: None, Steps: 140
+   [TRAIN] Episode 178/295 ✅ Ret: 10.31, TTM: None, Steps: 72
+   [TRAIN] Episode 179/295 ✅ Ret: 53.85, TTM: None, Steps: 140
+   [TRAIN] Episode 180/295 ✅ Ret: 1.13, TTM: None, Steps: 32
+Seed 1 | Episode 180/295 | recent avg return: 25.21 | dataset size: 19049
+   [TRAIN] Episode 181/295 ✅ Ret: 3.22, TTM: None, Steps: 35
+   [TRAIN] Episode 182/295 ✅ Ret: 5.81, TTM: None, Steps: 34
+   [TRAIN] Episode 183/295 ✅ Ret: 56.41, TTM: None, Steps: 140
+   [TRAIN] Episode 184/295 ✅ Ret: 3.05, TTM: None, Steps: 30
+   [TRAIN] Episode 185/295 ✅ Ret: 77.17, TTM: None, Steps: 140
+Seed 1 | Episode 185/295 | recent avg return: 29.13 | dataset size: 19428
+   [TRAIN] Episode 186/295 ✅ Ret: 98.41, TTM: None, Steps: 140
+   [TRAIN] Episode 187/295 ✅ Ret: -1.26, TTM: None, Steps: 18
+   [TRAIN] Episode 188/295 ✅ Ret: 90.93, TTM: None, Steps: 140
+   [TRAIN] Episode 189/295 ✅ Ret: 80.53, TTM: None, Steps: 140
+   [TRAIN] Episode 190/295 ✅ Ret: 6.03, TTM: None, Steps: 39
+Seed 1 | Episode 190/295 | recent avg return: 54.93 | dataset size: 19905
+   [TRAIN] Episode 191/295 ✅ Ret: 17.56, TTM: None, Steps: 74
+   [TRAIN] Episode 192/295 ✅ Ret: 83.33, TTM: None, Steps: 140
+   [TRAIN] Episode 193/295 ✅ Ret: 2.24, TTM: None, Steps: 38
+   [TRAIN] Episode 194/295 ✅ Ret: 7.52, TTM: None, Steps: 57
+   [TRAIN] Episode 195/295 ✅ Ret: 89.03, TTM: None, Steps: 140
+Seed 1 | Episode 195/295 | recent avg return: 39.93 | dataset size: 20354
+   [TRAIN] Episode 196/295 ✅ Ret: 55.12, TTM: None, Steps: 140
+   [TRAIN] Episode 197/295 ✅ Ret: 38.70, TTM: None, Steps: 140
+   [TRAIN] Episode 198/295 ✅ Ret: 72.82, TTM: None, Steps: 140
+   [TRAIN] Episode 199/295 ✅ Ret: 20.64, TTM: None, Steps: 70
+   [TRAIN] Episode 200/295 ✅ Ret: 85.86, TTM: None, Steps: 140
+Seed 1 | Episode 200/295 | recent avg return: 54.63 | dataset size: 20984
+   [TRAIN] Episode 201/295 ✅ Ret: 12.81, TTM: None, Steps: 58
+   [TRAIN] Episode 202/295 ✅ Ret: 35.98, TTM: None, Steps: 140
+   [TRAIN] Episode 203/295 ✅ Ret: 43.19, TTM: None, Steps: 140
+   [TRAIN] Episode 204/295 ✅ Ret: 4.48, TTM: None, Steps: 41
+   [TRAIN] Episode 205/295 ✅ Ret: 69.48, TTM: None, Steps: 140
+Seed 1 | Episode 205/295 | recent avg return: 33.19 | dataset size: 21503
+   [TRAIN] Episode 206/295 ✅ Ret: 1.80, TTM: None, Steps: 29
+   [TRAIN] Episode 207/295 ✅ Ret: 53.37, TTM: None, Steps: 140
+   [TRAIN] Episode 208/295 ✅ Ret: 96.70, TTM: None, Steps: 140
+   [TRAIN] Episode 209/295 ✅ Ret: 1.35, TTM: None, Steps: 47
+   [TRAIN] Episode 210/295 ✅ Ret: 69.33, TTM: None, Steps: 140
+Seed 1 | Episode 210/295 | recent avg return: 44.51 | dataset size: 21999
+   [TRAIN] Episode 211/295 ✅ Ret: 97.43, TTM: None, Steps: 140
+   [TRAIN] Episode 212/295 ✅ Ret: 93.03, TTM: None, Steps: 140
+   [TRAIN] Episode 213/295 ✅ Ret: 2.61, TTM: None, Steps: 26
+   [TRAIN] Episode 214/295 ✅ Ret: 91.18, TTM: None, Steps: 140
+   [TRAIN] Episode 215/295 ✅ Ret: 58.35, TTM: None, Steps: 140
+Seed 1 | Episode 215/295 | recent avg return: 68.52 | dataset size: 22585
+   [TRAIN] Episode 216/295 ✅ Ret: 101.58, TTM: None, Steps: 140
+   [TRAIN] Episode 217/295 ✅ Ret: 76.74, TTM: None, Steps: 140
+   [TRAIN] Episode 218/295 ✅ Ret: 94.21, TTM: None, Steps: 140
+   [TRAIN] Episode 219/295 ✅ Ret: 91.60, TTM: None, Steps: 140
+   [TRAIN] Episode 220/295 ✅ Ret: 5.48, TTM: None, Steps: 42
+Seed 1 | Episode 220/295 | recent avg return: 73.92 | dataset size: 23187
+   [TRAIN] Episode 221/295 ✅ Ret: 73.67, TTM: None, Steps: 140
+   [TRAIN] Episode 222/295 ✅ Ret: 77.76, TTM: None, Steps: 140
+   [TRAIN] Episode 223/295 ✅ Ret: 84.40, TTM: None, Steps: 140
+   [TRAIN] Episode 224/295 ✅ Ret: 18.01, TTM: None, Steps: 94
+   [TRAIN] Episode 225/295 ✅ Ret: 83.64, TTM: None, Steps: 140
+Seed 1 | Episode 225/295 | recent avg return: 67.50 | dataset size: 23841
+   [TRAIN] Episode 226/295 ✅ Ret: 87.33, TTM: None, Steps: 140
+   [TRAIN] Episode 227/295 ✅ Ret: 46.30, TTM: None, Steps: 140
+   [TRAIN] Episode 228/295 ✅ Ret: 96.71, TTM: None, Steps: 140
+   [TRAIN] Episode 229/295 ✅ Ret: 57.64, TTM: None, Steps: 140
+   [TRAIN] Episode 230/295 ✅ Ret: 9.99, TTM: None, Steps: 39
+Seed 1 | Episode 230/295 | recent avg return: 59.59 | dataset size: 24440
+   [TRAIN] Episode 231/295 ✅ Ret: 45.51, TTM: None, Steps: 140
+   [TRAIN] Episode 232/295 ✅ Ret: 90.42, TTM: None, Steps: 140
+   [TRAIN] Episode 233/295 ✅ Ret: 90.38, TTM: None, Steps: 140
+   [TRAIN] Episode 234/295 ✅ Ret: 0.92, TTM: None, Steps: 27
+   [TRAIN] Episode 235/295 ✅ Ret: 85.16, TTM: None, Steps: 140
+Seed 1 | Episode 235/295 | recent avg return: 62.48 | dataset size: 25027
+   [TRAIN] Episode 236/295 ✅ Ret: 9.03, TTM: None, Steps: 55
+   [TRAIN] Episode 237/295 ✅ Ret: 90.58, TTM: None, Steps: 140
+   [TRAIN] Episode 238/295 ✅ Ret: 46.70, TTM: None, Steps: 140
+   [TRAIN] Episode 239/295 ✅ Ret: 79.40, TTM: None, Steps: 140
+   [TRAIN] Episode 240/295 ✅ Ret: 10.94, TTM: None, Steps: 58
+Seed 1 | Episode 240/295 | recent avg return: 47.33 | dataset size: 25560
+   [TRAIN] Episode 241/295 ✅ Ret: -0.36, TTM: None, Steps: 29
+   [TRAIN] Episode 242/295 ✅ Ret: 3.27, TTM: None, Steps: 29
+   [TRAIN] Episode 243/295 ✅ Ret: 69.93, TTM: None, Steps: 140
+   [TRAIN] Episode 244/295 ✅ Ret: 12.10, TTM: None, Steps: 58
+   [TRAIN] Episode 245/295 ✅ Ret: 7.74, TTM: None, Steps: 59
+Seed 1 | Episode 245/295 | recent avg return: 18.54 | dataset size: 25875
+   [TRAIN] Episode 246/295 ✅ Ret: 81.48, TTM: None, Steps: 140
+   [TRAIN] Episode 247/295 ✅ Ret: 54.10, TTM: None, Steps: 140
+   [TRAIN] Episode 248/295 ✅ Ret: 69.74, TTM: None, Steps: 140
+   [TRAIN] Episode 249/295 ✅ Ret: 62.00, TTM: None, Steps: 140
+   [TRAIN] Episode 250/295 ✅ Ret: 68.84, TTM: None, Steps: 140
+Seed 1 | Episode 250/295 | recent avg return: 67.23 | dataset size: 26575
+   [TRAIN] Episode 251/295 ✅ Ret: 45.79, TTM: None, Steps: 140
+   [TRAIN] Episode 252/295 ✅ Ret: 63.76, TTM: None, Steps: 140
+   [TRAIN] Episode 253/295 ✅ Ret: 83.33, TTM: None, Steps: 140
+   [TRAIN] Episode 254/295 ✅ Ret: -0.06, TTM: None, Steps: 21
+   [TRAIN] Episode 255/295 ✅ Ret: 2.43, TTM: None, Steps: 30
+Seed 1 | Episode 255/295 | recent avg return: 39.05 | dataset size: 27046
+   [TRAIN] Episode 256/295 ✅ Ret: 1.97, TTM: None, Steps: 24
+   [TRAIN] Episode 257/295 ✅ Ret: 75.17, TTM: None, Steps: 140
+   [TRAIN] Episode 258/295 ✅ Ret: 94.06, TTM: None, Steps: 140
+   [TRAIN] Episode 259/295 ✅ Ret: 37.83, TTM: None, Steps: 140
+   [TRAIN] Episode 260/295 ✅ Ret: 33.85, TTM: None, Steps: 125
+Seed 1 | Episode 260/295 | recent avg return: 48.58 | dataset size: 27615
+   [TRAIN] Episode 261/295 ✅ Ret: 56.22, TTM: None, Steps: 140
+   [TRAIN] Episode 262/295 ✅ Ret: 76.48, TTM: None, Steps: 140
+   [TRAIN] Episode 263/295 ✅ Ret: 92.93, TTM: None, Steps: 140
+   [TRAIN] Episode 264/295 ✅ Ret: 38.99, TTM: None, Steps: 140
+   [TRAIN] Episode 265/295 ✅ Ret: 66.97, TTM: None, Steps: 140
+Seed 1 | Episode 265/295 | recent avg return: 66.32 | dataset size: 28315
+   [TRAIN] Episode 266/295 ✅ Ret: 71.71, TTM: None, Steps: 140
+   [TRAIN] Episode 267/295 ✅ Ret: 86.35, TTM: None, Steps: 140
+   [TRAIN] Episode 268/295 ✅ Ret: 58.80, TTM: None, Steps: 140
+   [TRAIN] Episode 269/295 ✅ Ret: 71.18, TTM: None, Steps: 140
+   [TRAIN] Episode 270/295 ✅ Ret: 11.35, TTM: None, Steps: 103
+Seed 1 | Episode 270/295 | recent avg return: 59.88 | dataset size: 28978
+   [TRAIN] Episode 271/295 ✅ Ret: 10.10, TTM: None, Steps: 47
+   [TRAIN] Episode 272/295 ✅ Ret: 92.87, TTM: None, Steps: 140
+   [TRAIN] Episode 273/295 ✅ Ret: 26.63, TTM: None, Steps: 140
+   [TRAIN] Episode 274/295 ✅ Ret: 96.53, TTM: None, Steps: 140
+   [TRAIN] Episode 275/295 ✅ Ret: 74.21, TTM: None, Steps: 140
+Seed 1 | Episode 275/295 | recent avg return: 60.07 | dataset size: 29585
+   [TRAIN] Episode 276/295 ✅ Ret: 2.61, TTM: None, Steps: 42
+   [TRAIN] Episode 277/295 ✅ Ret: 34.04, TTM: None, Steps: 140
+   [TRAIN] Episode 278/295 ✅ Ret: 2.28, TTM: None, Steps: 29
+   [TRAIN] Episode 279/295 ✅ Ret: 66.45, TTM: None, Steps: 140
+   [TRAIN] Episode 280/295 ✅ Ret: 1.75, TTM: None, Steps: 41
+Seed 1 | Episode 280/295 | recent avg return: 21.43 | dataset size: 29977
+   [TRAIN] Episode 281/295 ✅ Ret: 39.51, TTM: None, Steps: 140
+   [TRAIN] Episode 282/295

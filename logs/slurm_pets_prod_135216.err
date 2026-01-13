@@ -1,1 +1,2 @@
 environment: line 17: /usr/share/lmod/lmod/libexec/lmod: No such file or directory
+[2026-01-13T02:26:13.046] error: *** JOB 135216 ON gpunode5 CANCELLED AT 2026-01-13T02:26:13 DUE TO TIME LIMIT ***
