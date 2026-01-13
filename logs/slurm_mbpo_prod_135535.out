@@ -1,0 +1,32 @@
+=== MBPO Production: 1 seed (0), 50 episodes ===
+
+======================================================================
+🚀 MBPO TRAINING STARTED
+======================================================================
+
+📋 Configuration:
+   Seeds: [0]
+   Episodes: 50
+   Device: cuda
+   Max steps per episode: 140
+   Total max steps: 7000
+======================================================================
+
+🎓 TRAINING MODE
+📍 Single seed training (seed=0)
+✅ Environment created
+
+======================================================================
+MBPO Training: Seed 0
+======================================================================
+❌ Training failed: Cannot cast array data from dtype('<U6') to dtype('int64') according to the rule 'safe'
+
+=== Verifying results ===
+total 186
+drwxrwxr-x. 3 jabezc jabezc  25600 Jan 11 16:32 .
+drwxrwxr-x. 6 jabezc jabezc  25600 Jan 11 11:57 ..
+-rw-rw-r--. 1 jabezc jabezc 172327 Jan 12 04:20 episodes.csv
+drwxrwxr-x. 3 jabezc jabezc  25600 Jan 11 16:32 figures
+-rw-rw-r--. 1 jabezc jabezc   1716 Jan 12 04:20 summary.json
+1476 results/mbpo/episodes.csv
+MBPO production complete!

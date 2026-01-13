@@ -1,0 +1,25 @@
+environment: line 17: /usr/share/lmod/lmod/libexec/lmod: No such file or directory
+Traceback (most recent call last):
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 1256, in main
+    result = train_single_seed(seeds[0], cfg, env)
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 993, in train_single_seed
+    results = agent.train()
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 599, in train
+    "blueprint_adherence": self._compute_blueprint_adherence(ep_question_diffs),
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 793, in _compute_blueprint_adherence
+    counts = np.bincount(np.array(diffs), minlength=3)[:3].astype(np.float64)
+  File "<__array_function__ internals>", line 5, in bincount
+TypeError: Cannot cast array data from dtype('<U6') to dtype('int64') according to the rule 'safe'
+Traceback (most recent call last):
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 1301, in <module>
+    main()
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 1256, in main
+    result = train_single_seed(seeds[0], cfg, env)
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 993, in train_single_seed
+    results = agent.train()
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 599, in train
+    "blueprint_adherence": self._compute_blueprint_adherence(ep_question_diffs),
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 793, in _compute_blueprint_adherence
+    counts = np.bincount(np.array(diffs), minlength=3)[:3].astype(np.float64)
+  File "<__array_function__ internals>", line 5, in bincount
+TypeError: Cannot cast array data from dtype('<U6') to dtype('int64') according to the rule 'safe'
