@@ -1,0 +1,31 @@
+=== MBPO Production: 5 seeds (0 1 2 3 4), 295 episodes ===
+
+======================================================================
+🚀 MBPO TRAINING STARTED
+======================================================================
+
+📋 Configuration:
+   Seeds: [0, 1, 2, 3, 4]
+   Episodes: 295
+   Device: cuda
+   Max steps per episode: 140
+   Total max steps: 41300
+======================================================================
+
+🎓 TRAINING MODE
+📍 Multi-seed training (5 seeds)
+
+======================================================================
+MBPO Training: Seed 0
+======================================================================
+❌ Multi-seed training failed: '<=' not supported between instances of 'int' and 'str'
+
+=== Verifying results ===
+total 186
+drwxrwxr-x. 3 jabezc jabezc  25600 Jan 11 16:32 .
+drwxrwxr-x. 6 jabezc jabezc  25600 Jan 11 11:57 ..
+-rw-rw-r--. 1 jabezc jabezc 172327 Jan 12 04:20 episodes.csv
+drwxrwxr-x. 3 jabezc jabezc  25600 Jan 11 16:32 figures
+-rw-rw-r--. 1 jabezc jabezc   1716 Jan 12 04:20 summary.json
+1476 results/mbpo/episodes.csv
+MBPO production complete!

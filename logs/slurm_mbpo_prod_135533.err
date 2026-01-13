@@ -1,0 +1,23 @@
+environment: line 17: /usr/share/lmod/lmod/libexec/lmod: No such file or directory
+Traceback (most recent call last):
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 1283, in main
+    output = train_multi_seed(seeds, cfg, args.output)
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 1013, in train_multi_seed
+    result = train_single_seed(seed, cfg, env)
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 988, in train_single_seed
+    results = agent.train()
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 560, in train
+    if modality_idx is not None and 0 <= modality_idx < len(modality_names):
+TypeError: '<=' not supported between instances of 'int' and 'str'
+Traceback (most recent call last):
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 1296, in <module>
+    main()
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 1283, in main
+    output = train_multi_seed(seeds, cfg, args.output)
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 1013, in train_multi_seed
+    result = train_single_seed(seed, cfg, env)
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 988, in train_single_seed
+    results = agent.train()
+  File "/home/jabezc/Adaptive_Recommender_ver4/mbpo_ver3/train_mbpo.py", line 560, in train
+    if modality_idx is not None and 0 <= modality_idx < len(modality_names):
+TypeError: '<=' not supported between instances of 'int' and 'str'
