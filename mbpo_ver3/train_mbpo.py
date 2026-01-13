@@ -600,6 +600,31 @@ class MBPOAgent:
                         for mod, gains in ep_modality_gains.items()
                     },
                 }
+                # Diagnostic: if all episode metrics are zero, warn and show env info keys
+                try:
+                    all_zero = True
+                    for _k, _v in ep_metric.items():
+                        if isinstance(_v, (int, float)) and _v != 0:
+                            all_zero = False
+                            break
+                        if isinstance(_v, dict):
+                            for __vv in _v.values():
+                                if isinstance(__vv, (int, float)) and __vv != 0:
+                                    all_zero = False
+                                    break
+                            if not all_zero:
+                                break
+                except Exception:
+                    all_zero = False
+
+                if all_zero:
+                    print(f"WARNING: Episode {episodes+1} produced all-zero episode metrics.")
+                    try:
+                        print(f"info keys: {list(info.keys())}")
+                        print(f"last info: {info}")
+                    except Exception:
+                        print("info unavailable for diagnostic")
+
                 episode_metrics.append(ep_metric)
                 episode_rewards.append(episode_return)
                 episode_steps.append(ep_len)  # NEW: Record episode length
