@@ -557,7 +557,6 @@ class MBPOAgent:
                     ep_content_gains.append(mastery_gain)
                     # Modality breakdown
                     modality_idx = info.get("modality")
-                    print(f"DEBUG: action_type={action_type}, modality_idx={modality_idx}, type={type(modality_idx)}, mastery_gain={mastery_gain}")
                     if modality_idx is not None:
                         try:
                             modality_idx_int = int(modality_idx)
