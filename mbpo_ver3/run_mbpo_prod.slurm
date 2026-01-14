@@ -11,8 +11,8 @@ module load python-3.10.8-gcc-11.2.0-dlcmq7k
 
 mkdir -p logs results/mbpo
 
-echo "=== MBPO Production: 1 seed (0), 50 episodes ==="
-python mbpo_ver3/train_mbpo.py --seeds 0 --episodes 50
+echo "=== MBPO Production: 5 seeds (0 1 2 3 4), 295 episodes ==="
+python mbpo_ver3/train_mbpo.py --seeds 0 1 2 3 4 --episodes 295
 
 echo ""
 echo "=== Verifying results ==="
