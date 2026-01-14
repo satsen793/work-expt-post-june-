@@ -1,0 +1,287 @@
+=== MBPO Production: 2 seeds (0 1), 1 episode ===
+
+======================================================================
+🚀 MBPO TRAINING STARTED
+======================================================================
+
+📋 Configuration:
+   Seeds: [0, 1]
+   Episodes: 1
+   Device: cuda
+   Max steps per episode: 140
+   Total max steps: 140
+======================================================================
+
+🎓 TRAINING MODE
+📍 Multi-seed training (2 seeds)
+
+======================================================================
+MBPO Training: Seed 0
+======================================================================
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.08955937920788404
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.00506135433343885
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.02303675303149294
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.10894219551362916
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.08449119609030412
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.06218281673879189
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.06669067496414119
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.08657929473834775
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.09111593013860356
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.10236854829346631
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.07360903396614524
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.14649424080898468
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.067994711555047
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.10701785441863432
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.07783873727400703
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.05183509356634575
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.015338154906871071
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.03674458375639911
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.015084051221362027
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.04569796692111161
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.061452057735633336
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.07298930344918346
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.03798059869746295
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.04504777892596745
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.0737397005735082
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.07956064932767998
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.04518807336876679
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.06908661029536839
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.05675845234762966
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.04572444777964646
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.0335677718727172
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.06983726990737862
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.0
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.0016628999600351024
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.02793472346817316
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.06550734660804525
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.060422871434071435
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.056084681717544535
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.06787275956584907
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.08013153288831916
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.009304585267379567
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.10478065922530877
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.09154060373110778
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.0
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.018217173941524445
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.07602583914892463
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.02601082321187531
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.0
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.041308870560885225
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.07060823328472082
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.027719426630630095
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.04674317308999071
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.09746496801741678
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.05577713911439941
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.036647137362976284
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.04584459264067303
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.010028868334647556
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.014214197210300816
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.05521290494336853
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.058874424695378846
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.017440826891221506
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.03846412074441602
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.056503044314473394
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.014257984953065517
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.052590920075156644
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.07019285013660348
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.0005051832252092048
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.04715326627137606
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.06467291778515882
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.022497396138817627
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.0370791550614083
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.0610912986727149
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.028341191255908393
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.04162287881526194
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.033257040173083174
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.0444609716420003
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.03406023360902627
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.07246620984073393
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.0
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.05555927472786304
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.0
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.019777433413125933
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.056304225781907746
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.055993433412238974
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.006255246402178782
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.07154224696481756
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.08630738486078554
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.020589074028853238
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.0077283373222349905
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.07678930660112168
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.017932691086862074
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.032849775222536404
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.10639127317441333
+Seed 0 completed in 6.1s
+
+======================================================================
+MBPO Training: Seed 1
+======================================================================
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.07299616540407494
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.021673483377117386
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.04443011672924152
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.03208662701148399
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.05146248006657084
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.1207055272244042
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.015336908863793963
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.016958480082681526
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.06651817350812297
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.11137061347556669
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.07464885003902483
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.011615622380826918
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.06512040487014278
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.10089759581628782
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.01424398866138521
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.061634805608140386
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.06729109835575425
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.0008472377308719192
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.04590743283420007
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.08005664941292945
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.031793971184785164
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.07072354789090801
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.03871335894677563
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.09464612716724413
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.06886780822963728
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.021336015325992663
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.06182409613192685
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.03283492275155642
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.048634109514902824
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.057291230235348656
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.045786309779932255
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.03209044198254174
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.08247291729593459
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.03779565630369475
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.050487349768647646
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.07564551376476814
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.10592128946032126
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.08746302977865927
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.016042456061473254
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.03422654777010126
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.03274916234673825
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.0740702124390441
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.09165702885498138
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.08031763935109554
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.09350271596485232
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.07499678144911326
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.047515226213373174
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.07016688529661957
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.012415541464304236
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.03216448380598064
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.06788447867416336
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.07742391890055184
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.017230208547158787
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.0945727669511029
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.03778426117805256
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.027733009921405483
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.056870209286636386
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.07765824437961083
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.019587052502063274
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.03924745879135183
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.035585251927084505
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.012844867541277283
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.04181327863372725
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.03880317625127899
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.023833399612518402
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.006065569241206048
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.049235655370448606
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.01387959210099965
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.0573509600674843
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.028495441211242367
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.06969302764915741
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.08473654156428284
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.04705448213836905
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.05563181040281395
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.0
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.028983781953963894
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.032526286301107876
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.03329569204339411
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.01890503403806798
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.04469149705208514
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.027982670225014772
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.0341003034776709
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.025995654729016604
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.04036686214542218
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.07133003165408996
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.053356428436516
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.039312411715580864
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.020587998533521
+DEBUG: action_type=content, modality_idx=blog, type=<class 'str'>, mastery_gain=0.06908773412642971
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.023097811638610743
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.052649346763302685
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.045271111339525605
+DEBUG: action_type=content, modality_idx=video, type=<class 'str'>, mastery_gain=0.106779601367058
+DEBUG: action_type=content, modality_idx=text, type=<class 'str'>, mastery_gain=0.010445540458735358
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.03560521119370902
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.03665220613412745
+DEBUG: action_type=content, modality_idx=article, type=<class 'str'>, mastery_gain=0.017160666845938588
+DEBUG: action_type=content, modality_idx=handout, type=<class 'str'>, mastery_gain=0.020281938341122574
+DEBUG: action_type=content, modality_idx=PPT, type=<class 'str'>, mastery_gain=0.05048344857135778
+Seed 1 completed in 5.7s
+
+✓ Summary exported to results/mbpo/summary.json
+✓ Episodes CSV exported to results/mbpo/episodes.csv
+✓ Figures exported to results/mbpo/figures/
+
+======================================================================
+✅ Multi-seed training complete!
+Summary: {
+  "cumulative_reward": {
+    "mean": 40.830295181514295,
+    "std": 4.603775159812251,
+    "ci_95": [
+      36.22652002170204,
+      45.434070341326546
+    ]
+  },
+  "time_to_mastery": {
+    "mean": 140.0,
+    "std": 0.0,
+    "ci_95": [
+      0.0,
+      0.0
+    ]
+  },
+  "question_accuracy": {
+    "mean": 0.8614426569797613,
+    "std": 0.03217436429683446
+  },
+  "blueprint_adherence": {
+    "mean": 100.0,
+    "std": 0.0
+  },
+  "post_content_gain": {
+    "mean": 0.049216383486801005,
+    "std": 0.0007323575280814808
+  },
+  "mean_frustration": {
+    "mean": 0.07732142857142858,
+    "std": 0.005750000000000005
+  },
+  "final_mastery": {
+    "mean": 0.5008899122476578,
+    "std": 0.015255853533744812
+  },
+  "calibration_mae": {
+    "mean": 0.5389828961371571,
+    "std": 0.0027235596946749707
+  },
+  "auc_10k": {
+    "mean": 40.830295181514295,
+    "std": 4.603775159812251
+  },
+  "wall_clock_time_minutes": {
+    "mean": 0.09835082689921061,
+    "std": 0.0029135425885518373
+  },
+  "num_seeds": 2
+}
+======================================================================
+
+=== Verifying results ===
+total 140
+drwxrwxr-x. 3 jabezc jabezc 25600 Jan 14 00:47 .
+drwxrwxr-x. 6 jabezc jabezc 25600 Jan 11 11:57 ..
+-rw-rw-r--. 1 jabezc jabezc   849 Jan 14 01:10 episodes.csv
+drwxrwxr-x. 3 jabezc jabezc 25600 Jan 11 16:32 figures
+-rw-rw-r--. 1 jabezc jabezc  1416 Jan 14 01:10 summary.json
+3 results/mbpo/episodes.csv
+MBPO production complete!

@@ -1,0 +1,2 @@
+environment: line 17: /usr/share/lmod/lmod/libexec/lmod: No such file or directory
+[2026-01-14T01:08:37.079] error: *** JOB 135587 ON gpunode5 CANCELLED AT 2026-01-14T01:08:37 DUE to SIGNAL Terminated ***
