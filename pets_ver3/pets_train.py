@@ -409,9 +409,9 @@ class AdaptiveLearningEnv:
             if not self.episode_log:
                 return {}
 
-            # Ensure time_to_mastery is always set
-            if self.time_to_mastery is None:
-                self.time_to_mastery = self.step_count
+
+            # Always output time_to_mastery as steps (never None)
+            ttm = self.time_to_mastery if self.time_to_mastery is not None else self.step_count
 
             # Compute post-content gains by modality
             modality_gains = self._compute_modality_gains()
@@ -432,7 +432,7 @@ class AdaptiveLearningEnv:
                 "content_count": self.content_count,
                 "blueprint_adherence": self._compute_blueprint_adherence(),
                 "blueprint_proportions": diff_props,
-                "time_to_mastery": self.time_to_mastery,
+                "time_to_mastery": ttm,
                 "mean_frustration": self._compute_mean_frustration(),
                 "final_frustration": float(self.learner_state["frustration"]),
                 "modality_gains": modality_gains,
