@@ -406,34 +406,38 @@ class AdaptiveLearningEnv:
         return [c / total_q for c in self.diff_counts]
 
     def get_episode_metrics(self) -> Dict:
-        if not self.episode_log:
-            return {}
-        
-        # Compute post-content gains by modality
-        modality_gains = self._compute_modality_gains()
-        
-        # Compute calibration data
-        calibration_data = self._compute_calibration_data()
-        
-        # Get difficulty proportions
-        diff_props = self.get_difficulty_proportions()
-        
-        return {
-            "total_steps": self.step_count,
-            "final_mastery": float(np.mean(self.learner_state["mastery"])),
-            "cumulative_reward": float(self.cumulative_reward),
-            "question_accuracy": float(self.question_correct / self.question_total) if self.question_total else 0.0,
-            "question_total": self.question_total,
-            "question_correct": self.question_correct,
-            "content_count": self.content_count,
-            "blueprint_adherence": self._compute_blueprint_adherence(),
-            "blueprint_proportions": diff_props,
-            "time_to_mastery": self.time_to_mastery,
-            "mean_frustration": self._compute_mean_frustration(),
-            "final_frustration": float(self.learner_state["frustration"]),
-            "modality_gains": modality_gains,
-            "calibration_data": calibration_data,
-        }
+            if not self.episode_log:
+                return {}
+
+            # Ensure time_to_mastery is always set
+            if self.time_to_mastery is None:
+                self.time_to_mastery = self.step_count
+
+            # Compute post-content gains by modality
+            modality_gains = self._compute_modality_gains()
+
+            # Compute calibration data
+            calibration_data = self._compute_calibration_data()
+
+            # Get difficulty proportions
+            diff_props = self.get_difficulty_proportions()
+
+            return {
+                "total_steps": self.step_count,
+                "final_mastery": float(np.mean(self.learner_state["mastery"])),
+                "cumulative_reward": float(self.cumulative_reward),
+                "question_accuracy": float(self.question_correct / self.question_total) if self.question_total else 0.0,
+                "question_total": self.question_total,
+                "question_correct": self.question_correct,
+                "content_count": self.content_count,
+                "blueprint_adherence": self._compute_blueprint_adherence(),
+                "blueprint_proportions": diff_props,
+                "time_to_mastery": self.time_to_mastery,
+                "mean_frustration": self._compute_mean_frustration(),
+                "final_frustration": float(self.learner_state["frustration"]),
+                "modality_gains": modality_gains,
+                "calibration_data": calibration_data,
+            }
 
     def _compute_blueprint_adherence(self) -> float:
         total_q = sum(self.diff_counts)
