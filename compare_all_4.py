@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
 Unified 4-algorithm comparison script for Elsevier paper.
-Reads JSON summaries from DQN, PETS, MBPO, PPO and generates:
+Reads CSV episodes files from DQN, PETS, MBPO, PPO and generates:
 1. LaTeX Table 1 (performance comparison)
 2. Statistical significance tests (t-test, effect size)
 3. Side-by-side metrics visualization
 
 Usage:
-    python compare_all_4.py --dqn results/dqn/summary.json \\
-                            --pets results/pets/summary.json \\
-                            --mbpo results/mbpo/summary.json \\
-                            --ppo results/ppo/summary.json \\
+    python compare_all_4.py --dqn results/dqn/episodes.csv \\
+                            --pets results/pets/episodes.csv \\
+                            --mbpo results/mbpo/episodes.csv \\
+                            --ppo results/ppo/episodes.csv \\
                             --output comparison/
 """
 import argparse
@@ -29,17 +29,108 @@ def ensure_dir(path: str) -> None:
 
 
 def load_summary(path: str) -> Dict:
-    """Load JSON summary from file."""
+    """Load and compute summary metrics from episodes.csv file."""
     if not os.path.exists(path):
-        raise FileNotFoundError(f"Summary file not found: {path}")
+        raise FileNotFoundError(f"Episodes CSV file not found: {path}")
     
-    with open(path, "r") as f:
-        data = json.load(f)
+    return load_summary_from_csv(path)
+
+
+def load_summary_from_csv(path: str) -> Dict:
+    """Compute summary metrics from episodes.csv file."""
+    import csv
     
-    # Handle different JSON structures
-    if "summary" in data:
-        return data["summary"]
-    return data
+    episodes = []
+    with open(path, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            episodes.append({
+                'seed': int(row['seed']),
+                'episode': int(row['episode']),
+                'return': float(row['return']),
+                'cumulative_reward': float(row['cumulative_reward']),
+                'ttm': float(row['ttm']) if row['ttm'] else 0.0,
+                'total_steps': int(row['total_steps']),
+                'question_accuracy': float(row['question_accuracy']),
+                'content_rate': float(row['content_rate']),
+                'blueprint_adherence': float(row['blueprint_adherence']),
+                'post_content_gain': float(row['post_content_gain']),
+                'final_mastery': float(row['final_mastery']),
+                'mean_frustration': float(row['mean_frustration']),
+            })
+    
+    if not episodes:
+        return {}
+    
+    # Group by seed
+    seeds = {}
+    for ep in episodes:
+        seed = ep['seed']
+        if seed not in seeds:
+            seeds[seed] = []
+        seeds[seed].append(ep)
+    
+    # Compute per-seed aggregates
+    seed_ttm = []
+    seed_cum_reward = []
+    seed_qa = []
+    seed_ba = []
+    seed_pcg = []
+    seed_fm = []
+    seed_frust = []
+    
+    for seed_eps in seeds.values():
+        # Time-to-mastery: mean across episodes for this seed
+        ttms = [ep['ttm'] for ep in seed_eps if ep['ttm'] > 0]
+        if ttms:
+            seed_ttm.append(np.mean(ttms))
+        
+        # Cumulative reward: final episode's cumulative_reward
+        if seed_eps:
+            seed_cum_reward.append(seed_eps[-1]['cumulative_reward'])
+        
+        # Other metrics: mean across final 5 episodes or all
+        final_eps = seed_eps[-5:] if len(seed_eps) >= 5 else seed_eps
+        seed_qa.append(np.mean([ep['question_accuracy'] for ep in final_eps]))
+        seed_ba.append(np.mean([ep['blueprint_adherence'] for ep in final_eps]))
+        seed_pcg.append(np.mean([ep['post_content_gain'] for ep in final_eps]))
+        seed_fm.append(np.mean([ep['final_mastery'] for ep in final_eps]))
+        seed_frust.append(np.mean([ep['mean_frustration'] for ep in final_eps]))
+    
+    # Aggregate across seeds
+    summary = {
+        'time_to_mastery': {
+            'mean': float(np.mean(seed_ttm)) if seed_ttm else 0.0,
+            'std': float(np.std(seed_ttm)) if seed_ttm else 0.0,
+        },
+        'cumulative_reward': {
+            'mean': float(np.mean(seed_cum_reward)) if seed_cum_reward else 0.0,
+            'std': float(np.std(seed_cum_reward)) if seed_cum_reward else 0.0,
+        },
+        'question_accuracy': {
+            'mean': float(np.mean(seed_qa)) if seed_qa else 0.0,
+            'std': float(np.std(seed_qa)) if seed_qa else 0.0,
+        },
+        'blueprint_adherence': {
+            'mean': float(np.mean(seed_ba)) if seed_ba else 0.0,
+            'std': float(np.std(seed_ba)) if seed_ba else 0.0,
+        },
+        'post_content_gain': {
+            'mean': float(np.mean(seed_pcg)) if seed_pcg else 0.0,
+            'std': float(np.std(seed_pcg)) if seed_pcg else 0.0,
+        },
+        'final_mastery': {
+            'mean': float(np.mean(seed_fm)) if seed_fm else 0.0,
+            'std': float(np.std(seed_fm)) if seed_fm else 0.0,
+        },
+        'mean_frustration': {
+            'mean': float(np.mean(seed_frust)) if seed_frust else 0.0,
+            'std': float(np.std(seed_frust)) if seed_frust else 0.0,
+        },
+        'num_seeds': len(seeds),
+    }
+    
+    return summary
 
 
 def format_value(mean: float, std: float, precision: int = 2) -> str:
@@ -273,10 +364,10 @@ def generate_comparison_plot(summaries: Dict[str, Dict], output_dir: str) -> Non
 
 def main():
     parser = argparse.ArgumentParser(description="Generate unified comparison across all 4 algorithms")
-    parser.add_argument("--dqn", type=str, required=True, help="Path to DQN summary.json")
-    parser.add_argument("--pets", type=str, required=True, help="Path to PETS summary.json")
-    parser.add_argument("--mbpo", type=str, required=True, help="Path to MBPO summary.json")
-    parser.add_argument("--ppo", type=str, required=True, help="Path to PPO summary.json")
+    parser.add_argument("--dqn", type=str, required=True, help="Path to DQN episodes.csv")
+    parser.add_argument("--pets", type=str, required=True, help="Path to PETS episodes.csv")
+    parser.add_argument("--mbpo", type=str, required=True, help="Path to MBPO episodes.csv")
+    parser.add_argument("--ppo", type=str, required=True, help="Path to PPO episodes.csv")
     parser.add_argument("--output", type=str, default="comparison", help="Output directory")
     args = parser.parse_args()
     
