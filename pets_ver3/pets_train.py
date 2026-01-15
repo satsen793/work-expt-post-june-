@@ -830,7 +830,9 @@ def export_results_for_paper(
     import csv
     import os
     
-    output_dir = "results/pets"
+    # Unique output dir per run to avoid overwriting
+    seed_str = '_'.join(map(str, TRAIN_CONFIG.seeds))
+    output_dir = f"results/pets_seeds_{seed_str}_ep{TRAIN_CONFIG.total_episodes}"
     os.makedirs(output_dir, exist_ok=True)
     
     # 1. Learning curve data (for Figure: learning_curve.png)
