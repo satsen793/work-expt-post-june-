@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -J compare_4_algorithms
-#SBATCH -p cpu
+#SBATCH -p compute
 #SBATCH -N 1
 #SBATCH --cpus-per-task=4
 #SBATCH -t 01:00:00
