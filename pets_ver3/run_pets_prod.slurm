@@ -11,8 +11,8 @@ module load python-3.10.8-gcc-11.2.0-dlcmq7k
 
 mkdir -p logs results/pets
 
-echo "=== PETS Production: 5 seeds, 295 episodes ==="
-python pets_ver3/pets_train.py --episodes 295
+echo "=== PETS Fast Prod: 1 seed (0), 10 episodes ==="
+python pets_ver3/pets_train.py --seed 0 --episodes 10
 
 echo ""
 echo "=== Verifying results ==="

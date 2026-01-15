@@ -42,20 +42,20 @@ class EnvConfig:
 
 @dataclasses.dataclass
 class ModelConfig:
-    ensemble_size: int = 5
-    hidden_dim: int = 128  # Aggressively reduced for speed
+    ensemble_size: int = 1  # Super fast: reduced from 5
+    hidden_dim: int = 32    # Super fast: reduced from 128
     learning_rate: float = 1e-3
     weight_decay: float = 1e-5
-    train_epochs: int = 3  # Aggressively reduced for speed
-    batch_size: int = 32   # Aggressively reduced for speed
+    train_epochs: int = 1   # Super fast: reduced from 3
+    batch_size: int = 8     # Super fast: reduced from 32
     logvar_clamp: Tuple[float, float] = (-10.0, 2.0)
 
 
 @dataclasses.dataclass
 class MPCConfig:
-    horizon: int = 10
-    iterations: int = 1      # Aggressively reduced for speed
-    candidates: int = 50     # Aggressively reduced for speed
+    horizon: int = 5      # Super fast: reduced from 10
+    iterations: int = 1   # Already reduced
+    candidates: int = 10  # Super fast: reduced from 50
     elite_fraction: float = 0.1
     update_rate: float = 0.5
     gamma: float = 0.99
@@ -66,7 +66,7 @@ class MPCConfig:
 @dataclasses.dataclass
 class TrainConfig:
     total_episodes: int = UNIFIED_EPISODES  # 295 episodes for ~30k total steps (aligned with DQN)
-    initial_exploration: int = 5
+    initial_exploration: int = 1  # Super fast: reduced from 5
     device: str = "cuda" if torch.cuda.is_available() else "cpu"
     seeds: Tuple[int, ...] = tuple(UNIFIED_SEEDS)  # [0, 1, 2, 3, 4] (aligned with DQN)
 
