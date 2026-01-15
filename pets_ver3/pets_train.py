@@ -1035,13 +1035,13 @@ def generate_latex_tables(perf_summary, modality_stats, output_dir):
 \\\\toprule
 \\\\textbf{{Metric}} & \\\\textbf{{PETS}} \\\\\\\\
 \\\\midrule
-Time-to-Mastery (steps) & {perf_summary['time_to_mastery_mean']:.1f} $\\\\pm$ {perf_summary['time_to_mastery_std']:.1f} \\\\\\\\
-Cumulative Reward & {perf_summary['cumulative_reward_mean']:.2f} $\\\\pm$ {perf_summary['cumulative_reward_std']:.2f} \\\\\\\\
-Question Accuracy (\\\\%) & {perf_summary['question_accuracy_mean']*100:.1f} \\\\\\\\
-Blueprint Adherence (\\\\%) & {perf_summary['blueprint_adherence_mean']*100:.1f} \\\\\\\\
-Mean Frustration & {perf_summary['mean_frustration']:.3f} \\\\\\\\
-Final Mastery & {perf_summary['final_mastery_mean']:.3f} \\\\\\\\
-Wall-Clock Time (s) & {perf_summary['wall_clock_mean_s']:.1f} $\\\\pm$ {perf_summary['wall_clock_std_s']:.1f} \\\\\\\\
+Time-to-Mastery (steps) & {perf_summary['time_to_mastery']['mean']:.1f} $\\\\pm$ {perf_summary['time_to_mastery']['std']:.1f} \\\\\\\\
+Cumulative Reward & {perf_summary['cumulative_reward']['mean']:.2f} $\\\\pm$ {perf_summary['cumulative_reward']['std']:.2f} \\\\\\\\
+Question Accuracy (\\\\%) & {perf_summary['question_accuracy']['mean']*100:.1f} \\\\\\\\
+Blueprint Adherence (\\\\%) & {perf_summary['blueprint_adherence']['mean']*100:.1f} \\\\\\\\
+Mean Frustration & {perf_summary['mean_frustration']['mean']:.3f} \\\\\\\\
+Final Mastery & {perf_summary['final_mastery']['mean']:.3f} \\\\\\\\
+Wall-Clock Time (min) & {perf_summary['wall_clock_time_minutes']['mean']:.1f} $\\\\pm$ {perf_summary['wall_clock_time_minutes']['std']:.1f} \\\\\\\\
 \\\\bottomrule
 \\\\end{{tabular}}
 """
