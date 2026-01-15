@@ -1,0 +1,22 @@
+=== PETS Fast Prod: 0 seed(s), 10 episodes ===
+
+======================================================================
+🚀 PETS TRAINING STARTED
+======================================================================
+Seeds: (0,)
+Total episodes: 10
+Device: cuda
+======================================================================
+
+
+======================================================================
+📍 SEED 0 STARTING
+======================================================================
+✅ Random seeds set
+🏗️  Creating environment...
+✅ Environment created
+🏁 Initial exploration: 1 episodes
+   [EXPLORE] Episode 1/1 ✅ Ret: 51.05, TTM: 140
+🎓 Training: 9 episodes
+   [TRAIN] Episode 2/10 ✅ Ret: 15.08, TTM: 93, Steps: 93
+   [TRAIN] Episode 3/10

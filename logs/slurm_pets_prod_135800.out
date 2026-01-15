@@ -1,0 +1,124 @@
+=== PETS Fast Prod: 1 seed(s), 10 episodes ===
+
+======================================================================
+🚀 PETS TRAINING STARTED
+======================================================================
+Seeds: (1,)
+Total episodes: 10
+Device: cuda
+======================================================================
+
+
+======================================================================
+📍 SEED 1 STARTING
+======================================================================
+✅ Random seeds set
+🏗️  Creating environment...
+✅ Environment created
+🏁 Initial exploration: 1 episodes
+   [EXPLORE] Episode 1/1 ✅ Ret: 8.82, TTM: 119
+🎓 Training: 9 episodes
+   [TRAIN] Episode 2/10 ✅ Ret: 43.13, TTM: 140, Steps: 140
+   [TRAIN] Episode 3/10 ✅ Ret: 4.17, TTM: 42, Steps: 42
+   [TRAIN] Episode 4/10 ✅ Ret: 0.94, TTM: 29, Steps: 29
+   [TRAIN] Episode 5/10 ✅ Ret: 23.77, TTM: 140, Steps: 140
+Seed 1 | Episode 5/10 | recent avg return: 16.17 | dataset size: 470
+   [TRAIN] Episode 6/10 ✅ Ret: 6.93, TTM: 74, Steps: 74
+   [TRAIN] Episode 7/10 ✅ Ret: 35.15, TTM: 140, Steps: 140
+   [TRAIN] Episode 8/10 ✅ Ret: 20.28, TTM: 140, Steps: 140
+   [TRAIN] Episode 9/10 ✅ Ret: 37.90, TTM: 140, Steps: 140
+   [TRAIN] Episode 10/10 ✅ Ret: 15.25, TTM: 94, Steps: 94
+Seed 1 | Episode 10/10 | recent avg return: 23.10 | dataset size: 1058
+Seed 1 complete. Final recent-5 avg return: 23.10 | AUC@10k: 196.3
+Across seeds: mean±std of last 5 episodes: 23.10 ± 0.00
+95% CI (normal approx) on last-5 mean: 23.10 ± 0.00
+Bootstrap 95% CI on last-5 mean: [23.10, 23.10]
+Time-to-mastery (steps) mean±std (per seed avg): 105.80 ± 0.00
+Wall-clock per seed (s) mean±std: 87.46 ± 0.00
+Wall-clock per episode (s) mean±std: 8.50 ± 4.68
+CEM elite return (per-iter mean) mean±std: nan ± nan
+Ensemble disagreement mean±std: nan ± nan
+✓ Exported learning_curve_data.json
+✓ Exported summary.json
+✓ Exported summary_seed1.json
+✓ Exported modality_gains.json
+✓ Exported calibration_data.json
+✓ Exported variance_data.json
+✓ Generated LaTeX tables: table_ppo_perf.tex, table_modality.tex
+\n============================================================
+RESULTS EXPORT COMPLETE
+============================================================
+Files saved to results/ directory:
+  - learning_curve_data.json
+  - performance_summary.json
+  - modality_gains.json
+  - calibration_data.json
+  - variance_data.json
+  - table_ppo_perf.tex (LaTeX table)
+  - table_modality.tex (LaTeX table)
+\nUse these files to generate figures and tables for the paper.
+✓ Exported episodes.csv
+
+=== Verifying results ===
+total 55
+drwxrwxr-x. 2 jabezc jabezc 25600 Jan 15 11:18 .
+drwxrwxr-x. 8 jabezc jabezc 25600 Jan 15 11:17 ..
+-rw-rw-r--. 1 jabezc jabezc 10038 Jan 15 11:18 calibration_data.json
+-rw-rw-r--. 1 jabezc jabezc  2775 Jan 15 11:18 episodes.csv
+-rw-rw-r--. 1 jabezc jabezc   460 Jan 15 11:18 learning_curve_data.json
+-rw-rw-r--. 1 jabezc jabezc   598 Jan 15 11:18 modality_gains.json
+-rw-rw-r--. 1 jabezc jabezc   835 Jan 15 11:18 summary.json
+-rw-rw-r--. 1 jabezc jabezc   835 Jan 15 11:18 summary_seed1.json
+-rw-rw-r--. 1 jabezc jabezc   336 Jan 15 11:18 table_modality.tex
+-rw-rw-r--. 1 jabezc jabezc   414 Jan 15 11:18 table_ppo_perf.tex
+-rw-rw-r--. 1 jabezc jabezc   381 Jan 15 11:18 variance_data.json
+10 results/pets_seeds_1_ep10/episodes.csv
+seed,episode,return,cumulative_reward,ttm,total_steps,question_accuracy,content_rate,blueprint_adherence,post_content_gain,post_content_gain_video,post_content_gain_PPT,post_content_gain_text,post_content_gain_blog,post_content_gain_article,post_content_gain_handout,final_mastery,mean_frustration
+1,1,43.13462091215807,43.13462091215807,140,140,0.8085106382978723,0.6642857142857143,0.7617021276595746,0.05091382928320625,0.07743568736582718,0.05377244668120697,0.04638904362396004,0.04168629552044897,0.044529363527902606,0.039717667203225004,0.4741918070038569,0.07100000000000001
+1,2,4.166517226936438,4.166517226936438,42,42,0.375,0.6190476190476191,0.8375,0.04155320038805566,0.0656316535570541,0.0472936609197533,0.03461417078019649,0.0,0.04115556941401512,0.03723649773851771,0.29749868768031434,0.5811904761904761
+1,3,0.9404946651241499,0.9404946651241499,29,29,0.18181818181818182,0.6206896551724138,0.7636363636363637,0.03799793278811457,0.1387605954056701,0.050407583200244944,0.030155189470746968,0.016727942936130336,0.04634605127275457,0.01666198155197696,0.3503722644521684,0.38896551724137934
+1,4,23.77335948291069,23.77335948291069,140,140,0.5,0.6857142857142857,0.8090909090909091,0.04329121844586097,0.07003610444349345,0.051412763284393606,0.025402980322949242,0.03969277049582623,0.0346778789124868,0.030137136296880283,0.4871933086516881,0.2715
+{
+  "auc_10k": {
+    "mean": 196.33980401196825,
+    "std": 0.0
+  },
+  "wall_clock_time_minutes": {
+    "mean": 1.4577447533607484,
+    "std": 0.0
+  },
+  "checkpoints": {},
+  "time_to_mastery": {
+    "mean": 105.8,
+    "std": 0.0
+  },
+  "cumulative_reward": {
+    "mean": 23.100272762132924,
+    "std": 0.0,
+    "ci_95": [
+      23.100272762132924,
+      23.100272762132924
+    ]
+  },
+  "question_accuracy": {
+    "mean": 0.5257968617014901,
+    "std": 0.1526169110055401
+  },
+  "blueprint_adherence": {
+    "mean": 0.7353666343007157,
+    "std": 0.07297479298642368
+  },
+  "post_content_gain": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "mean_frustration": {
+    "mean": 0.21853233385361048,
+    "std": 0.10255885877517501
+  },
+  "final_mastery": {
+    "mean": 0.44128195667232806,
+    "std": 0.04536605154793104
+  },
+  "num_seeds": 1
+}PETS production complete!
