@@ -1,0 +1,100 @@
+=== PETS Smoke Test: 1 seed, 10 episodes ===
+
+======================================================================
+🚀 PETS TRAINING STARTED
+======================================================================
+Seeds: (0,)
+Total episodes: 10
+Device: cuda
+======================================================================
+
+
+======================================================================
+📍 SEED 0 STARTING
+======================================================================
+✅ Random seeds set
+🏗️  Creating environment...
+✅ Environment created
+🏁 Initial exploration: 5 episodes
+   [EXPLORE] Episode 1/5 ✅ Ret: 51.05, TTM: None
+   [EXPLORE] Episode 2/5 ✅ Ret: -1.57, TTM: None
+   [EXPLORE] Episode 3/5 ✅ Ret: 46.18, TTM: None
+   [EXPLORE] Episode 4/5 ✅ Ret: 45.65, TTM: None
+   [EXPLORE] Episode 5/5 ✅ Ret: 28.06, TTM: None
+🎓 Training: 5 episodes
+   [TRAIN] Episode 6/10 ✅ Ret: 72.93, TTM: None, Steps: 140
+   [TRAIN] Episode 7/10 ✅ Ret: 13.23, TTM: None, Steps: 72
+   [TRAIN] Episode 8/10 ✅ Ret: 6.17, TTM: None, Steps: 44
+   [TRAIN] Episode 9/10 ✅ Ret: 13.53, TTM: None, Steps: 54
+   [TRAIN] Episode 10/10 ✅ Ret: 3.91, TTM: None, Steps: 39
+Seed 0 | Episode 10/10 | recent avg return: 21.95 | dataset size: 931
+Seed 0 complete. Final recent-5 avg return: 21.95 | AUC@10k: 279.1
+Across seeds: mean±std of last 5 episodes: 21.95 ± 0.00
+95% CI (normal approx) on last-5 mean: 21.95 ± 0.00
+Bootstrap 95% CI on last-5 mean: [21.95, 21.95]
+Time-to-mastery (steps) mean±std (per seed avg): nan ± nan
+Wall-clock per seed (s) mean±std: 532.57 ± 0.00
+Wall-clock per episode (s) mean±std: 45.93 ± 58.69
+CEM elite return (per-iter mean) mean±std: 3.58 ± 0.25
+Ensemble disagreement mean±std: 0.0275 ± 0.0113
+✓ Exported learning_curve_data.json
+✓ Exported summary.json
+✓ Exported modality_gains.json
+✓ Exported calibration_data.json
+✓ Exported variance_data.json
+
+=== Verifying results ===
+total 53
+drwxrwxr-x. 2 jabezc jabezc 25600 Jan 15 02:48 .
+drwxrwxr-x. 6 jabezc jabezc 25600 Jan 11 11:57 ..
+-rw-rw-r--. 1 jabezc jabezc  6768 Jan 15 02:48 calibration_data.json
+-rw-rw-r--. 1 jabezc jabezc   461 Jan 15 02:48 learning_curve_data.json
+-rw-rw-r--. 1 jabezc jabezc   597 Jan 15 02:48 modality_gains.json
+-rw-rw-r--. 1 jabezc jabezc   831 Jan 15 02:48 summary.json
+-rw-rw-r--. 1 jabezc jabezc   382 Jan 15 02:48 variance_data.json
+ERROR: episodes.csv not found!
+{
+  "auc_10k": {
+    "mean": 279.14349087638647,
+    "std": 0.0
+  },
+  "wall_clock_time_minutes": {
+    "mean": 8.876221334934234,
+    "std": 0.0
+  },
+  "checkpoints": {},
+  "time_to_mastery": {
+    "mean": NaN,
+    "std": NaN
+  },
+  "cumulative_reward": {
+    "mean": 21.954348228010584,
+    "std": 0.0,
+    "ci_95": [
+      21.954348228010584,
+      21.954348228010584
+    ]
+  },
+  "question_accuracy": {
+    "mean": 0.5534624162031094,
+    "std": 0.1886221364575504
+  },
+  "blueprint_adherence": {
+    "mean": 0.7918449579232635,
+    "std": 0.04888339771332095
+  },
+  "post_content_gain": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "mean_frustration": {
+    "mean": 0.39558814703814704,
+    "std": 0.1927454794378272
+  },
+  "final_mastery": {
+    "mean": 0.3566954109752998,
+    "std": 0.040993428813562306
+  },
+  "num_seeds": 1
+}
+PETS smoke test complete!

@@ -1,0 +1,44 @@
+{
+  "auc_10k": {
+    "mean": 279.14349087638647,
+    "std": 0.0
+  },
+  "wall_clock_time_minutes": {
+    "mean": 8.876221334934234,
+    "std": 0.0
+  },
+  "checkpoints": {},
+  "time_to_mastery": {
+    "mean": NaN,
+    "std": NaN
+  },
+  "cumulative_reward": {
+    "mean": 21.954348228010584,
+    "std": 0.0,
+    "ci_95": [
+      21.954348228010584,
+      21.954348228010584
+    ]
+  },
+  "question_accuracy": {
+    "mean": 0.5534624162031094,
+    "std": 0.1886221364575504
+  },
+  "blueprint_adherence": {
+    "mean": 0.7918449579232635,
+    "std": 0.04888339771332095
+  },
+  "post_content_gain": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "mean_frustration": {
+    "mean": 0.39558814703814704,
+    "std": 0.1927454794378272
+  },
+  "final_mastery": {
+    "mean": 0.3566954109752998,
+    "std": 0.040993428813562306
+  },
+  "num_seeds": 1
+}
