@@ -914,6 +914,13 @@ def export_results_for_paper(
         json.dump(perf_summary, f, indent=2)
     print("✓ Exported summary.json")
     
+    # Save per-seed summary if single seed
+    if len(TRAIN_CONFIG.seeds) == 1:
+        seed = TRAIN_CONFIG.seeds[0]
+        with open(os.path.join(output_dir, f"summary_seed{seed}.json"), "w") as f:
+            json.dump(perf_summary, f, indent=2)
+        print(f"✓ Exported summary_seed{seed}.json")
+    
     # 3. Modality gains (for Figure: modality_gains.png and Table: tab:modality_gain)
     modality_stats = {}
     for mod, gains in all_modality_gains.items():
