@@ -9,20 +9,25 @@
 
 module load python-3.10.8-gcc-11.2.0-dlcmq7k
 
-mkdir -p logs results/pets_seeds_0_ep10
+# Configuration variables (change these for different runs)
+SEEDS="0"
+EPISODES="10"
+OUTPUT_DIR="results/pets_seeds_${SEEDS}_ep${EPISODES}"
 
-echo "=== PETS Fast Prod: 1 seed (0), 10 episodes ==="
-python pets_ver3/pets_train.py --seed 0 --episodes 10
+mkdir -p logs $OUTPUT_DIR
+
+echo "=== PETS Fast Prod: ${SEEDS} seed(s), ${EPISODES} episodes ==="
+python pets_ver3/pets_train.py --seed $SEEDS --episodes $EPISODES
 
 echo ""
 echo "=== Verifying results ==="
-ls -la results/pets_seeds_0_ep10/
-if [ -f results/pets_seeds_0_ep10/episodes.csv ]; then
-    wc -l results/pets_seeds_0_ep10/episodes.csv
-    head -5 results/pets_seeds_0_ep10/episodes.csv
+ls -la $OUTPUT_DIR/
+if [ -f $OUTPUT_DIR/episodes.csv ]; then
+    wc -l $OUTPUT_DIR/episodes.csv
+    head -5 $OUTPUT_DIR/episodes.csv
 else
     echo "ERROR: episodes.csv not found!"
 fi
-cat results/pets_seeds_0_ep10/summary.json 2>/dev/null || echo "ERROR: summary.json not found!"
+cat $OUTPUT_DIR/summary.json 2>/dev/null || echo "ERROR: summary.json not found!"
 
 echo "PETS production complete!"
