@@ -980,7 +980,7 @@ def export_results_for_paper(
 
     # 7. Episodes CSV (align columns with DQN/PPO/MBPO)
     # Build canonical header with modality breakdown right after post_content_gain
-    episodes_csv_path = os.path.join("results", "pets", "episodes.csv")
+    episodes_csv_path = os.path.join(output_dir, "episodes.csv")
     os.makedirs(os.path.dirname(episodes_csv_path), exist_ok=True)
     with open(episodes_csv_path, "w", newline="") as fcsv:
         writer = csv.writer(fcsv)
