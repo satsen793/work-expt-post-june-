@@ -4,13 +4,13 @@
     "std": 0.0
   },
   "wall_clock_time_minutes": {
-    "mean": 3.455806271235148,
+    "mean": 1.742839272816976,
     "std": 0.0
   },
   "checkpoints": {},
   "time_to_mastery": {
-    "mean": NaN,
-    "std": NaN
+    "mean": 127.3,
+    "std": 0.0
   },
   "cumulative_reward": {
     "mean": 40.75374909043016,

@@ -1,0 +1,3 @@
+environment: line 17: /usr/share/lmod/lmod/libexec/lmod: No such file or directory
+/home/jabezc/Adaptive_Recommender_ver4/pets_ver3/pets_train.py:580: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at /pytorch/aten/src/ATen/native/ReduceOps.cpp:1839.)
+  disagreement = torch.stack(preds_mean).std(dim=0).mean().item()
