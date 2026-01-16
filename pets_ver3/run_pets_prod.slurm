@@ -16,6 +16,9 @@ OUTPUT_DIR="results/pets_seeds_${SEEDS}_ep${EPISODES}"
 
 mkdir -p logs $OUTPUT_DIR
 
+# Ensure we're in the project root
+cd ..
+
 echo "=== PETS Fast Prod: ${SEEDS} seed(s), ${EPISODES} episodes ==="
 python pets_ver3/pets_train.py --seed $SEEDS --episodes $EPISODES
 
