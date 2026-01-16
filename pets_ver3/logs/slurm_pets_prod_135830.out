@@ -1,0 +1,9 @@
+=== PETS Fast Prod: 1 seed(s), 10 episodes ===
+
+=== Verifying results ===
+total 2
+drwxrwxr-x. 2 jabezc jabezc 1024 Jan 16 00:49 .
+drwxrwxr-x. 3 jabezc jabezc 1024 Jan 16 00:49 ..
+ERROR: episodes.csv not found!
+ERROR: summary.json not found!
+PETS production complete!
