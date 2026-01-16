@@ -1,0 +1,17 @@
+% Table 1: Fair 4-Algorithm Performance Comparison
+\begin{table}[htbp]
+\centering
+\caption{Performance Comparison: Model-Free (DQN, PPO) vs Model-Based (PETS, MBPO) Adaptive Learning Policies}
+\label{tab:performance_comparison}
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{Algorithm} & \textbf{TTM} & \textbf{Cum. Reward} & \textbf{AUC@10k} & \textbf{Blueprint} & \textbf{Calibration} & \textbf{Time (min)} \\
+\midrule
+DQN & 140.0 $\pm$ 0.0 & 25.4 $\pm$ 9.0 & 26.4 $\pm$ 5.7 & 99.0 $\pm$ 0.4 & N/A$^*$ & --- \\
+PPO & 105.7 $\pm$ 9.2 & 73.6 $\pm$ 36.3 & 61.5 $\pm$ 21.5 & 99.4 $\pm$ 0.2 & N/A$^*$ & --- \\
+PETS & 125.9 $\pm$ 0.0 & 44.4 $\pm$ 0.0 & 44.4 $\pm$ 0.0 & 0.7 $\pm$ 0.0 & 0.000 $\pm$ 0.000 & --- \\
+MBPO & 107.8 $\pm$ 25.0 & 27.1 $\pm$ 37.3 & 28.9 $\pm$ 30.1 & 100.0 $\pm$ 0.0 & 0.000 $\pm$ 0.000 & --- \\
+\bottomrule
+\multicolumn{7}{l}{$^*$ Calibration applies only to model-based methods (PETS, MBPO) with learned dynamics.} \\
+\end{tabular}
+\end{table}

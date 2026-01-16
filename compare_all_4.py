@@ -78,8 +78,12 @@ def load_summary_from_csv(path: str) -> Dict:
     seed_pcg = []
     seed_fm = []
     seed_frust = []
+    seed_auc = []  # NEW: AUC@10k per seed
     
     for seed_eps in seeds.values():
+        # Sort episodes by episode number
+        seed_eps.sort(key=lambda x: x['episode'])
+        
         # Time-to-mastery: mean across episodes for this seed
         ttms = [ep['ttm'] for ep in seed_eps if ep['ttm'] > 0]
         if ttms:
@@ -88,6 +92,24 @@ def load_summary_from_csv(path: str) -> Dict:
         # Cumulative reward: final episode's cumulative_reward
         if seed_eps:
             seed_cum_reward.append(seed_eps[-1]['cumulative_reward'])
+        
+        # AUC@10k: area under cumulative reward curve up to 10k steps
+        total_steps = 0
+        auc = 0.0
+        prev_reward = 0.0
+        for ep in seed_eps:
+            steps = ep['total_steps']
+            reward = ep['cumulative_reward']
+            if total_steps + steps > 10000:
+                # Partial episode
+                remaining = 10000 - total_steps
+                auc += (reward - prev_reward) * (remaining / steps)
+                break
+            else:
+                auc += (reward - prev_reward)
+                total_steps += steps
+                prev_reward = reward
+        seed_auc.append(auc)
         
         # Other metrics: mean across final 5 episodes or all
         final_eps = seed_eps[-5:] if len(seed_eps) >= 5 else seed_eps
@@ -99,6 +121,10 @@ def load_summary_from_csv(path: str) -> Dict:
     
     # Aggregate across seeds
     summary = {
+        'auc_10k': {
+            'mean': float(np.mean(seed_auc)) if seed_auc else 0.0,
+            'std': float(np.std(seed_auc)) if seed_auc else 0.0,
+        },
         'time_to_mastery': {
             'mean': float(np.mean(seed_ttm)) if seed_ttm else 0.0,
             'std': float(np.std(seed_ttm)) if seed_ttm else 0.0,
@@ -230,6 +256,13 @@ def generate_statistical_tests(summaries: Dict[str, Dict], output_path: str) -> 
     algo_order = ["DQN", "PETS", "MBPO", "PPO"]
     available = [a for a in algo_order if a in summaries]
     
+    # Collect effect sizes for plotting
+    effect_matrix = {}
+    for algo in available:
+        effect_matrix[algo] = {}
+        for algo2 in available:
+            effect_matrix[algo][algo2] = 0.0
+    
     # Pairwise comparisons
     for i, algo1 in enumerate(available):
         for algo2 in available[i+1:]:
@@ -248,6 +281,8 @@ def generate_statistical_tests(summaries: Dict[str, Dict], output_path: str) -> 
                 ("Post-Content Gain", "post_content_gain"),
             ]
             
+            avg_effect = 0.0
+            count = 0
             for metric_name, metric_key in metrics:
                 m1 = s1.get(metric_key, {})
                 m2 = s2.get(metric_key, {})
@@ -256,6 +291,9 @@ def generate_statistical_tests(summaries: Dict[str, Dict], output_path: str) -> 
                 mean2, std2 = m2.get("mean", 0.0), m2.get("std", 0.0)
                 
                 effect_size = compute_effect_size(mean1, std1, mean2, std2)
+                
+                avg_effect += effect_size
+                count += 1
                 
                 # Interpret effect size
                 if abs(effect_size) < 0.2:
@@ -268,13 +306,21 @@ def generate_statistical_tests(summaries: Dict[str, Dict], output_path: str) -> 
                     interpretation = "large"
                 
                 winner = algo1 if mean1 > mean2 else algo2
-                results.append(f"{metric_name:25s}: d={effect_size:+.3f} ({interpretation}) → {winner} wins")
+                results.append(f"{metric_name:25s}: d={effect_size:+.3f} ({interpretation}) -> {winner} wins")
+            
+            # Average effect size across metrics
+            avg_effect /= count if count > 0 else 1
+            effect_matrix[algo1][algo2] = avg_effect
+            effect_matrix[algo2][algo1] = -avg_effect  # Symmetric
     
     # Write to file
     with open(output_path, "w") as f:
         f.write("\n".join(results))
     
     print(f"✓ Statistical tests exported to {output_path}")
+    
+    # Generate plot
+    generate_effect_size_plot(effect_matrix, os.path.dirname(output_path))
 
 
 def generate_comparison_json(summaries: Dict[str, Dict], output_path: str) -> None:
@@ -360,6 +406,31 @@ def generate_comparison_plot(summaries: Dict[str, Dict], output_dir: str) -> Non
     plt.close()
     
     print(f"✓ Comparison plot exported to {output_dir}/comparison_plot.png")
+
+
+def generate_effect_size_plot(effect_matrix: Dict[str, Dict[str, float]], output_dir: str) -> None:
+    """Generate a heatmap plot of pairwise effect sizes."""
+    try:
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+    except ImportError:
+        print("⚠ seaborn not available for effect size plot, skipping")
+        return
+    
+    ensure_dir(os.path.join(output_dir, "placeholder"))
+    
+    algos = list(effect_matrix.keys())
+    matrix = [[effect_matrix[algo1].get(algo2, 0.0) for algo2 in algos] for algo1 in algos]
+    
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(matrix, annot=True, fmt=".2f", cmap="RdYlBu_r", center=0,
+                xticklabels=algos, yticklabels=algos, cbar_kws={'label': "Cohen's d"})
+    plt.title("Average Pairwise Effect Sizes (Cohen's d) Across All Metrics\nPositive = Row Algorithm Wins")
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "effect_size_heatmap.png"), dpi=200)
+    plt.close()
+    
+    print(f"✓ Effect size heatmap exported to {output_dir}/effect_size_heatmap.png")
 
 
 def main():
