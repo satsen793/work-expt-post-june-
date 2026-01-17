@@ -10,8 +10,8 @@
 module load python-3.10.8-gcc-11.2.0-dlcmq7k
 
 # Configuration variables (change these for different runs)
-SEEDS="1"
-EPISODES="10"
+SEEDS="0"
+EPISODES="295"
 OUTPUT_DIR="results/pets_seeds_${SEEDS}_ep${EPISODES}"
 
 mkdir -p logs $OUTPUT_DIR
