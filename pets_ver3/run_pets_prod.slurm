@@ -20,7 +20,7 @@ echo "Files in current directory:"
 ls -la
 
 # Configuration variables (change these for different runs)
-SEEDS="0"
+SEEDS="2"
 EPISODES="295"
 OUTPUT_DIR="results/pets_seeds_${SEEDS}_ep${EPISODES}"
 
