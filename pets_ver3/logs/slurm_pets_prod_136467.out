@@ -1,0 +1,80 @@
+Python version:
+Python 3.9.13
+Python path:
+/apps/spack/opt/spack/linux-rocky8-zen2/gcc-11.2.0/anaconda3-2022.10-htq3o45qwkhxfedgb65w6kbeb2227u7r/bin/python
+Current directory:
+/home/jabezc/Adaptive_Recommender_ver4/pets_ver3
+Files in current directory:
+total 801
+drwxrwxr-x.  5 jabezc jabezc 33792 Jan 17 11:37 .
+drwxrwxr-x. 16 jabezc jabezc 33792 Jan 17 05:02 ..
+-rw-rw-r--.  1 jabezc jabezc  7399 Jan 11 08:59 CHECKLIST.md
+-rw-rw-r--.  1 jabezc jabezc 70816 Jan 11 08:59 Elsevier_Template.tex
+-rw-rw-r--.  1 jabezc jabezc 11176 Jan 11 08:59 generate_figures.py
+-rw-rw-r--.  1 jabezc jabezc  6096 Jan 11 08:59 IMPLEMENTATION_SUMMARY.md
+drwxr-xr-x.  2 jabezc jabezc 25600 Jan 17 11:38 logs
+-rw-rw-r--.  1 jabezc jabezc 15653 Jan 11 08:59 PAPER_CORRESPONDENCE.md
+-rw-rw-r--.  1 jabezc jabezc 55535 Jan 17 05:02 pets_train.py
+drwxrwxr-x.  2 jabezc jabezc 25600 Jan 13 05:50 __pycache__
+-rw-rw-r--.  1 jabezc jabezc   725 Jan 11 08:59 README.md
+-rw-rw-r--.  1 jabezc jabezc    18 Jan 11 08:59 requirements.txt
+drwxrwxr-x.  4 jabezc jabezc 25600 Jan 17 05:08 results
+-rw-rw-r--.  1 jabezc jabezc  1444 Jan 11 11:49 run_pets_gpu.slurm
+-rw-rw-r--.  1 jabezc jabezc  1823 Jan 17 11:37 run_pets_prod.slurm
+-rw-rw-r--.  1 jabezc jabezc   639 Jan 15 03:05 run_pets_smoke.slurm
+-rw-rw-r--.  1 jabezc jabezc 16167 Jan 11 08:59 spec_evaluation.md
+-rw-rw-r--.  1 jabezc jabezc  1520 Jan 11 08:59 spec_intro.md
+-rw-rw-r--.  1 jabezc jabezc  2446 Jan 11 08:59 spec_metadata.md
+-rw-rw-r--.  1 jabezc jabezc  3162 Jan 11 08:59 spec_methodology.md
+-rw-rw-r--.  1 jabezc jabezc  7679 Jan 11 08:59 spec_overview.md
+-rw-rw-r--.  1 jabezc jabezc 17226 Jan 11 08:59 spec_pets.md
+-rw-rw-r--.  1 jabezc jabezc  1061 Jan 11 08:59 spec_related_work.md
+-rw-rw-r--.  1 jabezc jabezc 17530 Jan 11 08:59 spec_simulator.md
+-rw-rw-r--.  1 jabezc jabezc   846 Jan 11 08:59 spec_threats.md
+=== PETS Fast Prod: 0 seed(s), 295 episodes ===
+Running: python pets_ver3/pets_train.py --seed 0 --episodes 295
+
+======================================================================
+🚀 PETS TRAINING STARTED
+======================================================================
+Seeds: (0,)
+Total episodes: 295
+Device: cuda
+======================================================================
+
+
+======================================================================
+📍 SEED 0 STARTING
+======================================================================
+✅ Random seeds set
+🏗️  Creating environment...
+✅ Environment created
+🏁 Initial exploration: 5 episodes
+   [EXPLORE] Episode 1/5 ✅ Ret: 51.05, TTM: 140
+   [EXPLORE] Episode 2/5 ✅ Ret: -1.57, TTM: 22
+   [EXPLORE] Episode 3/5 ✅ Ret: 46.18, TTM: 140
+   [EXPLORE] Episode 4/5 ✅ Ret: 45.65, TTM: 140
+   [EXPLORE] Episode 5/5 ✅ Ret: 28.06, TTM: 140
+🎓 Training: 290 episodes
+   [TRAIN] Episode 6/295 ✅ Ret: 69.56, TTM: 140, Steps: 140
+   [TRAIN] Episode 7/295 ✅ Ret: 17.33, TTM: 85, Steps: 85
+   [TRAIN] Episode 8/295 ✅ Ret: 78.36, TTM: 140, Steps: 140
+   [TRAIN] Episode 9/295 ✅ Ret: 21.87, TTM: 81, Steps: 81
+   [TRAIN] Episode 10/295 ✅ Ret: 49.06, TTM: 140, Steps: 140
+Seed 0 | Episode 10/295 | recent avg return: 47.24 | dataset size: 1168
+   [TRAIN] Episode 11/295 ✅ Ret: 39.33, TTM: 140, Steps: 140
+   [TRAIN] Episode 12/295 ✅ Ret: 2.17, TTM: 32, Steps: 32
+   [TRAIN] Episode 13/295 ✅ Ret: 44.75, TTM: 140, Steps: 140
+   [TRAIN] Episode 14/295 ✅ Ret: 6.41, TTM: 38, Steps: 38
+   [TRAIN] Episode 15/295 ✅ Ret: 0.08, TTM: 32, Steps: 32
+Seed 0 | Episode 15/295 | recent avg return: 18.55 | dataset size: 1550
+   [TRAIN] Episode 16/295 ✅ Ret: -0.80, TTM: 18, Steps: 18
+   [TRAIN] Episode 17/295 ✅ Ret: 74.35, TTM: 140, Steps: 140
+   [TRAIN] Episode 18/295 ✅ Ret: 56.08, TTM: 140, Steps: 140
+   [TRAIN] Episode 19/295 ✅ Ret: 40.90, TTM: 140, Steps: 140
+   [TRAIN] Episode 20/295 ✅ Ret: 82.24, TTM: 140, Steps: 140
+Seed 0 | Episode 20/295 | recent avg return: 50.55 | dataset size: 2128
+   [TRAIN] Episode 21/295 ✅ Ret: 58.11, TTM: 140, Steps: 140
+   [TRAIN] Episode 22/295 ✅ Ret: 75.40, TTM: 140, Steps: 140
+   [TRAIN] Episode 23/295 ✅ Ret: 1.57, TTM: 32, Steps: 32
+   [TRAIN] Episode 24/295

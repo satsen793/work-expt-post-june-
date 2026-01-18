@@ -1,0 +1,69 @@
+Python version:
+Python 3.9.13
+Python path:
+/apps/spack/opt/spack/linux-rocky8-zen2/gcc-11.2.0/anaconda3-2022.10-htq3o45qwkhxfedgb65w6kbeb2227u7r/bin/python
+Current directory:
+/home/jabezc/Adaptive_Recommender_ver4/pets_ver3
+Files in current directory:
+total 801
+drwxrwxr-x.  5 jabezc jabezc 33792 Jan 17 22:10 .
+drwxrwxr-x. 16 jabezc jabezc 33792 Jan 17 15:32 ..
+-rw-rw-r--.  1 jabezc jabezc  7399 Jan 11 19:29 CHECKLIST.md
+-rw-rw-r--.  1 jabezc jabezc 70816 Jan 11 19:29 Elsevier_Template.tex
+-rw-rw-r--.  1 jabezc jabezc 11176 Jan 11 19:29 generate_figures.py
+-rw-rw-r--.  1 jabezc jabezc  6096 Jan 11 19:29 IMPLEMENTATION_SUMMARY.md
+drwxr-xr-x.  2 jabezc jabezc 25600 Jan 17 22:19 logs
+-rw-rw-r--.  1 jabezc jabezc 15653 Jan 11 19:29 PAPER_CORRESPONDENCE.md
+-rw-rw-r--.  1 jabezc jabezc 55535 Jan 17 15:32 pets_train.py
+drwxrwxr-x.  2 jabezc jabezc 25600 Jan 13 16:20 __pycache__
+-rw-rw-r--.  1 jabezc jabezc   725 Jan 11 19:29 README.md
+-rw-rw-r--.  1 jabezc jabezc    18 Jan 11 19:29 requirements.txt
+drwxrwxr-x.  4 jabezc jabezc 25600 Jan 17 15:38 results
+-rw-rw-r--.  1 jabezc jabezc  1444 Jan 11 22:19 run_pets_gpu.slurm
+-rw-rw-r--.  1 jabezc jabezc  1823 Jan 17 22:10 run_pets_prod.slurm
+-rw-rw-r--.  1 jabezc jabezc   639 Jan 15 13:35 run_pets_smoke.slurm
+-rw-rw-r--.  1 jabezc jabezc 16167 Jan 11 19:29 spec_evaluation.md
+-rw-rw-r--.  1 jabezc jabezc  1520 Jan 11 19:29 spec_intro.md
+-rw-rw-r--.  1 jabezc jabezc  2446 Jan 11 19:29 spec_metadata.md
+-rw-rw-r--.  1 jabezc jabezc  3162 Jan 11 19:29 spec_methodology.md
+-rw-rw-r--.  1 jabezc jabezc  7679 Jan 11 19:29 spec_overview.md
+-rw-rw-r--.  1 jabezc jabezc 17226 Jan 11 19:29 spec_pets.md
+-rw-rw-r--.  1 jabezc jabezc  1061 Jan 11 19:29 spec_related_work.md
+-rw-rw-r--.  1 jabezc jabezc 17530 Jan 11 19:29 spec_simulator.md
+-rw-rw-r--.  1 jabezc jabezc   846 Jan 11 19:29 spec_threats.md
+=== PETS Fast Prod: 2 seed(s), 295 episodes ===
+Running: python pets_ver3/pets_train.py --seed 2 --episodes 295
+
+======================================================================
+🚀 PETS TRAINING STARTED
+======================================================================
+Seeds: (2,)
+Total episodes: 295
+Device: cuda
+======================================================================
+
+
+======================================================================
+📍 SEED 2 STARTING
+======================================================================
+✅ Random seeds set
+🏗️  Creating environment...
+✅ Environment created
+🏁 Initial exploration: 5 episodes
+   [EXPLORE] Episode 1/5 ✅ Ret: 36.07, TTM: 140
+   [EXPLORE] Episode 2/5 ✅ Ret: 0.10, TTM: 36
+   [EXPLORE] Episode 3/5 ✅ Ret: 6.75, TTM: 92
+   [EXPLORE] Episode 4/5 ✅ Ret: 4.81, TTM: 55
+   [EXPLORE] Episode 5/5 ✅ Ret: 9.37, TTM: 81
+🎓 Training: 290 episodes
+   [TRAIN] Episode 6/295 ✅ Ret: 10.46, TTM: 68, Steps: 68
+   [TRAIN] Episode 7/295 ✅ Ret: 45.82, TTM: 140, Steps: 140
+   [TRAIN] Episode 8/295 ✅ Ret: 32.92, TTM: 140, Steps: 140
+   [TRAIN] Episode 9/295 ✅ Ret: 4.92, TTM: 41, Steps: 41
+   [TRAIN] Episode 10/295 ✅ Ret: 56.85, TTM: 140, Steps: 140
+Seed 2 | Episode 10/295 | recent avg return: 30.20 | dataset size: 933
+   [TRAIN] Episode 11/295 ✅ Ret: 2.20, TTM: 37, Steps: 37
+   [TRAIN] Episode 12/295 ✅ Ret: 44.54, TTM: 140, Steps: 140
+   [TRAIN] Episode 13/295 ✅ Ret: 43.33, TTM: 140, Steps: 140
+   [TRAIN] Episode 14/295 ✅ Ret: 15.71, TTM: 64, Steps: 64
+   [TRAIN] Episode 15/295
