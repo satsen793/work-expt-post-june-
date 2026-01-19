@@ -40,7 +40,25 @@ def load_summary(path: str) -> Dict:
             data = json.load(f)
         # Handle different formats
         if isinstance(data, dict):
-            return data
+            # Process the dict to ensure metrics are aggregated
+            processed_summary = {}
+            for key, value in data.items():
+                if isinstance(value, dict) and "mean" in value:
+                    # Already aggregated
+                    processed_summary[key] = value
+                elif isinstance(value, list):
+                    # Raw values, compute mean/std
+                    if value:
+                        processed_summary[key] = {
+                            "mean": float(np.mean(value)),
+                            "std": float(np.std(value)),
+                        }
+                    else:
+                        processed_summary[key] = {"mean": 0.0, "std": 0.0}
+                else:
+                    # Single value, assume mean
+                    processed_summary[key] = {"mean": float(value), "std": 0.0}
+            return processed_summary
         elif isinstance(data, list):
             # If list, perhaps episodes, compute summary
             return compute_summary_from_episodes(data)
@@ -367,11 +385,116 @@ def generate_updated_latex_table():
     
     print("✓ Updated LaTeX table with Heuristic and blueprint adherence saved")
 
+def plot_mean_reward_at_budgets():
+    """Plot mean reward at fixed interaction budgets with error bars (±SD across seeds)."""
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError:
+        print("matplotlib not available")
+        return
+
+    algos = ['DQN', 'PPO', 'PETS', 'MBPO']
+    colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
+    budgets = [5000, 10000, 20000, 30000]  # Fixed interaction budgets in steps
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    bar_width = 0.2
+    x_positions = np.arange(len(budgets))
+
+    for idx, algo in enumerate(algos):
+        means = []
+        stds = []
+
+        csv_path = f"results/{algo.lower()}/episodes.csv"
+        if os.path.exists(csv_path):
+            episodes = load_full_episodes(csv_path)
+            seed_data = {}
+            for ep in episodes:
+                seed = ep['seed']
+                if seed not in seed_data:
+                    seed_data[seed] = []
+                seed_data[seed].append(ep)
+
+            for budget in budgets:
+                rewards_at_budget = [get_reward_at_steps(seed_data[seed], budget) for seed in seed_data]
+                if rewards_at_budget:
+                    means.append(np.mean(rewards_at_budget))
+                    stds.append(np.std(rewards_at_budget))
+                else:
+                    means.append(0.0)
+                    stds.append(0.0)
+
+            # Plot bars with error bars
+            ax.bar(x_positions + idx * bar_width, means, bar_width, yerr=stds, 
+                   label=algo, color=colors[idx], capsize=5, alpha=0.7)
+
+    ax.set_xlabel('Interaction Budget (Environment Steps)', fontsize=12)
+    ax.set_ylabel('Mean Cumulative Reward', fontsize=12)
+    ax.set_title('Mean Reward at Fixed Interaction Budgets (±SD Across Seeds)', fontsize=14, fontweight='bold')
+    ax.set_xticks(x_positions + bar_width * (len(algos) - 1) / 2)
+    ax.set_xticklabels([f'{b//1000}K' for b in budgets])
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    plt.tight_layout()
+    plt.savefig('mean_reward_at_budgets.png', dpi=300)
+    plt.close()
+    print("✓ Mean reward at fixed interaction budgets plot saved")
+
+def plot_mean_reward_variance_per_seed():
+    """Plot mean reward variance for each seed across all models."""
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError:
+        print("matplotlib not available")
+        return
+
+    algos = ['DQN', 'PPO', 'PETS', 'MBPO']
+    colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
+
+    # Collect all seeds
+    all_seeds = set()
+    seed_rewards = {}  # seed -> {algo: reward}
+
+    for algo in algos:
+        csv_path = f"results/{algo.lower()}/episodes.csv"
+        if os.path.exists(csv_path):
+            episodes = load_full_episodes(csv_path)
+            for ep in episodes:
+                seed = ep['seed']
+                all_seeds.add(seed)
+                if seed not in seed_rewards:
+                    seed_rewards[seed] = {}
+                # Take the final episode's cumulative_reward
+                seed_rewards[seed][algo] = ep['cumulative_reward']
+
+    # Sort seeds
+    sorted_seeds = sorted(all_seeds)
+
+    variances = []
+    for seed in sorted_seeds:
+        rewards = [seed_rewards[seed].get(algo, 0.0) for algo in algos]
+        variances.append(np.var(rewards))
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.bar(sorted_seeds, variances, color='skyblue', alpha=0.7)
+    ax.set_xlabel('Seed', fontsize=12)
+    ax.set_ylabel('Reward Variance Across Models', fontsize=12)
+    ax.set_title('Mean Reward Variance for Each Seed Across All Models', fontsize=14, fontweight='bold')
+    ax.set_xticks(sorted_seeds)
+    ax.grid(True, alpha=0.3)
+    plt.tight_layout()
+    plt.savefig('mean_reward_variance_per_seed.png', dpi=300)
+    plt.close()
+    print("✓ Mean reward variance per seed across models plot saved")
+
 if __name__ == "__main__":
     plot_episode_reward_distribution_at_milestones()
     plot_episode_reward_distribution_variant()
     plot_reward_variance_across_seeds()
     plot_reward_variance_across_models()
     plot_blueprint_adherence_comparison()
+    plot_mean_reward_at_budgets()
+    plot_mean_reward_variance_per_seed()
     generate_updated_latex_table()
     print("All milestone and variance analysis complete!")

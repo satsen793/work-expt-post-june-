@@ -41,7 +41,25 @@ def load_summary(path: str) -> Dict:
             data = json.load(f)
         # Handle different formats
         if isinstance(data, dict):
-            return data
+            # Process the dict to ensure metrics are aggregated
+            processed_summary = {}
+            for key, value in data.items():
+                if isinstance(value, dict) and "mean" in value:
+                    # Already aggregated
+                    processed_summary[key] = value
+                elif isinstance(value, list):
+                    # Raw values, compute mean/std
+                    if value:
+                        processed_summary[key] = {
+                            "mean": float(np.mean(value)),
+                            "std": float(np.std(value)),
+                        }
+                    else:
+                        processed_summary[key] = {"mean": 0.0, "std": 0.0}
+                else:
+                    # Single value, assume mean
+                    processed_summary[key] = {"mean": float(value), "std": 0.0}
+            return processed_summary
         elif isinstance(data, list):
             # If list, perhaps episodes, compute summary
             return compute_summary_from_episodes(data)
