@@ -1,0 +1,35 @@
+Python version:
+Python 3.9.13
+Python path:
+/apps/spack/opt/spack/linux-rocky8-zen2/gcc-11.2.0/anaconda3-2022.10-htq3o45qwkhxfedgb65w6kbeb2227u7r/bin/python
+Current directory:
+/home/jabezc/Adaptive_Recommender_ver4/pets_ver3
+Files in current directory:
+total 801
+drwxrwxr-x.  5 jabezc jabezc 33792 Jan 18 02:46 .
+drwxrwxr-x. 16 jabezc jabezc 33792 Jan 17 05:02 ..
+-rw-rw-r--.  1 jabezc jabezc  7399 Jan 11 08:59 CHECKLIST.md
+-rw-rw-r--.  1 jabezc jabezc 70816 Jan 11 08:59 Elsevier_Template.tex
+-rw-rw-r--.  1 jabezc jabezc 11176 Jan 11 08:59 generate_figures.py
+-rw-rw-r--.  1 jabezc jabezc  6096 Jan 11 08:59 IMPLEMENTATION_SUMMARY.md
+drwxr-xr-x.  2 jabezc jabezc 25600 Jan 18 09:58 logs
+-rw-rw-r--.  1 jabezc jabezc 15653 Jan 11 08:59 PAPER_CORRESPONDENCE.md
+-rw-rw-r--.  1 jabezc jabezc 55535 Jan 17 05:02 pets_train.py
+drwxrwxr-x.  2 jabezc jabezc 25600 Jan 13 05:50 __pycache__
+-rw-rw-r--.  1 jabezc jabezc   725 Jan 11 08:59 README.md
+-rw-rw-r--.  1 jabezc jabezc    18 Jan 11 08:59 requirements.txt
+drwxrwxr-x.  7 jabezc jabezc 25600 Jan 18 02:46 results
+-rw-rw-r--.  1 jabezc jabezc  1444 Jan 11 11:49 run_pets_gpu.slurm
+-rw-rw-r--.  1 jabezc jabezc  1823 Jan 18 02:46 run_pets_prod.slurm
+-rw-rw-r--.  1 jabezc jabezc   639 Jan 15 03:05 run_pets_smoke.slurm
+-rw-rw-r--.  1 jabezc jabezc 16167 Jan 11 08:59 spec_evaluation.md
+-rw-rw-r--.  1 jabezc jabezc  1520 Jan 11 08:59 spec_intro.md
+-rw-rw-r--.  1 jabezc jabezc  2446 Jan 11 08:59 spec_metadata.md
+-rw-rw-r--.  1 jabezc jabezc  3162 Jan 11 08:59 spec_methodology.md
+-rw-rw-r--.  1 jabezc jabezc  7679 Jan 11 08:59 spec_overview.md
+-rw-rw-r--.  1 jabezc jabezc 17226 Jan 11 08:59 spec_pets.md
+-rw-rw-r--.  1 jabezc jabezc  1061 Jan 11 08:59 spec_related_work.md
+-rw-rw-r--.  1 jabezc jabezc 17530 Jan 11 08:59 spec_simulator.md
+-rw-rw-r--.  1 jabezc jabezc   846 Jan 11 08:59 spec_threats.md
+=== PETS Fast Prod: 3 seed(s), 295 episodes ===
+Running: python pets_ver3/pets_train.py --seed 3 --episodes 295
