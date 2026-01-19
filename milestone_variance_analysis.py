@@ -60,8 +60,11 @@ def load_summary(path: str) -> Dict:
                         # If can't compute mean (e.g., list of dicts), set to 0
                         processed_summary[key] = {"mean": 0.0, "std": 0.0}
                 else:
-                    # Single value, assume mean
-                    processed_summary[key] = {"mean": float(value), "std": 0.0}
+                    # Single value or complex structure, try to convert
+                    try:
+                        processed_summary[key] = {"mean": float(value), "std": 0.0}
+                    except (TypeError, ValueError):
+                        processed_summary[key] = {"mean": 0.0, "std": 0.0}
             return processed_summary
         elif isinstance(data, list):
             # If list, perhaps episodes, compute summary
