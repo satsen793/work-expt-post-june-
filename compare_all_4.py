@@ -1207,7 +1207,36 @@ def generate_calibration_plot(output_dir: str) -> None:
     print(f"✓ Calibration plot exported to {output_dir}/calibration_plot.png")
 
 
-def generate_modality_gains_plot(output_dir: str) -> None:
+def compute_modality_gains_from_csv(csv_path: str) -> Dict:
+    """Compute modality gains from episodes.csv."""
+    episodes = load_full_episodes(csv_path)
+    
+    modality_columns = {
+        'video': 'post_content_gain_video',
+        'PPT': 'post_content_gain_PPT',
+        'text': 'post_content_gain_text',
+        'blog': 'post_content_gain_blog',
+        'article': 'post_content_gain_article',
+        'handout': 'post_content_gain_handout'
+    }
+    
+    modality_gains = {}
+    for mod, col in modality_columns.items():
+        gains = [float(ep[col]) for ep in episodes if float(ep[col]) > 0]
+        if gains:
+            modality_gains[mod] = {
+                'mean': float(np.mean(gains)),
+                'std': float(np.std(gains)),
+                'count': len(gains)
+            }
+        else:
+            modality_gains[mod] = {
+                'mean': 0.0,
+                'std': 0.0,
+                'count': 0
+            }
+    
+    return modality_gains
     """Generate average post-content gain by modality for model-based methods (combined chart)."""
     try:
         import matplotlib.pyplot as plt
