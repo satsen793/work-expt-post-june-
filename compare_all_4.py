@@ -484,8 +484,12 @@ def generate_statistical_tests(summaries: Dict[str, Dict], output_path: str) -> 
 
 def generate_effect_size_plot(effect_matrix: Dict[str, Dict], output_dir: str) -> None:
     """Generate Cohen's d effect size heatmap."""
-    import matplotlib.pyplot as plt
-    import seaborn as sns
+    try:
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+    except ImportError:
+        print("⚠ matplotlib or seaborn not available, skipping effect size heatmap")
+        return
     
     algos = list(effect_matrix.keys())
     matrix = np.zeros((len(algos), len(algos)))
