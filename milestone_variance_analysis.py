@@ -48,13 +48,16 @@ def load_summary(path: str) -> Dict:
                     processed_summary[key] = value
                 elif isinstance(value, list):
                     # Raw values, compute mean/std
-                    if value and not isinstance(value[0], dict):
-                        processed_summary[key] = {
-                            "mean": float(np.mean(value)),
-                            "std": float(np.std(value)),
-                        }
-                    else:
-                        # List of dicts or empty, skip
+                    try:
+                        if value:
+                            processed_summary[key] = {
+                                "mean": float(np.mean(value)),
+                                "std": float(np.std(value)),
+                            }
+                        else:
+                            processed_summary[key] = {"mean": 0.0, "std": 0.0}
+                    except (TypeError, ValueError):
+                        # If can't compute mean (e.g., list of dicts), set to 0
                         processed_summary[key] = {"mean": 0.0, "std": 0.0}
                 else:
                     # Single value, assume mean
