@@ -322,6 +322,12 @@ def load_full_episodes(path: str) -> List[Dict]:
                 'final_mastery': float(row['final_mastery']),
                 'mean_frustration': float(row['mean_frustration']),
                 'blueprint_adherence': float(row.get('blueprint_adherence', 0.0)),
+                'post_content_gain_video': float(row.get('post_content_gain_video', 0.0)),
+                'post_content_gain_PPT': float(row.get('post_content_gain_PPT', 0.0)),
+                'post_content_gain_text': float(row.get('post_content_gain_text', 0.0)),
+                'post_content_gain_blog': float(row.get('post_content_gain_blog', 0.0)),
+                'post_content_gain_article': float(row.get('post_content_gain_article', 0.0)),
+                'post_content_gain_handout': float(row.get('post_content_gain_handout', 0.0)),
             })
     
     return episodes
