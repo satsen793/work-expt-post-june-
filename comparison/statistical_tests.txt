@@ -4,10 +4,10 @@
 
 ## DQN vs PETS
 --------------------------------------------------
-Time-to-Mastery          : d=+13.269 (large) -> DQN wins
-Cumulative Reward        : d=+0.880 (large) -> DQN wins
-Question Accuracy        : d=+0.282 (small) -> DQN wins
-Post-Content Gain        : d=+0.200 (negligible) -> DQN wins
+Time-to-Mastery          : d=+14.846 (large) -> DQN wins
+Cumulative Reward        : d=+1.027 (large) -> DQN wins
+Question Accuracy        : d=+0.390 (small) -> DQN wins
+Post-Content Gain        : d=+0.365 (small) -> DQN wins
 
 ## DQN vs MBPO
 --------------------------------------------------
@@ -25,17 +25,17 @@ Post-Content Gain        : d=+1.658 (large) -> DQN wins
 
 ## PETS vs MBPO
 --------------------------------------------------
-Time-to-Mastery          : d=-0.469 (small) -> MBPO wins
-Cumulative Reward        : d=-0.306 (small) -> MBPO wins
-Question Accuracy        : d=+0.657 (medium) -> PETS wins
-Post-Content Gain        : d=+1.904 (large) -> PETS wins
+Time-to-Mastery          : d=-0.473 (small) -> MBPO wins
+Cumulative Reward        : d=-0.398 (small) -> MBPO wins
+Question Accuracy        : d=+0.632 (medium) -> PETS wins
+Post-Content Gain        : d=+1.865 (large) -> PETS wins
 
 ## PETS vs PPO
 --------------------------------------------------
-Time-to-Mastery          : d=-0.876 (large) -> PPO wins
-Cumulative Reward        : d=-2.988 (large) -> PPO wins
-Question Accuracy        : d=-0.587 (medium) -> PPO wins
-Post-Content Gain        : d=+0.534 (medium) -> PETS wins
+Time-to-Mastery          : d=-0.897 (large) -> PPO wins
+Cumulative Reward        : d=-3.348 (large) -> PPO wins
+Question Accuracy        : d=-0.738 (medium) -> PPO wins
+Post-Content Gain        : d=+0.421 (small) -> PETS wins
 
 ## MBPO vs PPO
 --------------------------------------------------
