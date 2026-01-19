@@ -562,7 +562,6 @@ def generate_comparison_plot(summaries: Dict[str, Dict], output_dir: str) -> Non
         ("Time-to-Mastery (steps)", "time_to_mastery", 1.0),
         ("Question Accuracy (%)", "question_accuracy", 100.0),
         ("Post-Content Gain", "post_content_gain", 1.0),
-        ("Blueprint Adherence", "blueprint_adherence", 1.0),
     ]
     
     fig, axes = plt.subplots(3, 2, figsize=(14, 15))
