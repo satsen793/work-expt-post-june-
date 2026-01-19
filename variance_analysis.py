@@ -38,16 +38,27 @@ def load_summary(path: str) -> Dict:
     json_path = path.replace('episodes.csv', 'summary.json')
     if os.path.exists(json_path):
         with open(json_path, 'r') as f:
-            return json.load(f)
+            data = json.load(f)
+        # Handle different formats
+        if isinstance(data, dict):
+            return data
+        elif isinstance(data, list):
+            # If list, perhaps episodes, compute summary
+            return compute_summary_from_episodes(data)
+        else:
+            return {}
     else:
         # Simple summary from CSV
         episodes = load_full_episodes(path)
         if not episodes:
             return {}
         rewards = [ep['cumulative_reward'] for ep in episodes]
+        blueprint = [ep['blueprint_adherence'] for ep in episodes]
         return {
             'cumulative_reward': {'mean': np.mean(rewards), 'std': np.std(rewards)},
-            'blueprint_adherence': {'mean': np.mean([ep['blueprint_adherence'] for ep in episodes]), 'std': np.std([ep['blueprint_adherence'] for ep in episodes])},
+            'blueprint_adherence': {'mean': np.mean(blueprint), 'std': np.std(blueprint)},
+            'time_to_mastery': {'mean': 0.0, 'std': 0.0},  # Placeholder
+            'post_content_gain': {'mean': 0.0, 'std': 0.0},  # Placeholder
         }
 
 def get_reward_at_steps(episodes: List[Dict], steps: int) -> float:
@@ -107,7 +118,7 @@ def plot_reward_variance_across_seeds():
     print("✓ Reward variance across seeds plot saved")
 
 def plot_reward_variance_across_models():
-    """Plot mean reward variance for each seed across all models."""
+    """Plot final rewards for each seed across all models."""
     try:
         import matplotlib.pyplot as plt
     except ImportError:
@@ -115,34 +126,41 @@ def plot_reward_variance_across_models():
         return
 
     algos = ['DQN', 'PPO', 'PETS', 'MBPO']
+    colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
     seeds = list(range(5))  # Assuming 5 seeds
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(12, 8))
 
-    variances = []
-    for seed in seeds:
+    x = np.arange(len(seeds))
+    width = 0.2
+
+    for idx, algo in enumerate(algos):
         rewards = []
-        for algo in algos:
+        for seed in seeds:
             csv_path = f"results/{algo.lower()}/episodes.csv"
             if os.path.exists(csv_path):
                 episodes = load_full_episodes(csv_path)
                 seed_eps = [ep for ep in episodes if ep['seed'] == seed]
                 if seed_eps:
                     rewards.append(seed_eps[-1]['cumulative_reward'])  # Final reward
-        if len(rewards) > 1:
-            variances.append(np.var(rewards))
-        else:
-            variances.append(0.0)
+                else:
+                    rewards.append(0.0)
+            else:
+                rewards.append(0.0)
+        
+        ax.bar(x + idx*width, rewards, width, alpha=0.7, color=colors[idx], label=algo)
 
-    ax.bar(seeds, variances, alpha=0.7, color='#1f77b4')
     ax.set_xlabel('Seed', fontsize=12)
-    ax.set_ylabel('Reward Variance Across Models', fontsize=12)
-    ax.set_title('Reward Variance for Each Seed Across All Models', fontsize=14, fontweight='bold')
+    ax.set_ylabel('Final Cumulative Reward', fontsize=12)
+    ax.set_title('Final Rewards per Seed Across All Models', fontsize=14, fontweight='bold')
+    ax.set_xticks(x + width*1.5)
+    ax.set_xticklabels(seeds)
+    ax.legend()
     ax.grid(True, alpha=0.3, axis='y')
     plt.tight_layout()
-    plt.savefig('reward_variance_across_models.png', dpi=300)
+    plt.savefig('rewards_per_seed_per_model.png', dpi=300)
     plt.close()
-    print("✓ Reward variance across models plot saved")
+    print("✓ Rewards per seed per model plot saved")
 
 def update_comparison_plot_with_blueprint():
     """Update comparison plot to include blueprint adherence."""
