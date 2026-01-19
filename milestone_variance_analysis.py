@@ -442,7 +442,7 @@ def plot_mean_reward_at_budgets():
     print("✓ Mean reward at fixed interaction budgets plot saved")
 
 def plot_mean_reward_variance_per_seed():
-    """Plot mean reward variance for each seed across all models."""
+    """Plot mean reward variance for each seed across all models - separate plot per seed."""
     try:
         import matplotlib.pyplot as plt
     except ImportError:
@@ -471,22 +471,18 @@ def plot_mean_reward_variance_per_seed():
     # Sort seeds
     sorted_seeds = sorted(all_seeds)
 
-    variances = []
     for seed in sorted_seeds:
+        fig, ax = plt.subplots(figsize=(8, 6))
         rewards = [seed_rewards[seed].get(algo, 0.0) for algo in algos]
-        variances.append(np.var(rewards))
-
-    fig, ax = plt.subplots(figsize=(8, 6))
-    ax.bar(sorted_seeds, variances, color='skyblue', alpha=0.7)
-    ax.set_xlabel('Seed', fontsize=12)
-    ax.set_ylabel('Reward Variance Across Models', fontsize=12)
-    ax.set_title('Mean Reward Variance for Each Seed Across All Models', fontsize=14, fontweight='bold')
-    ax.set_xticks(sorted_seeds)
-    ax.grid(True, alpha=0.3)
-    plt.tight_layout()
-    plt.savefig('mean_reward_variance_per_seed.png', dpi=300)
-    plt.close()
-    print("✓ Mean reward variance per seed across models plot saved")
+        ax.bar(algos, rewards, color=colors, alpha=0.7)
+        ax.set_xlabel('Algorithm', fontsize=12)
+        ax.set_ylabel('Cumulative Reward', fontsize=12)
+        ax.set_title(f'Mean Reward Variance for Seed {seed} Across All Models', fontsize=14, fontweight='bold')
+        ax.grid(True, alpha=0.3)
+        plt.tight_layout()
+        plt.savefig(f'mean_reward_variance_seed_{seed}.png', dpi=300)
+        plt.close()
+        print(f"✓ Mean reward variance for seed {seed} plot saved")
 
 if __name__ == "__main__":
     plot_episode_reward_distribution_at_milestones()
