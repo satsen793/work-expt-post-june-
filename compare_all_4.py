@@ -1432,7 +1432,10 @@ def main():
     generate_aggregated_curves(full_episodes, args.output)
     generate_time_reward_tradeoff(full_episodes, args.output)
     generate_calibration_plot(args.output)
-    generate_modality_gains_plot(args.output)
+    try:
+        generate_modality_gains_plot(args.output)
+    except NameError:
+        print("⚠ generate_modality_gains_plot not available, skipping modality gains plot")
     generate_reward_variance_across_seeds(full_episodes, args.output)
     generate_reward_variance_across_models(full_episodes, args.output)
     
