@@ -10,6 +10,7 @@ import sys
 import json
 import csv
 import argparse
+import random
 from typing import Dict, List, Tuple
 import numpy as np
 
@@ -96,6 +97,7 @@ class DiscreteActionSpace:
 class AdaptiveLearningEnv:
     def __init__(self, seed: int = 0, max_steps: int | None = None, config: Dict | None = None):
         self.cfg = config or SIMULATOR_CONFIG
+        assert self.cfg is not None  # Ensure cfg is always a dict
         self.num_los = self.cfg["num_los"]
         self.num_questions = self.cfg["num_los"] * self.cfg["num_questions_per_lo"]
         self.num_contents = self.cfg["num_los"] * self.cfg["num_contents_per_lo"]
@@ -113,7 +115,7 @@ class AdaptiveLearningEnv:
         self.question_counts = np.zeros(3, dtype=np.int32)
         self.episode_log: List[Dict] = []
         self.event_log: List[Dict] = []
-        self.max_steps_current = max_steps
+        self.max_steps_current = int(max_steps or self.cfg["max_episode_steps"])
 
     def _build_questions(self) -> Dict[Tuple[int, int], List[Question]]:
         questions: Dict[Tuple[int, int], List[Question]] = {}
@@ -242,7 +244,7 @@ class AdaptiveLearningEnv:
             "event_type": "answered" if result["type"] == "question" else "content_completed",
             "difficulty": result.get("difficulty"),
             "modality": result.get("modality"),
-            "correct": result.get("correct"),
+            "correct": result.get("correct", False),
             "mastery_gain": result.get("mastery_gain", 0.0),
             "frustration": result.get("frustration", 0.0),
             "response_time": result.get("response_time", 0.0),
@@ -255,7 +257,7 @@ class AdaptiveLearningEnv:
     def _execute_question(self, action: Dict) -> Dict:
         lo = action["lo"]
         diff = action["difficulty"]
-        question = self.rng.choice(self.questions[(lo, diff)])
+        question = random.choice(self.questions[(lo, diff)])
 
         # IRT-based correctness
         ability = self.state["ability"]
@@ -381,7 +383,7 @@ class HeuristicPolicy:
     def _select_question_action(self, mastery: np.ndarray) -> int:
         """Select question action based on mastery-band difficulty."""
         # Choose LO with lowest mastery
-        lo = np.argmin(mastery)
+        lo = int(np.argmin(mastery))
 
         # Difficulty based on mastery level
         m = mastery[lo]
@@ -399,7 +401,7 @@ class HeuristicPolicy:
     def _select_content_action(self, mastery: np.ndarray, frustration: float) -> int:
         """Select content action based on frustration level."""
         # Choose LO with lowest mastery
-        lo = np.argmin(mastery)
+        lo = int(np.argmin(mastery))
 
         # Modality based on frustration
         if frustration > 0.5:
@@ -468,7 +470,7 @@ def save_episodes_to_csv(episodes: List[Dict], filename: str):
                 "frustration": step_entry["frustration"],
                 "response_time": step_entry["response_time"],
                 "post_content_gain": step_entry["post_content_gain"],
-                "question_accuracy": 1.0 if step_entry.get("correct") else 0.0,
+                "question_accuracy": 1.0 if step_entry.get("correct", False) else 0.0,
                 "content_rate": 1.0 if step_entry["action_type"] == "content" else 0.0,
                 "final_mastery": ep["mean_mastery"],
                 "mean_frustration": ep["final_frustration"],
@@ -544,4 +546,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-<parameter name="filePath">c:\Users\HP\Videos\dqn , pets\train.py
