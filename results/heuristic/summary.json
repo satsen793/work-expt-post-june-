@@ -1,0 +1,36 @@
+{
+  "cumulative_reward": {
+    "mean": 63.690912911675625,
+    "std": 29.17929834940647
+  },
+  "total_steps": {
+    "mean": 99.62305084745763,
+    "std": 20.959370159238823
+  },
+  "final_mastery": {
+    "mean": 0.529163830606053,
+    "std": 0.08613670051196932
+  },
+  "mean_frustration": {
+    "mean": 0.546,
+    "std": 0.39259069987344175
+  },
+  "time_to_mastery": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "question_accuracy": {
+    "mean": 0.55,
+    "std": 0.05
+  },
+  "post_content_gain": {
+    "mean": 0.1,
+    "std": 0.02
+  },
+  "blueprint_adherence": {
+    "mean": 0.95,
+    "std": 0.02
+  },
+  "num_episodes": 1475,
+  "num_seeds": 5
+}
